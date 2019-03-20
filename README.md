@@ -1,3 +1,3 @@
 # README
 
-Freebnb
+Fairbnb
