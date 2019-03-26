@@ -20,11 +20,11 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  # after_initialize: :ensure_token
+  after_initialize: :ensure_token
 
   def self.find_by_credentials(email, password)
     @user = User.find_by(email: email)
-    @user && @user.is_password?(password) ? @user || nil
+    @user && @user.is_password?(password) ? @user : nil
   end
 
   def self.generate_token
