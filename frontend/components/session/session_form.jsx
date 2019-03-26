@@ -1,45 +1,69 @@
 import React from 'react';
-import { merge } from lodash;
 
 class SessionForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '' };
+    this.state = this.props.userInfo;
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInput(field) {
+    return e => this.setState({ [field]: e.target.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.formAction(this.state);
   }
 
 
   render() {
-
-    const link = (this.props.formType === 'signup') ? <Link to='/login'>Log In</Link> : <Link to='/signup'>Sign Up</Link>
+    let ident = <div></div>;
+    if (this.props.formType === 'Sign Up') {
+      ident = 
+        <div>
+          <label>First name
+          <input
+            type="text"
+            value={this.state.fname}
+            onChange={this.handleInput('fname')} />
+          </label> <br></br>
+          <label>Last name
+          <input
+              type="text"
+              value={this.state.lname}
+              onChange={this.handleInput('lname')} />
+          </label> <br></br>
+        </div>
+    }
 
     return (
       <div>
         <h3>{this.props.formType}</h3>
         <form onSubmit={this.handleSubmit}>
-          <label>Email Address:
+          <label>Email address
           <input
               type="text"
-              value={this.state.username}
-              onChange={this.handleChange('email')} />
-          </label>
+              value={this.state.email}
+              onChange={this.handleInput('email')} />
+          </label><br></br>
+
+          {ident}
+
           <label>Password:
           <input
               type="password"
               value={this.state.password}
-              onChange={this.handleChange('password')} />
+              onChange={this.handleInput('password')} />
           </label>
           <input type="submit" />
-          <p>{link}</p>
         </form>
+
       </div>
     )
   };
 
 };
+
+export default SessionForm;

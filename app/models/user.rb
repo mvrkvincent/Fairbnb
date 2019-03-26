@@ -50,7 +50,7 @@ class User < ApplicationRecord
   private
 
   def ensure_token
-    @session_token || User.generate_token
+    self.session_token ||= User.generate_token
   end
 
 end
