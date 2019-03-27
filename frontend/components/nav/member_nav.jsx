@@ -7,7 +7,7 @@ class MemberNav extends React.Component {
 
     return (
       <div>
-        <button onClick={this.props.logout}>Log Out</button>
+        <Link to='/' onClick={this.props.logout}>Log Out</Link>
       </div>
     )
 

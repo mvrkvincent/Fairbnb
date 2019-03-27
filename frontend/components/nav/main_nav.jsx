@@ -6,7 +6,9 @@ import VisitorNav from './visitor_nav';
 class MainNav extends React.Component {
 
   render() {
-    const nav = (this.props.currentUser) ? <MemberNav /> : <VisitorNav />;
+    const logout = this.props.logout;
+
+    const nav = (this.props.currentUser) ? <MemberNav logout={logout}/> : <VisitorNav/>;
 
     return(
       <div>
