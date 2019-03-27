@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import loginContainer from '../session/login_container';
-import signupContainer from '../session/signup_container';
+import { closeModal } from '../../actions/modal_actions';
+import LoginContainer from '../session/login_container';
+import SignupContainer from '../session/signup_container';
 
 const Modal = ({modal, closeModal}) => {
 
@@ -12,11 +13,11 @@ const Modal = ({modal, closeModal}) => {
   let form;
   switch (modal) {
     case 'SIGNUP': {
-      form = signupContainer;
+      form = <SignupContainer />;
       break;
     }
     case 'LOGIN': {
-      form = loginContainer;
+      form = <LoginContainer />;
       break;
     }
     default: return null;

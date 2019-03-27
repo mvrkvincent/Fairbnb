@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import MemberNav from './member_nav';
 import VisitorNav from './visitor_nav';
 
