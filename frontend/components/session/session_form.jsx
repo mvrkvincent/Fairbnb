@@ -14,12 +14,13 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.formAction(this.state);
+    this.props.formAction(this.state).then(() => this.props.history.push('/'));
   }
 
 
   render() {
     let ident = <div></div>;
+    
     if (this.props.formType === 'Sign Up') {
       ident = 
         <div>
@@ -28,13 +29,15 @@ class SessionForm extends React.Component {
             type="text"
             value={this.state.fname}
             onChange={this.handleInput('fname')} />
-          </label> <br></br>
+          </label> 
+          <br></br>
           <label>Last name
           <input
               type="text"
               value={this.state.lname}
               onChange={this.handleInput('lname')} />
-          </label> <br></br>
+          </label> 
+          <br></br>
         </div>
     }
 
@@ -47,7 +50,8 @@ class SessionForm extends React.Component {
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')} />
-          </label><br></br>
+          </label>
+          <br></br>
 
           {ident}
 
@@ -59,7 +63,7 @@ class SessionForm extends React.Component {
           </label>
           <input type="submit" />
         </form>
-
+        {this.props.altLink}
       </div>
     )
   };

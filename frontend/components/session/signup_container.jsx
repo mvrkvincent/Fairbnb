@@ -7,7 +7,7 @@ import SessionForm from './session_form';
 const msp = state => ({
   userInfo: { email: '', fname: '', lname: '', password: '' },
   formType: 'Sign Up',
-  altLink: <div><Link to='/signin'>Log In</Link></div>,
+  altLink: <div><Link to='/login'>Log In</Link></div>,
   errors: Object.keys(state.errors).map(id => state.errors[id])
 });
 
