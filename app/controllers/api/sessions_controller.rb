@@ -14,7 +14,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render :show
     else
-      render json: { errors: ['invalid credentials, try again'] }, status: 422
+      render json: ['invalid credentials, try again'], status: 422
     end
 
   end
@@ -24,7 +24,7 @@ class Api::SessionsController < ApplicationController
     if current_user
       logout
     else
-      render json: { errors: ['not logged in']}, status: 404
+      render json: ['not logged in'], status: 404
     end
 
   end

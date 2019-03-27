@@ -15,64 +15,67 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.formAction(this.state);
-    this.props.closeModal();
+    this.props.formAction(this.state).then(this.props.closeModal);
+  }
+
+  renderErrors() {
+   return( <ul>{this.props.errors.map((error, idx) => (<li key={idx}>{error}</li>))}</ul> )
   }
 
 
   render() {
     let ident;
-    let passText;
+    let subText;
     let altLink;
+
 
     if (this.props.formType === 'Sign Up') {
       ident = 
         <div>
-          <label>First name
           <input
             type="text"
+            placeholder="First name"
             value={this.state.fname}
             onChange={this.handleInput('fname')} />
-          </label> 
           <br></br>
-          <label>Last name
           <input
             type="text"
+            placeholder="Last name"
             value={this.state.lname}
             onChange={this.handleInput('lname')} />
-          </label> 
           <br></br>
         </div>; 
-      passText = 'Create a password'
+      subText = 'Sign up'
       altLink = <div>Already a Fairbnb member? <Link to='/' onClick={this.props.altLink}>Log In</Link></div>;
 
     } else {
-      passText = 'Password'
+      subText = 'Log in'
       altLink = <div>Not a member? <Link to='/' onClick={this.props.altLink}>Sign Up</Link></div>;
     };
 
     return (
       <div>
         <h3>{this.props.formType}</h3>
+        <p></p>
         <form onSubmit={this.handleSubmit}>
-          <label>Email address
           <input
             type="text"
+            placeholder="Email address"
             value={this.state.email}
             onChange={this.handleInput('email')} />
-          </label>
           <br></br>
 
           {ident}
 
-          <label>{passText}
           <input
             type="password"
+            placeholder="Create a Password"
             value={this.state.password}
             onChange={this.handleInput('password')} />
-          </label>
-          <input type="submit" />
+          <br></br>
+          <input type="submit" value={subText} />
         </form>
+            {this.renderErrors()}
         {altLink}
       </div>
     )
