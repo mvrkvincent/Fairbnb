@@ -6,8 +6,10 @@ class VisitorNav extends React.Component {
 
     return (
       <div>
-        <button onClick={this.props.signup} value="Sign Up">Sign up</button>
-        <button onClick={this.props.login} value="Log In">Log in</button>
+        <button>Demo</button>
+        <button>Help</button>
+        <button onClick={this.props.signup}>Sign up</button>
+        <button onClick={this.props.login}>Log in</button>
       </div>
     )
 
