@@ -19,8 +19,8 @@ class SessionForm extends React.Component {
 
 
   render() {
-    let ident = <div></div>;
-    
+    let ident;
+    let passText;
     if (this.props.formType === 'Sign Up') {
       ident = 
         <div>
@@ -33,13 +33,17 @@ class SessionForm extends React.Component {
           <br></br>
           <label>Last name
           <input
-              type="text"
-              value={this.state.lname}
-              onChange={this.handleInput('lname')} />
+            type="text"
+            value={this.state.lname}
+            onChange={this.handleInput('lname')} />
           </label> 
           <br></br>
-        </div>
-    }
+        </div>; 
+      passText = 'Create a password'
+
+    } else {
+      passText = 'Password'
+    };
 
     return (
       <div>
@@ -47,19 +51,19 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>Email address
           <input
-              type="text"
-              value={this.state.email}
-              onChange={this.handleInput('email')} />
+            type="text"
+            value={this.state.email}
+            onChange={this.handleInput('email')} />
           </label>
           <br></br>
 
           {ident}
 
-          <label>Password:
+          <label>{passText}
           <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')} />
+            type="password"
+            value={this.state.password}
+            onChange={this.handleInput('password')} />
           </label>
           <input type="submit" />
         </form>

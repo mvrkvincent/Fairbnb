@@ -7,7 +7,7 @@ class MainNav extends React.Component {
 
   render() {
     const logout = this.props.logout;
-
+    // const modal = this.props.modal; < add to navs?
     const nav = (this.props.currentUser) ? <MemberNav logout={logout}/> : <VisitorNav/>;
 
     return(
@@ -15,7 +15,6 @@ class MainNav extends React.Component {
         {nav}
       </div>
     )
-
   }
 
 }
