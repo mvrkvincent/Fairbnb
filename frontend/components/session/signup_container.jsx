@@ -12,7 +12,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
   formAction: user => dispatch(signup(user)),
-  altLink: () => dispatch(openModal('LOGIN'))
+  altLink: () => dispatch(openModal('LOGIN')),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(msp, mdp)(SessionForm);

@@ -16,6 +16,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.formAction(this.state);
+    this.props.closeModal();
   }
 
 
@@ -43,11 +44,11 @@ class SessionForm extends React.Component {
           <br></br>
         </div>; 
       passText = 'Create a password'
-      altLink = <div>Already a Fairbnb account? <Link to='/login'>Log In</Link></div>;
+      altLink = <div>Already a Fairbnb member? <Link to='/' onClick={this.props.altLink}>Log In</Link></div>;
 
     } else {
       passText = 'Password'
-      altLink = <div>Not a member? <Link to='/signup'>Sign Up</Link></div>;
+      altLink = <div>Not a member? <Link to='/' onClick={this.props.altLink}>Sign Up</Link></div>;
     };
 
     return (
