@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
 const msp = state => ({
@@ -11,7 +11,8 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-  formAction: user => dispatch(signup(user))
+  formAction: user => dispatch(signup(user)),
+  altLink: () => dispatch(openModal('LOGIN'))
 });
 
 export default connect(msp, mdp)(SessionForm);

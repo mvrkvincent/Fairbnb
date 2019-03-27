@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 import { merge } from 'lodash';
 
 export default (state = { id: null }, action) => {
@@ -15,4 +15,4 @@ export default (state = { id: null }, action) => {
     default: return state;
   }
 
-}
+};

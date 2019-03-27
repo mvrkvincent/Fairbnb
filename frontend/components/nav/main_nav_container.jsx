@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signup, login, logout } from '../../actions/session_actions';
+import { logout } from '../../actions/session_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import MainNav from './main_nav';
 
 const msp = ({ session, entities }) => ({
@@ -8,8 +9,9 @@ const msp = ({ session, entities }) => ({
 });
 
 const mdp = dispatch => ({
+  signup: () => dispatch(openModal('SIGNUP')),
+  login: () => dispatch(openModal('LOGIN')),
   logout: () => dispatch(logout())
-  //something about modal functionality? popup action?
 });
 
 export default connect(msp, mdp)(MainNav);

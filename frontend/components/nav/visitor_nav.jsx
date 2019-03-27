@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// 
+
 
 class VisitorNav extends React.Component {
 
@@ -8,8 +8,8 @@ class VisitorNav extends React.Component {
 
     return (
       <div>
-        <Link to='/signup'>Sign Up</Link>
-        <Link to='/login'>Log In</Link>
+        <Link to='/' onClick={this.props.signup}>Sign Up</Link>
+        <Link to='/' onClick={this.props.login}>Log In</Link>
       </div>
     )
 
