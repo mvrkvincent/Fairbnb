@@ -75,7 +75,9 @@ class SessionForm extends React.Component {
           <br></br>
           <input type="submit" value={subText} />
         </form>
-            {this.renderErrors()}
+
+        {this.renderErrors()}
+
         {altLink}
       </div>
     )
