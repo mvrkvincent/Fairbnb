@@ -14,19 +14,93 @@
  *= require_self
  */
 
- .modal-background {
-   position: fixed;
-   top: 0;
-   bottom: 0;
-   right: 0;
-   left: 0;
-   background: rgba(0, 0, 0, 0.7);
-   z-index: 10;
- }
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
 
- .modal-child {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
- }
+.modal-child {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 32px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFFFFF;
+  color: #484848;
+  font-family: Montserrat;
+  }
+
+.close {
+  color:  #eae8e8;
+  font-family: Montserrat;
+  cursor: pointer;
+  position: absolute;
+}
+
+.alt-link {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: 5px;
+  border-top: 1px solid #eae8e8;
+  text-align: left;
+  color: #484848;
+  font-family: Montserrat;
+}
+
+.alt-link > button {
+  color: #008489;
+  font-weight: bolder;
+  font-size: 16px;
+  border: none;
+  font-family: Montserrat;
+  cursor: pointer;
+}
+
+.alt-link > button:hover {
+  text-decoration: underline;
+}
+
+.modal-errors {
+  list-style: none;
+}
+
+.modal-form button {
+  display: inline-block;
+  background-color: #FF5A5F;
+  color: #FFFFFF;
+  font-family: Montserrat;
+  text-align: center;
+  padding: 10px 22px;
+  line-height: 24px;
+  font-size: 16px;
+  width: 500px;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 5px;
+}
+
+.input {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  color: #eae8e8;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 11px;
+  border-style: none;
+  border: 1px solid #eae8e8;
+  border-radius: 5px;
+  width: 100%;
+}

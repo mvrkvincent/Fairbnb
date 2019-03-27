@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import { openModal, closeModal } from '../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions';
 import MainNav from './main_nav';
 
 const msp = ({ session, entities }) => ({

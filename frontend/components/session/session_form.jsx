@@ -19,13 +19,14 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-   return( <ul>{this.props.errors.map((error, idx) => (<li key={idx}>{error}</li>))}</ul> )
+   return( <ul className="modal-errors">{this.props.errors.map((error, idx) => (<li key={idx}>{error}</li>))}</ul> )
   }
 
 
   render() {
     let ident;
     let subText;
+    let placeText;
     let altLink;
 
 
@@ -34,32 +35,38 @@ class SessionForm extends React.Component {
         <div>
           <input
             type="text"
+            className="input"
             placeholder="First name"
             value={this.state.fname}
             onChange={this.handleInput('fname')} />
           <br></br>
           <input
             type="text"
+            className="input"
             placeholder="Last name"
             value={this.state.lname}
             onChange={this.handleInput('lname')} />
           <br></br>
         </div>; 
       subText = 'Sign up'
-      altLink = <div>Already a Fairbnb member? <Link to='/' onClick={this.props.altLink}>Log In</Link></div>;
+      placeText = 'Create a Password'
+      altLink = <div className="alt-link">Already a Fairbnb member? <button onClick={this.props.altLink}>Log In</button></div>;
 
     } else {
       subText = 'Log in'
-      altLink = <div>Not a member? <Link to='/' onClick={this.props.altLink}>Sign Up</Link></div>;
+      placeText = 'Password'
+      altLink = <div className="alt-link">Not a member? <button onClick={this.props.altLink}>Sign Up</button></div>;
     };
 
     return (
-      <div>
+      <div >
+      <div onClick={this.props.closeModal} className="close">X</div>
         <h3>{this.props.formType}</h3>
         <p></p>
-        <form onSubmit={this.handleSubmit}>
+        <form className="modal-form" onSubmit={this.handleSubmit}>
           <input
             type="text"
+            className="input"
             placeholder="Email address"
             value={this.state.email}
             onChange={this.handleInput('email')} />
@@ -69,15 +76,14 @@ class SessionForm extends React.Component {
 
           <input
             type="password"
-            placeholder="Create a Password"
+            className="input"
+            placeholder={placeText}
             value={this.state.password}
             onChange={this.handleInput('password')} />
           <br></br>
-          <input type="submit" value={subText} />
+          <button>{subText}</button>
         </form>
-
         {this.renderErrors()}
-
         {altLink}
       </div>
     )
