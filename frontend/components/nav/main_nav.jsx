@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MemberNav from './member_nav';
+import VisitorNav from './visitor_nav';
 
 class MainNav extends React.Component {
 
   render() {
-    
+    const nav = (this.props.currentUser) ? <MemberNav /> : <VisitorNav />;
+
     return(
       <div>
-        <Link to='/signup'>Sign Up</Link>
-        <Link to='/login'>Log In</Link>
-        <button onClick={this.props.logout}>Log Out</button>
-
+        {nav}
       </div>
     )
 

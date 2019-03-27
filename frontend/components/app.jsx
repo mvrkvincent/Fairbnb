@@ -10,8 +10,8 @@ export const App = () => (
       <h1>Fairbnb (beta)</h1>
       <MainNavContainer />
     </header>
-      <Route path='/signup' component={SignUpContainer} />
-      <Route path='/login' component={LogInContainer} />
+      <Route exact path='/signup' component={SignUpContainer} />
+      <Route exact path='/login' component={LogInContainer} />
   </div>
 
 );
