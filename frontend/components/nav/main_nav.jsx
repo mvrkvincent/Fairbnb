@@ -7,8 +7,9 @@ class MainNav extends React.Component {
 
   render() {
     const logout = this.props.logout;
+    const user = this.props.currentUser;
     // const modal = this.props.modal; < add to navs?
-    const nav = (this.props.currentUser) ? <MemberNav logout={logout}/> : <VisitorNav/>;
+    const nav = (this.props.currentUser) ? <MemberNav user={user} logout={logout}/> : <VisitorNav/>;
 
     return(
       <div>
