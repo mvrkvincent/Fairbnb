@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class MemberNav extends React.Component {
 
@@ -7,7 +6,7 @@ class MemberNav extends React.Component {
 
     return (
       <div>
-        <h3>Hey {this.props.currentUser.fname}</h3>
+        <button>Hey {this.props.currentUser.fname}</button>
         <button onClick={this.props.logout} value="Log out">Log out</button>
       </div>
     )

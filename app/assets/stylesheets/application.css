@@ -14,6 +14,43 @@
  *= require_self
  */
 
+.body {
+  font-family: Montserrat;
+}
+
+.nav-bar {
+  margin: 0 auto;
+  font-family: Montserrat;
+  color: #484848;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  border-bottom: 1px solid #eae8e8;
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#nav button {
+  padding: 0 20px;
+  border: none;
+  font-size: 16px;
+  height: 100%;
+}
+
+#nav button:hover {
+   border-bottom: 2px solid #484848;
+}
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -94,7 +131,7 @@
   position: relative;
   box-sizing: border-box;
   display: flex;
-  color: #eae8e8;
+  color: #484848;
   font-family: Montserrat;
   font-size: 16px;
   line-height: 24px;
