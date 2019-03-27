@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
 
@@ -21,6 +22,8 @@ class SessionForm extends React.Component {
   render() {
     let ident;
     let passText;
+    let altLink;
+
     if (this.props.formType === 'Sign Up') {
       ident = 
         <div>
@@ -40,9 +43,11 @@ class SessionForm extends React.Component {
           <br></br>
         </div>; 
       passText = 'Create a password'
+      altLink = <div>Already a Fairbnb account? <Link to='/login'>Log In</Link></div>;
 
     } else {
       passText = 'Password'
+      altLink = <div>Not a member? <Link to='/signup'>Sign Up</Link></div>;
     };
 
     return (
@@ -67,7 +72,7 @@ class SessionForm extends React.Component {
           </label>
           <input type="submit" />
         </form>
-        {this.props.altLink}
+        {altLink}
       </div>
     )
   };

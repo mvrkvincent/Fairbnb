@@ -5,6 +5,7 @@ import SignUpContainer from './session/signup_container';
 import MainNavContainer from './nav/main_nav_container';
 
 export const App = () => (
+  
   <div>
     <header>
       <h1>Fairbnb (beta)</h1>
