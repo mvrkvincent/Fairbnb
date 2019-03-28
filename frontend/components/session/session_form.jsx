@@ -30,38 +30,42 @@ class SessionForm extends React.Component {
 
 
   render() {
-    let ident, subText, placeText, altLink;
+    let ident, buttonText, placeText, altLink;
 
     if (this.props.formType === 'Sign up') {
       ident = 
         <div>
-          <div className="form-field">          
+          <div className="form-field"> 
+          <label for="Last Name">       
           <input
             type="text"
             className="form-input"
             placeholder="First name"
             value={this.state.fname}
             onChange={this.handleInput('fname')} />
+          </label>  
           <i className="far fa-user"></i>
           </div>  
           <br></br>
           <div className="form-field">
+          <label for="Last Name">
           <input
             type="text"
             className="form-input"
             placeholder="Last name"
             value={this.state.lname}
             onChange={this.handleInput('lname')} />
+          </label>
           <i className="fas fa-user"></i>
           </div>
           <br></br>
         </div>; 
-      subText = 'Sign up'
+      buttonText = 'Sign up'
       placeText = 'Create a Password'
       altLink = <div className="alt-link">Already a Fairbnb member? <button onClick={this.props.altLink}>Log In</button></div>;
 
     } else {
-      subText = 'Log in'
+      buttonText = 'Log in'
       placeText = 'Password'
       altLink = <div className="alt-link">Not a member? <button onClick={this.props.altLink}>Sign Up</button></div>;
     };
@@ -94,7 +98,7 @@ class SessionForm extends React.Component {
             <i className="fas fa-lock"></i>
           </div>
           <br></br>
-          <button>{subText}</button>
+          <button>{buttonText}</button>
         </form>
         <div className="modal-errors">{this.renderErrors()}</div>
         {altLink}

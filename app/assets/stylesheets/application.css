@@ -23,7 +23,6 @@
 
 }
 
-
 .nav-bar {
   font-family: 'Montserrat', sans-serif;
   color: #787878;
@@ -40,8 +39,47 @@
   align-items: center;
   justify-content: center;
   width: 600px;
+  font-size: 2em;
 
 }
+
+.filter-bar {
+  height: 48px;
+  font-family: 'Montserrat', sans-serif;
+  color: #787878;
+  display: flex;
+  border-bottom: 1px solid #eae8e8;
+  align-items: center;
+}
+
+.filter-bar div {
+  margin-left: 155.48px;
+}
+
+.filter-bar button {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 16px;
+  color: #585858;
+  font-size: 13.8px;
+  font-weight: lighter;
+  height: 32px;
+  cursor: pointer;
+  border: 1px solid #eae8e8;
+  border-radius: 5px;
+  margin-right: 16px;
+  outline: none;
+}
+
+.filter-bar button:hover {
+   background-color: #eae8e8;
+}
+
+.filter-bar button:focus {
+  outline: none;
+  background-color: #008489;
+  color: #FFFFFF;
+}
+
 
 #logo-search a {
   text-decoration: none;
@@ -65,7 +103,14 @@
   border: 0.5px solid #eae8e8;
   border-radius: 5px;
   width: 100%;
-  box-shadow: 1px 1px 5px #eae8e8;
+  box-shadow: 0px 1px 5px #eae8e8, 
+         1px 1px 5px #eae8e8;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.search:hover {
+  box-shadow: 0px 2px 5px #eae8e8, 
+        -3px 2px 5px #eae8e8, 3px 2px 5px #eae8e8;
 }
 
 .search-input {
@@ -90,6 +135,7 @@
   font-size: 13.8px;
   font-weight: 500;
   height: 100%;
+  cursor: pointer;
 }
 
 .nav-bar button:hover {
@@ -235,6 +281,10 @@
   font-weight: bolder;
   border-style: none;
   width: 100%;
+}
+
+.form-field:focus-within {
+  border: 1px solid #008489
 }
 
 .form-input[type="text"]:focus, input[type="password"]:focus { 
