@@ -7,8 +7,8 @@ export const App = () => (
 
   <div>
     <Modal />
-    <header className="nav-bar">
-      <div id="logo"><h1>Fairbnb</h1></div>
+    <header>
+      
       <MainNavContainer />
     </header>
   </div>

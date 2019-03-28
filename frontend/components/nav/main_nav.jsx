@@ -14,7 +14,8 @@ class MainNav extends React.Component {
     const nav = (this.props.currentUser) ? <MemberNav currentUser={currentUser} logout={logout}/> : <VisitorNav demo={demo}signup={signup} login={login}/>;
 
     return(
-      <div id="nav">
+      <div className="nav-bar">
+        <div id="logo"><h1>Fairbnb</h1></div>
         {nav}
       </div>
     )

@@ -12,7 +12,7 @@ class MemberNav extends React.Component {
     )
 
   }
-
+  
 }
 
 export default MemberNav;
