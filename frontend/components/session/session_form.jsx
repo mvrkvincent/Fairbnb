@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
             placeholder="First name"
             value={this.state.fname}
             onChange={this.handleInput('fname')} />
-          <i class="far fa-user"></i>
+          <i className="far fa-user"></i>
           </div>  
           <br></br>
           <div className="form-field">
@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
             placeholder="Last name"
             value={this.state.lname}
             onChange={this.handleInput('lname')} />
-          <i class="far fa-user"></i>
+          <i className="fas fa-user"></i>
           </div>
           <br></br>
         </div>; 
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
             placeholder="Email address"
             value={this.state.email}
             onChange={this.handleInput('email')} />
-            <i class="far fa-envelope"></i>
+            <i className="far fa-envelope"></i>
           </div>
           <br></br>
 
@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
             placeholder={placeText}
             value={this.state.password}
             onChange={this.handleInput('password')} />
-            <i class="far fa-lock"></i>
+            <i className="fas fa-lock"></i>
           </div>
           <br></br>
           <button>{subText}</button>

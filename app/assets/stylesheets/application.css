@@ -49,22 +49,7 @@
   padding: 0 24px;
 }
 
-#r-img {
-  position: relative;
-  box-sizing: border-box;
-  display: flex;
-  color: #585858;
-  font-family: FontAwesome, 'Montserrat', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: bolder;
-  padding: 11px;
-  border-style: none;
-  border: 0.5px solid #eae8e8;
-  border-radius: 5px;
-  width: 100%;
-  box-shadow: 1px 1px 5px #eae8e8;
-}
+
 
 .search {
   position: relative;
@@ -91,6 +76,7 @@
   line-height: 24px;
   font-weight: bolder;
   border-style: none;
+  width: 100%;
 }
 
 .search-input[type="text"]:focus { 
@@ -185,6 +171,12 @@
   padding: 5px;
 }
 
+.modal-errors ul li:before {
+  content: "X";
+  padding-right: 8px;
+  color: #D93900;
+}
+
 .modal-form {
   padding: 20px 0px;
 }
@@ -242,6 +234,7 @@
   line-height: 24px;
   font-weight: bolder;
   border-style: none;
+  width: 100%;
 }
 
 .form-input[type="text"]:focus, input[type="password"]:focus { 
