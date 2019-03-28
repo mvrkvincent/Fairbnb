@@ -245,3 +245,7 @@
 button:focus {
   outline: none;
 }
+
+i {
+   padding: 5px;
+}
