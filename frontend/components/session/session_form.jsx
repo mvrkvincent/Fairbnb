@@ -20,7 +20,7 @@ class SessionForm extends React.Component {
 
   demo(e) {
     e.preventDefault();
-    this.props.loginDemo({ email: 'test', password: '123456' }).then(this.props.closeModal);
+    this.props.loginDemo({ email: 'smitty@no1.com', password: 'Warbenjagermanjensen' }).then(this.props.closeModal);
   }
 
   renderErrors() {
