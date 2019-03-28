@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
     let altLink;
 
 
-    if (this.props.formType === 'Sign Up') {
+    if (this.props.formType === 'Sign up') {
       ident = 
         <div>
           <input
@@ -60,8 +60,8 @@ class SessionForm extends React.Component {
     return (
       <div >
       <div onClick={this.props.closeModal} className="close">X</div>
-        <h3>{this.props.formType}</h3>
-        <p></p>
+        <br></br><br></br>
+        <div id="form-type">{this.props.formType} with your Email address</div>
         <form className="modal-form" onSubmit={this.handleSubmit}>
           <input
             type="text"

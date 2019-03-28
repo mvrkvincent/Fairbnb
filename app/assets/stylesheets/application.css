@@ -14,6 +14,11 @@
  *= require_self
  */
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .body {
   font-family: Montserrat;
 }
@@ -29,9 +34,13 @@
 
 #logo {
   padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #nav {
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,9 +53,10 @@
   justify-content: center;
 }
 #nav button {
-  padding: 0 20px;
+  padding: 0 16px;
   border: none;
-  font-size: 16px;
+  font-size: 13.8px;
+  font-weight: 500;
   height: 100%;
 }
 
@@ -81,9 +91,10 @@
 }
 
 .close {
-  color:  #eae8e8;
+  color:  #484848;
   font-family: Montserrat;
   cursor: pointer;
+  font-weight: lighter;
   position: absolute;
 }
 
@@ -92,7 +103,7 @@
   box-sizing: border-box;
   display: flex;
   width: 100%;
-  padding: 5px;
+  padding: 20px 0px;
   border-top: 1px solid #eae8e8;
   text-align: left;
   color: #484848;
@@ -106,6 +117,7 @@
   border: none;
   font-family: Montserrat;
   cursor: pointer;
+  padding-left: 5px;
 }
 
 .alt-link > button:hover {
@@ -114,6 +126,15 @@
 
 .modal-errors {
   list-style: none;
+}
+
+.modal-form {
+  padding: 20px 0px;
+}
+
+#form-type {
+  border-bottom: 1px solid #eae8e8;
+  padding: 20px 0px;
 }
 
 .modal-form button {
@@ -144,4 +165,13 @@
   border: 1px solid #eae8e8;
   border-radius: 5px;
   width: 100%;
+}
+
+input[type="text"]:focus, input[type="password"]:focus { 
+    outline: none;
+    border: 1px solid #008489;
+}
+
+button:focus {
+  outline: none;
 }

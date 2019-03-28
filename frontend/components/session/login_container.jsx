@@ -6,7 +6,7 @@ import SessionForm from './session_form';
 
 const msp = state => ({
   userInfo: { email: '', password: '' },
-  formType: 'Log In',
+  formType: 'Log in',
   errors: Object.values(state.errors.session)
 });
 
