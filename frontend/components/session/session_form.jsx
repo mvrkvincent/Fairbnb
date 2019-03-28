@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   handleInput(field) {
     return e => this.setState({ [field]: e.target.value });
   }
@@ -34,19 +35,25 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Sign up') {
       ident = 
         <div>
+          <div className="form-field">          
           <input
             type="text"
-            className="input"
+            className="form-input"
             placeholder="First name"
             value={this.state.fname}
             onChange={this.handleInput('fname')} />
+          <i class="far fa-user"></i>
+          </div>  
           <br></br>
+          <div className="form-field">
           <input
             type="text"
-            className="input"
+            className="form-input"
             placeholder="Last name"
             value={this.state.lname}
             onChange={this.handleInput('lname')} />
+          <i class="far fa-user"></i>
+          </div>
           <br></br>
         </div>; 
       subText = 'Sign up'
@@ -65,22 +72,27 @@ class SessionForm extends React.Component {
         <br></br><br></br>
         <div id="form-type">{this.props.formType} with Email or <button onClick={this.demo}>Demo</button></div>
         <form className="modal-form" onSubmit={this.handleSubmit}>
+          <div className="form-field">
           <input
             type="text"
-            className="input"
+            className="form-input"
             placeholder="Email address"
             value={this.state.email}
             onChange={this.handleInput('email')} />
+            <i class="far fa-envelope"></i>
+          </div>
           <br></br>
 
           {ident}
-
+          <div className="form-field">
           <input
             type="password"
-            className="input"
+            className="form-input"
             placeholder={placeText}
             value={this.state.password}
             onChange={this.handleInput('password')} />
+            <i class="far fa-lock"></i>
+          </div>
           <br></br>
           <button>{subText}</button>
         </form>

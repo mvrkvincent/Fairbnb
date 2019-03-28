@@ -7,7 +7,7 @@ class VisitorNav extends React.Component {
     return (
       <div>
         <button onClick={this.props.demo}>Demo member</button>
-        <button>About</button>
+        <button onClick={this.props.about}>About</button>
         <button onClick={this.props.signup}>Sign up</button>
         <button onClick={this.props.login}>Log in</button>
       </div>

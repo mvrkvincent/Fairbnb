@@ -8,7 +8,6 @@ export const App = () => (
   <div>
     <Modal />
     <header>
-      
       <MainNavContainer />
     </header>
   </div>
