@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
             placeholder="Last name"
             value={this.state.lname}
             onChange={this.handleInput('lname')} />
-          <i className="fas fa-user"></i>
+          <i className="far fa-user"></i>
           </div>
           <br></br>
         </div>; 
