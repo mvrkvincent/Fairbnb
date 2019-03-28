@@ -5,8 +5,9 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.userInfo;
-    this.demo = this.demo.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAltLink = this.handleAltLink.bind(this);
   }
 
 
@@ -19,62 +20,64 @@ class SessionForm extends React.Component {
     this.props.formAction(this.state).then(this.props.closeModal);
   }
 
-  demo(e) {
+  handleDemo(e) {
     e.preventDefault();
     this.props.loginDemo({ email: 'smitty@no1.com', password: 'Warbenjagermanjensen' }).then(this.props.closeModal);
   }
 
+  
+  handleAltLink(e) {
+    e.preventDefault();
+    this.props.clearErrors();
+    this.props.altLink();
+  }
+  
   renderErrors() {
     return( <ul>{this.props.errors.map((error, idx) => (<li key={idx}>{error}</li>))}</ul> )
   }
 
-
   render() {
-    let ident, buttonText, placeText, altLink;
+    let ident, buttonText, placeText, altLinkText;
 
     if (this.props.formType === 'Sign up') {
       ident = 
         <div>
-          <div className="form-field"> 
-          <label for="Last Name">       
+          <div className="form-field">     
           <input
             type="text"
             className="form-input"
             placeholder="First name"
             value={this.state.fname}
             onChange={this.handleInput('fname')} />
-          </label>  
           <i className="far fa-user"></i>
           </div>  
           <br></br>
           <div className="form-field">
-          <label for="Last Name">
           <input
             type="text"
             className="form-input"
             placeholder="Last name"
             value={this.state.lname}
             onChange={this.handleInput('lname')} />
-          </label>
           <i className="fas fa-user"></i>
           </div>
           <br></br>
         </div>; 
       buttonText = 'Sign up'
       placeText = 'Create a Password'
-      altLink = <div className="alt-link">Already a Fairbnb member? <button onClick={this.props.altLink}>Log In</button></div>;
+      altLinkText = <div className="alt-link">Already a Fairbnb member? <button onClick={this.handleAltLink}>Log In</button></div>;
 
     } else {
       buttonText = 'Log in'
       placeText = 'Password'
-      altLink = <div className="alt-link">Not a member? <button onClick={this.props.altLink}>Sign Up</button></div>;
+      altLinkText = <div className="alt-link">Not a member? <button onClick={this.handleAltLink}>Sign Up</button></div>;
     };
 
     return (
       <div >
       <div onClick={this.props.closeModal} className="close">X</div>
         <br></br><br></br>
-        <div id="form-type">{this.props.formType} with Email or <button onClick={this.demo}>Demo</button></div>
+        <div id="form-type">{this.props.formType} with Email or <button onClick={this.handleDemo}>Demo</button></div>
         <form className="modal-form" onSubmit={this.handleSubmit}>
           <div className="form-field">
           <input
@@ -101,7 +104,7 @@ class SessionForm extends React.Component {
           <button>{buttonText}</button>
         </form>
         <div className="modal-errors">{this.renderErrors()}</div>
-        {altLink}
+        {altLinkText}
       </div>
     )
   };
