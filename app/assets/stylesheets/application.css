@@ -188,7 +188,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.alt-link > button {
+.alt-link button {
   color: #008489;
   font-weight: bolder;
   font-size: 16px;
@@ -198,7 +198,7 @@
   padding-left: 5px;
 }
 
-.alt-link > button:hover {
+.alt-link button:hover {
   text-decoration: underline;
 }
 
@@ -240,6 +240,10 @@
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   padding-left: 1px;
+}
+
+#form-type button:hover {
+  text-decoration: underline;
 }
 
 .modal-form button {
