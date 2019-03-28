@@ -5,6 +5,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.userInfo;
+    this.demo = this.demo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -15,6 +16,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.formAction(this.state).then(this.props.closeModal);
+  }
+
+  demo(e) {
+    e.preventDefault();
+    this.props.loginDemo({ email: 'test', password: '123456' }).then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -57,7 +63,7 @@ class SessionForm extends React.Component {
       <div >
       <div onClick={this.props.closeModal} className="close">X</div>
         <br></br><br></br>
-        <div id="form-type">{this.props.formType} with your Email address</div>
+        <div id="form-type">{this.props.formType} with Email or <button onClick={this.demo}>Demo</button></div>
         <form className="modal-form" onSubmit={this.handleSubmit}>
           <input
             type="text"

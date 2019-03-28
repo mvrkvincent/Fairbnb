@@ -8,9 +8,10 @@ class MainNav extends React.Component {
     const signup = this.props.signup;
     const login = this.props.login;
     const logout = this.props.logout;
+    const demo = this.props.demo;
     const currentUser = this.props.currentUser;
     
-    const nav = (this.props.currentUser) ? <MemberNav currentUser={currentUser} logout={logout}/> : <VisitorNav signup={signup} login={login}/>;
+    const nav = (this.props.currentUser) ? <MemberNav currentUser={currentUser} logout={logout}/> : <VisitorNav demo={demo}signup={signup} login={login}/>;
 
     return(
       <div id="nav">

@@ -148,6 +148,16 @@
   padding-bottom: 20px;
 }
 
+#form-type button {
+  color: #008489;
+  font-weight: bolder;
+  font-size: 16px;
+  border: none;
+  font-family: Montserrat;
+  cursor: pointer;
+  padding-left: 1px;
+}
+
 .modal-form button {
   display: inline-block;
   background-color: #FF5A5F;
