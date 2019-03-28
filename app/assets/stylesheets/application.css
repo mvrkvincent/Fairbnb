@@ -125,7 +125,18 @@
 }
 
 .modal-errors {
+  margin-bottom: 10px;
+  color: #D93900;
+  font-weight: 600;
+  text-align: left;
+}
+
+.modal-errors ul {
   list-style: none;
+}
+
+.modal-errors ul li {
+  padding: 5px;
 }
 
 .modal-form {
@@ -134,7 +145,7 @@
 
 #form-type {
   border-bottom: 1px solid #eae8e8;
-  padding: 20px 0px;
+  padding-bottom: 20px;
 }
 
 .modal-form button {

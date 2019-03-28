@@ -18,16 +18,12 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-   return( <ul className="modal-errors">{this.props.errors.map((error, idx) => (<li key={idx}>{error}</li>))}</ul> )
+    return( <ul>{this.props.errors.map((error, idx) => (<li key={idx}>{error}</li>))}</ul> )
   }
 
 
   render() {
-    let ident;
-    let subText;
-    let placeText;
-    let altLink;
-
+    let ident, subText, placeText, altLink;
 
     if (this.props.formType === 'Sign up') {
       ident = 
@@ -82,7 +78,7 @@ class SessionForm extends React.Component {
           <br></br>
           <button>{subText}</button>
         </form>
-        {this.renderErrors()}
+        <div className="modal-errors">{this.renderErrors()}</div>
         {altLink}
       </div>
     )
