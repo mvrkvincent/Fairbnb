@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
         <form className="modal-form" onSubmit={this.handleSubmit}>
           <div className="form-field">
           <input
-            type="text"
+            type="email"
             className="form-input"
             placeholder="Email address"
             value={this.state.email}

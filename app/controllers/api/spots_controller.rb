@@ -8,14 +8,16 @@ class Api::SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
   end
 
-#   def create
-#     @spot = Spot.new(spot_params)
+  def create
+    @spot = Spot.new(spot_params)
 
-#     if @spot.save
-#       render :show
-#     else
-#       render json: @spot.errors.full_messages, status: 422
-#   end
+    if @spot.save
+      render :show
+    else
+      render json: @spot.errors.full_messages, status: 422
+    end
+    
+  end
 
 #   def update
 #     @spot = current_user.spots.find(params[:id])
@@ -32,9 +34,9 @@ class Api::SpotsController < ApplicationController
 
 #   private
 
-#   def spot_params
-#     params.require(:spot).permit( :host_id, :name, :type, :rate, :num_guests, :num_beds, 
-#                                   :num_baths, :city, :address, :lat, :lng )
-#   end
+  def spot_params
+    params.require(:spot).permit( :host_id, :name, :accommodation, :rate, :num_guests, :num_beds, 
+                                  :num_baths, :city, :address, :lat, :lng )
+  end
 
 end

@@ -3,7 +3,7 @@ import { fetchSpots } from '../../actions/spot_actions';
 import SpotIndex from './spot_index';
 
 const msp = ({ entities }) => ({
-  spots: Object.values(entities.spots).map(id => entities.spots[id]) 
+  spots: Object.values(entities.spots)
 });
 
 const mdp = dispatch => ({

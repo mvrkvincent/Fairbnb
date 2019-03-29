@@ -291,7 +291,7 @@
   border: 1px solid #008489
 }
 
-.form-input[type="text"]:focus, input[type="password"]:focus { 
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus { 
     outline: none;
 }
 
@@ -302,4 +302,40 @@ button:focus {
 
 i {
    padding: 5px;
+}
+
+.spot-index {
+  min-height: 400px;
+}
+.spot-index ul {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.spot-item {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #585858;
+  width: 420px;
+  height: 280;
+  margin: 15px;
+}
+.spot-img {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.spot-accom {
+  color: #585858;
 }

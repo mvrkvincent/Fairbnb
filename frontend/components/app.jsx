@@ -11,7 +11,7 @@ export const App = () => (
     <header>
       <MainNavContainer />
     </header>
-      {/* <SpotIndexContainer/> */}
+      <SpotIndexContainer/>
   </div>
 
 );
