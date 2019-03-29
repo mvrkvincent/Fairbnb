@@ -325,16 +325,16 @@ margin-top: 130px;
   font-size: 24px;
   color: #585858;
   box-sizing: border-box;
-  /* justify-content: center; */
+  justify-content: center;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  padding: 0 25px;
+  padding: 0 40px;
 }
 
 #spot-index-head {
  justify-content: center;
- padding: 25px 15px 0 15px;
+ padding: 25px 20px 0 20px;
  width: 100%;
 }
 
