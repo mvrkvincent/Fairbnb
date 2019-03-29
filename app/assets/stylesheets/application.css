@@ -20,7 +20,7 @@
 }
 
 .main {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .navBar{
@@ -180,8 +180,8 @@
 }
 
 .close {
-  color:  #585858;
-  font-family: 'Montserrat', sans-serif;
+  color:  #797979;
+  font-family: 'Font Awesome';
   cursor: pointer;
   font-weight: lighter;
   position: absolute;
@@ -316,19 +316,31 @@ i {
 }
 
 .content {
-  margin-top: 130px;
+margin-top: 130px;
+
 }
 
 .spot-index {
-  min-height: 400px;
-}
-.spot-index ul {
+  font-family: 'Montserrat Black', sans-serif;
+  font-size: 24px;
+  color: #585858;
   box-sizing: border-box;
+  /* justify-content: center; */
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  padding: 5px;
-  margin: 5px;
+  padding: 0 25px;
+}
+
+#spot-index-head {
+ justify-content: center;
+ padding: 25px 15px 0 15px;
+ width: 100%;
+}
+
+.spot-link {
+  font-family: sans-serif;
+  text-decoration: none;
 }
 
 .spot-item {
@@ -337,8 +349,7 @@ i {
   font-size: 16px;
   color: #585858;
   width: 420px;
-  height: 280;
-  margin: 15px;
+  margin: 0 15px 15px 15px;
 }
 .spot-img {
   height: 300px;
@@ -347,9 +358,37 @@ i {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .spot-accom {
-  color: #585858;
+  font-family: 'Montserrat Black', sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.spot-name {
+  font-size: 18px;
+  font-family: 'Montserrat Black', sans-serif;
+  margin: 8px 0;
+}
+
+.spot-terms {
+  font-family: 'Montserrat Extra Light', sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 8px 0;
+}
+
+.rating {
+  font-size: 10px;
+  font-weight: 900;
+  margin: 8px 0;
+  padding: 0;
+}
+
+.spot-item .rating i{
+  padding: 0;
+  color: #008489;
 }

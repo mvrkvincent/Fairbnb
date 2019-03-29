@@ -13,8 +13,9 @@ class SpotIndex extends React.Component {
     const SpotIndexItems = spots.map(spot => <SpotIndexItem key={spot.id} spot={spot} />)
 
     return (
-      <div className="spot-index" id="spotIndex">
-        <ul>{SpotIndexItems}</ul>
+      <div className="spot-index" >
+        <div id="spot-index-head">Where to stay</div>
+        {SpotIndexItems}
       </div>
     );
   }
