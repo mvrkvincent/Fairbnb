@@ -19,9 +19,17 @@
   padding: 0;
 }
 
-.body {
-
+.main {
+  display: inline-block;
 }
+
+.navBar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
 
 .nav-bar {
   font-family: 'Montserrat', sans-serif;
@@ -32,6 +40,9 @@
   border-bottom: 1px solid #eae8e8;
 }
 
+
+
+
 #logo-search {
   font-family: 'Sriracha';
   color: #fd5c63;
@@ -40,7 +51,7 @@
   justify-content: center;
   width: 600px;
   font-size: 2em;
-
+  
 }
 
 .filter-bar {
@@ -71,7 +82,7 @@
 }
 
 .filter-bar button:hover {
-   background-color: #eae8e8;
+  background-color: #eae8e8;
 }
 
 .filter-bar button:focus {
@@ -104,13 +115,13 @@
   border-radius: 5px;
   width: 100%;
   box-shadow: 0px 1px 5px #eae8e8, 
-         1px 1px 5px #eae8e8;
+  1px 1px 5px #eae8e8;
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .search:hover {
   box-shadow: 0px 2px 5px #eae8e8, 
-        -3px 2px 5px #eae8e8, 3px 2px 5px #eae8e8;
+  -3px 2px 5px #eae8e8, 3px 2px 5px #eae8e8;
 }
 
 .search-input {
@@ -125,7 +136,7 @@
 }
 
 .search-input[type="text"]:focus { 
-    outline: none;
+  outline: none;
 }
 
 .nav-bar button {
@@ -139,8 +150,8 @@
 }
 
 .nav-bar button:hover {
-   border-bottom: 2px solid #888888;
-   border-top: 2px solid #FFFFFF
+  border-bottom: 2px solid #888888;
+  border-top: 2px solid #FFFFFF
 }
 
 .modal-background {
@@ -292,7 +303,7 @@
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus { 
-    outline: none;
+  outline: none;
 }
 
 
@@ -301,14 +312,17 @@ button:focus {
 }
 
 i {
-   padding: 5px;
+  padding: 5px;
+}
+
+.content {
+  margin-top: 130px;
 }
 
 .spot-index {
   min-height: 400px;
 }
 .spot-index ul {
-  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;

@@ -12,7 +12,7 @@ class MainNav extends React.Component {
     const NavButtons = (this.props.currentUser) ? <MemberNav currentUser={currentUser} logout={logout}/> : <VisitorNav about={about} demo={demo} signup={signup} login={login}/>;
     
     return(
-      <div>
+      <div className="main-nav">
       <div className="nav-bar">
         <div id="logo-search">
           <div><h1><a href="/">Fairbnb</a></h1></div>

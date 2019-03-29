@@ -6,12 +6,14 @@ import SpotIndexContainer from './spots/spot_index_container';
 
 export const App = () => (
   
-  <div>
+  <div className="main">
     <Modal />
-    <header>
+    <div className="navBar">
       <MainNavContainer />
-    </header>
+    </div>
+    <div className="content">
       <SpotIndexContainer/>
+    </div>
   </div>
 
 );
