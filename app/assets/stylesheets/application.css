@@ -14,20 +14,25 @@
  *= require_self
  */
 
-* {
-  margin: 0;
-  padding: 0;
-}
 
+body{
+  
+}
 .main {
-  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
 }
 
 .navBar{
+  min-width: 960px;
   position: fixed;
   top: 0;
   width: 100%;
   background-color: #FFFFFF;
+}
+
+.content {
+  min-width: 980px;
 }
 
 
@@ -36,12 +41,10 @@
   color: #787878;
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  /* height: 80px; */
   border-bottom: 1px solid #eae8e8;
+  
 }
-
-
-
 
 #logo-search {
   font-family: 'Sriracha';
@@ -51,7 +54,7 @@
   justify-content: center;
   width: 600px;
   font-size: 2em;
-  
+  height: 80px;
 }
 
 .filter-bar {
@@ -99,7 +102,6 @@
 }
 
 
-
 .search {
   position: relative;
   box-sizing: border-box;
@@ -145,14 +147,70 @@
   border: none;
   font-size: 13.8px;
   font-weight: 500;
-  height: 100%;
   cursor: pointer;
+  height: 80px;
 }
 
 .nav-bar button:hover {
   border-bottom: 2px solid #888888;
   border-top: 2px solid #FFFFFF
 }
+
+
+@media only screen and (max-width: 960px) {
+  
+  .navBar {
+    justify-content: center;
+  }
+  .nav-bar {
+    flex-direction: column;
+  }
+
+  #logo-search {
+    justify-content: left;
+    border-bottom: 1px solid #eae8e8;
+    width: 960px;
+  }
+
+  .nav-buttons {
+    margin-left: 155.48px;
+    height: 48px;
+    font-family: 'Montserrat', sans-serif;
+    color: #787878;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-bar button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 16px;
+    color: #585858;
+    font-size: 13.8px;
+    font-weight: lighter;
+    height: 32px;
+    cursor: pointer;
+    border: 1px solid #eae8e8;
+    border-radius: 5px;
+    margin-right: 16px;
+    outline: none;
+  }
+  .nav-bar button:hover {
+    background-color: #eae8e8;
+  }
+
+  .nav-bar button:focus {
+    outline: none;
+    background-color: #008489;
+    color: #FFFFFF;
+  }
+
+
+  .search {
+    width: 400px;
+  }
+
+}
+
 
 .modal-background {
   position: fixed;
@@ -317,7 +375,6 @@ i {
 
 .content {
 margin-top: 130px;
-
 }
 
 .spot-index {
@@ -330,6 +387,7 @@ margin-top: 130px;
   display: flex;
   flex-flow: row wrap;
   padding: 0 40px;
+  
 }
 
 #spot-index-head {
