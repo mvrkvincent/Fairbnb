@@ -11,10 +11,10 @@ export const App = () => (
     <Modal />
     <div className="navBar"><MainNavContainer /></div>
     <div className="content">
-    <Switch>
-      <Route exact path='/' component={SpotIndexContainer} />
-      <Route exact path="/spots/:spotId" component={SpotShowContainer} />
-    </Switch>
+      <Switch>
+        <Route exact path='/' component={SpotIndexContainer} />
+        <Route exact path="/spots/:spotId" component={SpotShowContainer} />
+      </Switch>
     </div>
   </div>
 

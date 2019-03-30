@@ -19,60 +19,81 @@ class SpotShow extends React.Component {
 
   render() {
     const { name, city, accommodation, num_guests, num_beds, num_baths, description, img_url } = (this.state.spot) ? this.state.spot : this.state;
-    const spotImg = { backgroundImage: `url(${img_url})` };
-    const s1 = num_beds > 1 ? 's' : '';
-    const s2 = num_baths > 1 ? 's' : '';
+    const s1 = num_guests > 1 ? 's' : '';
+    const s2 = num_beds > 1 ? 's' : '';
+    const s3 = num_baths > 1 ? 's' : '';
     // const userId = spot.host_id;
     // const hostImg = { backgroundImage: `url(${user.userId.img_url})` };
     // const hostName = user.userId.fname
     return (
-      <div className="spot-show">
+      <div className="show">
   
-      <div className="spot-imgs">
+      <div className="show-imgs">
           <div className="main-img"><img src={img_url}/></div>
           <div className="sub-imgs">
-            <img src={img_url} />
-            <img src={img_url} />
-            <img src={img_url} />
-            <img src={img_url} />
+            <div><img src={img_url} /></div>
+            <div><img src={img_url} /></div>
+            <div><img src={img_url} /></div>
+            <div><img src={img_url} /></div>
           </div>
       </div>
-      <div className="spot-content">
-        <div className="spot-name">
-            <div className="name-head">{name}</div>
-            <div className="detail">{city}</div>
-            {/* <div className="host-img" style={hostImg}></div>
-            <div className="host-name">{hostName}</div> */}
+
+      <div className="show-content">
+
+        <div className="show-content-left">
+          <div className="name">
+              <div className="name-head">{name}</div>
+          {/* <div className="host-img" style={hostImg}></div>
+          <div className="host-name">{hostName}</div> */}
+          </div>
+          <div className="detail">{city}</div>
+
+          <div className="details">
+            <div className="accommodation-head"><i className="fas fa-home"></i>{'  '}{accommodation}</div>
+            <div className="main-detail">
+              <div>{num_guests} guest{s1}</div>
+              <div>{num_beds} bedroom{s2}</div>
+              <div>{num_baths} bathroom{s3}</div>
+            </div>
+            <div className="section-head"></div>
+            <div className="detail">{description}</div>
+          </div>
+          
+          <div className="amenities">
+              <div className="section-head">Amenitites</div>
+          </div>
+
+          <div className="availability">
+              <div className="section-head">Availability</div>
+          </div>
+
+          <div className="Reviews">
+            <div className="reviews-head">Reviews
+            <div className="rating">
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="far fa-star"></i>
+            </div>
+            </div>
+          </div>
         </div>
 
-        <div className="spot-details">
-          <div className="section-head"><i className="fas fa-home"></i>   {accommodation}</div>
-          <div className="detail">{num_guests}guests {num_beds}bed{s1} {num_baths}bath{s2}</div>
-          <div className="section-head"><i className="far fa-file-alt"></i>  About the Space</div>
-          <div className="detail">{description}</div>
-        </div>
-        
-        <div className="amenities">
-            <div className="section-head">Amenitites</div>
+        <div className="show-content-right">
         </div>
 
-        <div className="availability">
-            <div className="section-head">Availability</div>
-        </div>
 
-        <div className="Reviews">
-          <div className="reviews-head">Reviews<div className="rating">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="far fa-star"></i>
-          </div></div>
-        </div>
+
       </div>
 
 
-      </div>
+
+
+
+
+
+    </div>
     );
   }
 }
