@@ -27,9 +27,17 @@ class SpotShow extends React.Component {
     // const hostName = user.userId.fname
     return (
       <div className="spot-show">
-
-        <div className="spot-imgs" style={spotImg}></div>
-
+  
+      <div className="spot-imgs">
+          <div className="main-img"><img src={img_url}/></div>
+          <div className="sub-imgs">
+            <img src={img_url} />
+            <img src={img_url} />
+            <img src={img_url} />
+            <img src={img_url} />
+          </div>
+      </div>
+      <div className="spot-content">
         <div className="spot-name">
             <div className="name-head">{name}</div>
             <div className="detail">{city}</div>
@@ -61,7 +69,7 @@ class SpotShow extends React.Component {
             <i className="far fa-star"></i>
           </div></div>
         </div>
-        
+      </div>
 
 
       </div>
