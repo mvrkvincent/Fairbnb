@@ -8,8 +8,8 @@ class MainNav extends React.Component {
   render() {
   
     const {signup, login, logout, demo, about, currentUser} = this.props;
-
-    const NavButtons = (this.props.currentUser) ? <MemberNav currentUser={currentUser} logout={logout}/> : <VisitorNav about={about} demo={demo} signup={signup} login={login}/>;
+    
+    const NavButtons = (this.props.currentUser) ? <MemberNav about={about} logout={logout} currentUser={currentUser} /> : <VisitorNav demo={demo} about={about} signup={signup} login={login}/>;
     
     return(
       <div className="main-nav">

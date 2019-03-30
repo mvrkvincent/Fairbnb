@@ -7,6 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Spot.delete_all
+User.delete_all
+
+User.create(email: 'smitty@number1.com', 
+            fname: 'Smitty', 
+            lname: 'Werbenjagermanjensen',
+            password: 'Werbenjagermanjensen',
+            img_url: 'https://vignette.wikia.nocookie.net/spongebob/images/f/f0/Smitty.jpg/revision/latest?cb=20160213220608'
+            )
+
 
 Spot.create(host_id: 20,
             name: 'Lakeside Highrise 1', 

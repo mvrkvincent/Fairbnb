@@ -35,7 +35,6 @@ body{
   min-width: 980px;
 }
 
-
 .nav-bar {
   font-family: 'Montserrat', sans-serif;
   color: #787878;
@@ -141,19 +140,50 @@ body{
   outline: none;
 }
 
-.nav-bar button {
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+.nav-buttons button {
   padding: 0 16px;
   color: #585858;
   border: none;
   font-size: 13.8px;
   font-weight: 500;
   cursor: pointer;
+  height: 100%;
+}
+
+.nav-buttons button:hover {
+  border-bottom: 2px solid #888888;
+  border-top: 2px solid #FFFFFF
+}
+
+.user-img {
+  display: flex;
+  align-items: center;
   height: 80px;
 }
 
-.nav-bar button:hover {
+.user-img:hover {
   border-bottom: 2px solid #888888;
   border-top: 2px solid #FFFFFF
+}
+
+.user-img button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.user-img button:hover {
+  border: none;
 }
 
 

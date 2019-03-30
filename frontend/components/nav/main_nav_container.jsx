@@ -11,7 +11,7 @@ const mdp = dispatch => ({
   signup: () => dispatch(openModal('SIGNUP')),
   login: () => dispatch(openModal('LOGIN')),
   logout: () => dispatch(logout()),
-  demo: () => dispatch(login({email: 'smitty@no1.com', password: 'Warbenjagermanjensen' })), 
+  demo: () => dispatch(login({ email: 'smitty@number1.com', password: 'Werbenjagermanjensen' })), 
   about: () => dispatch(openModal('ABOUT'))
 });
 
