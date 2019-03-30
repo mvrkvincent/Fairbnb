@@ -11,6 +11,7 @@ class SpotShow extends React.Component {
     this.props.fetchSpot(this.props.spotId);
   }
 
+
   render() {
     const { name, city, accommodation, num_guests, num_beds, num_baths, description, img_url } = this.state;
 
@@ -35,7 +36,7 @@ class SpotShow extends React.Component {
         <div className="spot-details">
           <div className="section-head"><i className="fas fa-home"></i>   {accommodation}</div>
           <div className="detail">{num_guests}guests {num_beds}bed{s1} {num_baths}bath{s2}</div>
-          <div className="section-head"><i className="fas fa-info"></i>  About the Space</div>
+          <div className="section-head"><i className="far fa-file-alt"></i>  About the Space</div>
           <div className="detail">{description}</div>
         </div>
         
