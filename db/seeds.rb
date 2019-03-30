@@ -16,6 +16,13 @@ User.create(email: 'smitty@number1.com',
             img_url: 'https://vignette.wikia.nocookie.net/spongebob/images/f/f0/Smitty.jpg/revision/latest?cb=20160213220608'
             )
 
+User.create(email: 'bobby@xkcd.com', 
+            fname: 'Bobby', 
+            lname: 'Droptables',
+            password: 'starwars'
+            )
+            
+
 
 Spot.create(host_id: 20,
             name: 'Lakeside Highrise 1', 

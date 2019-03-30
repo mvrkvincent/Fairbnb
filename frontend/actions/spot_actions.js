@@ -9,10 +9,10 @@ const receiveSpots = spots => ({
   type: RECEIVE_SPOTS,
   spots
 });
-const receiveSpot = spot => ({
-  type: RECEIVE_SPOT,
-  spot
-});
+const receiveSpot = spot => {
+  return ({type: RECEIVE_SPOT,
+  spot});
+};
 
 const removeSpot = spotId => ({
   type: REMOVE_SPOT,

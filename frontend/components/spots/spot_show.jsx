@@ -5,12 +5,12 @@ class SpotShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.spot;
+    debugger
   }
 
   componentDidMount() {
-    this.props.fetchSpot(this.props.spotId);
+    this.setState(this.props.fetchSpot(this.props.match.params.spotId));
   }
-
 
   render() {
     const { name, city, accommodation, num_guests, num_beds, num_baths, description, img_url } = this.state;

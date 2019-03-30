@@ -11,7 +11,7 @@ class SpotIndexItem extends React.Component {
 
     return (
       <div className="spot-item">
-        <Link className="spot-item"to={`/spots/${id}`}>
+        <Link className="spot-item" to={`/spots/${id}`}>
           <div className="spot-img" style={spotImg}></div>
 
           <div className="spot-accom">{accommodation} · {num_beds} bed{s}</div>
