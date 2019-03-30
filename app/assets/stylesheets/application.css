@@ -15,14 +15,6 @@
  */
 
 
-body{
-  
-}
-.main {
-  display: flex;
-  flex-direction: column;
-}
-
 .navBar{
   min-width: 960px;
   position: fixed;
@@ -164,6 +156,7 @@ body{
   display: flex;
   align-items: center;
   height: 80px;
+  margin-right: 10px;
 }
 
 .user-img:hover {
@@ -172,8 +165,8 @@ body{
 }
 
 .user-img button {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 100px;
   background-size: cover;
   background-position: center;

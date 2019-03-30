@@ -2,14 +2,18 @@ import React from 'react';
 
 class SpotShow extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = this.props.spot;
+  }
+
   componentDidMount() {
-    this.props.fetchSpot(this.props.match.params.spotId);
+    this.props.fetchSpot(this.props.spotId);
   }
 
   render() {
-    debugger
-    const { name, city, accommodation, num_guests, num_beds, num_baths, description, img_url } = this.props.spot;
-    debugger
+    const { name, city, accommodation, num_guests, num_beds, num_baths, description, img_url } = this.state;
+
     const spotImg = { backgroundImage: `url(${img_url})` };
     const s1 = num_beds > 1 ? 's' : '';
     const s2 = num_baths > 1 ? 's' : '';
@@ -31,7 +35,7 @@ class SpotShow extends React.Component {
         <div className="spot-details">
           <div className="section-head"><i className="fas fa-home"></i>   {accommodation}</div>
           <div className="detail">{num_guests}guests {num_beds}bed{s1} {num_baths}bath{s2}</div>
-          <div className="section-head"><i class="fas fa-info-circle"></i>  About the Space</div>
+          <div className="section-head"><i className="fas fa-info"></i>  About the Space</div>
           <div className="detail">{description}</div>
         </div>
         

@@ -9,7 +9,6 @@ const receiveSpots = spots => ({
   type: RECEIVE_SPOTS,
   spots
 });
-
 const receiveSpot = spot => ({
   type: RECEIVE_SPOT,
   spot
