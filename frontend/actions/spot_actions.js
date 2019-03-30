@@ -4,21 +4,19 @@ export const RECEIVE_SPOTS = 'RECEIVE_SPOTS';
 export const RECEIVE_SPOT = 'RECEIVE_SPOT';
 export const REMOVE_SPOT = 'REMOVE_SPOT';
 
-
 const receiveSpots = spots => ({
   type: RECEIVE_SPOTS,
   spots
 });
-const receiveSpot = spot => {
-  return ({type: RECEIVE_SPOT,
-  spot});
-};
+const receiveSpot = spot => ({
+  type: RECEIVE_SPOT,
+  spot
+});
 
 const removeSpot = spotId => ({
   type: REMOVE_SPOT,
   spotId
 });
-
 
 export const fetchSpots = () => dispatch => {
  return SpotApiUtil.fetchSpots().then(spots => dispatch(receiveSpots(spots)));
