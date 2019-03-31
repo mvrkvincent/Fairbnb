@@ -14,11 +14,10 @@ class About extends React.Component {
         <br></br><br></br>
         <div id="form-type">About the developer</div>
         <div className="modal-form">
-            Feel free to reach out for more information
+        <button id="contact-mail"><i className="far fa-envelope"></i>Email</button>
+        <button id="contact-git"><i className="fab fa-github"></i> GitHub</button>
+        <button id="contact-li"><i className="fab fa-linkedin"></i>LinkedIn</button>
         </div>
-        <button id="contact"><i className="far fa-envelope"></i>Email</button>
-        <button id="contact"><i className="fab fa-github"></i> GitHub</button>
-        <button id="contact"><i className="fab fa-linkedin"></i>LinkedIn</button>
       </div>
     )
   };

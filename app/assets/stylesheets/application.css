@@ -486,13 +486,14 @@ i {
 }
 
 .show {
-  margin-top: 82px;
+  margin-top: 80px;
   font-family: 'Montserrat', sans-serif;
   color: #585858;
   box-sizing: border-box;
   width: 100%;
   display: flex;
   flex-direction: column;
+  border-top: 1px solid black;
 }
 
 .show-imgs{
@@ -614,6 +615,16 @@ i {
   border: 1px solid #eae8e8;
 }
 
-.modal-form #contact {
+.modal-form #contact-mail {
   margin: 10px 0;
+}
+
+.modal-form #contact-git {
+  margin: 10px 0;
+  background-color: #52565e;
+}
+
+.modal-form #contact-li {
+  margin: 10px 0;
+  background-color: #0077b5;
 }
