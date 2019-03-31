@@ -32,8 +32,15 @@ class SessionForm extends React.Component {
     this.props.altLink();
   }
   
-  renderErrors() {
-    return( <ul>{this.props.errors.map((error, idx) => (<li key={idx}>{error}</li>))}</ul> )
+  renderErrors(field) {
+    const errors = this.props.errors;
+    const fieldError = [];
+
+    errors.forEach((error) => (error[0] === field) ? fieldError.push(error) : null);
+
+    return( 
+      <ul>{fieldError.map((error, idx) => (<li key={idx}>{error}</li>))}</ul> 
+    )
   }
 
   render() {
@@ -42,6 +49,8 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Sign up') {
       ident = 
         <div>
+
+        <div className="field-wrapper">
           <div className="form-field">     
           <input
             type="text"
@@ -50,8 +59,11 @@ class SessionForm extends React.Component {
             value={this.state.fname}
             onChange={this.handleInput('fname')} />
           <i className="far fa-user"></i>
-          </div>  
-          <br></br>
+          </div>
+          <div className="modal-errors">{this.renderErrors('F')}</div>
+          </div> 
+
+          <div className="field-wrapper">
           <div className="form-field">
           <input
             type="text"
@@ -61,7 +73,9 @@ class SessionForm extends React.Component {
             onChange={this.handleInput('lname')} />
           <i className="far fa-user"></i>
           </div>
-          <br></br>
+          <div className="modal-errors">{this.renderErrors('L')}</div>
+          </div>
+
         </div>; 
       buttonText = 'Sign up'
       placeText = 'Create a Password'
@@ -74,11 +88,12 @@ class SessionForm extends React.Component {
     };
 
     return (
-      <div >
+      <div className="modal" >
         <div onClick={this.props.closeModal} className="close"><i className="fas fa-times"></i></div>
-        <br></br><br></br>
+
         <div id="form-type">{this.props.formType} with Email or <button onClick={this.handleDemo}>Demo</button></div>
         <form className="modal-form" onSubmit={this.handleSubmit}>
+          <div className="field-wrapper">
           <div className="form-field">
           <input
             type="email"
@@ -88,9 +103,13 @@ class SessionForm extends React.Component {
             onChange={this.handleInput('email')} />
             <i className="far fa-envelope"></i>
           </div>
-          <br></br>
+          <div className="modal-errors">{this.renderErrors('E')}</div>
+          </div>
+    
 
           {ident}
+
+          <div className="field-wrapper">
           <div className="form-field">
           <input
             type="password"
@@ -100,10 +119,10 @@ class SessionForm extends React.Component {
             onChange={this.handleInput('password')} />
             <i className="fas fa-lock"></i>
           </div>
-          <br></br>
+          <div className="modal-errors">{this.renderErrors('P')}</div>
+          </div>
           <button>{buttonText}</button>
         </form>
-        <div className="modal-errors">{this.renderErrors()}</div>
         {altLinkText}
       </div>
     )

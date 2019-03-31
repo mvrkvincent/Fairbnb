@@ -246,7 +246,6 @@
  
 }
 
-
 .modal-background {
   position: fixed;
   top: 0;
@@ -257,8 +256,9 @@
   z-index: 10;
 }
 
-.modal-child {
-  position: absolute;
+.modal {
+
+    position: absolute;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -271,13 +271,14 @@
   color: #585858;
   font-family: 'Montserrat', sans-serif;
 }
-
 .close {
   color:  #797979;
+  text-align: left;
   font-family: 'Font Awesome';
   cursor: pointer;
   font-weight: lighter;
-  position: absolute;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .alt-link {
@@ -319,17 +320,11 @@
 }
 
 .modal-errors ul li {
-  padding: 5px;
-}
-
-.modal-errors ul li:before {
-  content: "X";
-  padding-right: 8px;
-  color: #D93900;
+  padding-top: 5px;
 }
 
 .modal-form {
-  padding: 20px 0px;
+  padding-top: 20px
 }
 
 #form-type {
@@ -358,12 +353,17 @@
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   padding: 10px 22px;
+  margin-bottom: 15px;
   line-height: 24px;
   font-size: 16px;
   width: 500px;
   cursor: pointer;
   border-style: none;
   border-radius: 5px;
+}
+
+.field-wrapper {
+    margin-bottom: 15px;
 }
 
 .form-field {
@@ -616,15 +616,15 @@ i {
 }
 
 .modal-form #contact-mail {
-  margin: 10px 0;
+  /* margin: 10px 0; */
 }
 
 .modal-form #contact-git {
-  margin: 10px 0;
-  background-color: #52565e;
+  /* margin: 10px 0; */
+  background-color:  #52565e;
 }
 
 .modal-form #contact-li {
-  margin: 10px 0;
+  /* margin: 10px 0; */
   background-color: #0077b5;
 }
