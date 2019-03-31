@@ -9,7 +9,7 @@ class SpotShow extends React.Component {
   render() {
     const defaultSpot = {
       name: '', accommodation: '', rate: 0, num_guests: 0, num_beds: 0,
-      num_baths: 0, city: 0, description: '', img_url: ''};
+      num_baths: 0, city: '', description: '', img_url: ''};
     
       const { name, accommodation, num_guests, num_beds, 
             num_baths, city, description, img_url } = this.props.spot || defaultSpot;
@@ -40,8 +40,8 @@ class SpotShow extends React.Component {
               <div className="name-head">{name}</div>
           {/* <div className="host-img" style={hostImg}></div>
           <div className="host-name">{hostName}</div> */}
+          {city}
           </div>
-          <div className="detail">{city}</div>
 
           <div className="details">
             <div className="accommodation-head"><i className="fas fa-home"></i>{'  '}{accommodation}</div>
@@ -50,21 +50,31 @@ class SpotShow extends React.Component {
               <div>{num_beds} bedroom{s2}</div>
               <div>{num_baths} bathroom{s3}</div>
             </div>
-            <div className="section-head"></div>
+            <div className="section-head">About this spot</div>
             <div className="detail">{description}</div>
           </div>
           
           <div className="amenities">
               <div className="section-head">Amenitites</div>
+              <div className="detail">Many Amenitites</div>
           </div>
 
           <div className="availability">
               <div className="section-head">Availability</div>
+              <div className="detail">Updated 2 days ago</div>
+              <div className="module"></div>
           </div>
 
-          <div className="Reviews">
-            <div className="reviews-head">Reviews
-            <div className="rating">
+            <div className="map">
+              <div className="section-head">The Neighborhood</div>
+              <div className="detail">Take a look around {city}</div>
+              <div className="module"></div>
+              Exact location information is provided after a booking is confirmed.
+            </div>
+
+          <div className="reviews">
+            <div className="section-head">Reviews
+            <div className="detail"> No current reviews{'  '}
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>

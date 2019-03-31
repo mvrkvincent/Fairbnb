@@ -363,7 +363,7 @@
 }
 
 .field-wrapper {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .form-field {
@@ -559,7 +559,7 @@ i {
   display: flex;
   flex-direction: row;
   margin: 20px 160px;
-  padding: 0 25px;
+  padding: 0 25px 25px 25px;
 }
 
 .show-content-left {
@@ -567,7 +567,9 @@ i {
   margin-right: 60px;
 }
 
-
+.name {
+  margin-bottom: 30px;
+}
 .name-head {
   font-family: 'Montserrat Black', sans-serif;
   font-size: 38px;
@@ -607,24 +609,36 @@ i {
 }
 
 .detail {
-  padding-bottom: 20px;
+  padding: 20px 0;
 }
+
+
+.module{
+  height: 300px;
+  width: 100%;
+  border: 1px solid #eae8e8;
+  margin: 15px 0;
+}
+
+
+
+.reviews i {
+  color: #008489;
+}
+
 
 .show-content-right {
   min-width: 410px;
+  height: 500px;
   border: 1px solid #eae8e8;
 }
 
-.modal-form #contact-mail {
-  /* margin: 10px 0; */
-}
+
 
 .modal-form #contact-git {
-  /* margin: 10px 0; */
   background-color:  #52565e;
 }
 
 .modal-form #contact-li {
-  /* margin: 10px 0; */
   background-color: #0077b5;
 }
