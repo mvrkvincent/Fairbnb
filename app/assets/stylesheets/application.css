@@ -18,7 +18,6 @@
   height: 100%;
 }
 
-
 .navBar{
   min-width: 960px;
   position: fixed;
@@ -613,4 +612,8 @@ i {
 .show-content-right {
   min-width: 410px;
   border: 1px solid #eae8e8;
+}
+
+.modal-form #contact {
+  margin: 10px 0;
 }

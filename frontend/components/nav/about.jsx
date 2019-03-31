@@ -9,13 +9,16 @@ class About extends React.Component {
   render() {
 
     return (
-      <div >
-        <div onClick={this.props.closeModal} className="close">X</div>
+      <div className="modal-form">
+        <div onClick={this.props.closeModal} className="close"><i className="fas fa-times"></i></div>
         <br></br><br></br>
-        <div id="form-type">About Fairbnb</div>
+        <div id="form-type">About the developer</div>
         <div className="modal-form">
-            This is some text about us
+            Feel free to reach out for more information
         </div>
+        <button id="contact"><i className="far fa-envelope"></i>Email</button>
+        <button id="contact"><i className="fab fa-github"></i> GitHub</button>
+        <button id="contact"><i className="fab fa-linkedin"></i>LinkedIn</button>
       </div>
     )
   };
