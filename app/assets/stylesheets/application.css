@@ -592,7 +592,7 @@ i {
 }
 
 .details {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .main-detail {
@@ -611,6 +611,6 @@ i {
 }
 
 .show-content-right {
-  width: 40%;
+  min-width: 410px;
   border: 1px solid #eae8e8;
 }

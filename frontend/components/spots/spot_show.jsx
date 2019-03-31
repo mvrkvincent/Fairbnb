@@ -2,27 +2,22 @@ import React from 'react';
 
 class SpotShow extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = this.props.spot;
-  }
-  
-  componentWillMount() {
-    this.setState(this.props.fetchSpot(this.props.match.params.spotId));
-  }
-  
-  componentWillReceiveProps(nextProps) {
-    if (nextProps !== this.state) {
-      this.setState(nextProps);
-    }
+  componentDidMount() {
+    this.props.fetchSpot(this.props.match.params.spotId);
   }
 
   render() {
-    const { name, city, accommodation, num_guests, num_beds, num_baths, description, img_url } = (this.state.spot) ? this.state.spot : this.state;
+    const defaultSpot = {
+      name: '', accommodation: '', rate: 0, num_guests: 0, num_beds: 0,
+      num_baths: 0, city: 0, description: '', img_url: ''};
+    
+      const { name, accommodation, num_guests, num_beds, 
+            num_baths, city, description, img_url } = this.props.spot || defaultSpot;
+
     const s1 = num_guests > 1 ? 's' : '';
     const s2 = num_beds > 1 ? 's' : '';
     const s3 = num_baths > 1 ? 's' : '';
-    // const userId = spot.host_id;
+    // const userId = host_id;
     // const hostImg = { backgroundImage: `url(${user.userId.img_url})` };
     // const hostName = user.userId.fname
     return (
