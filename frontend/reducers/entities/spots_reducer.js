@@ -4,13 +4,13 @@ import { RECEIVE_SPOTS, RECEIVE_SPOT, REMOVE_SPOT } from '../../actions/spot_act
 export default (state = {}, action) => {
   Object.freeze(state);
 
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_SPOTS: {
       const result = merge({}, state, action.spots);
       return result;
     }
     case RECEIVE_SPOT: {
-      return merge({}, state, {[action.spot.id]: action.spot});
+      return merge({}, state, { [action.spot.id]: action.spot });
     }
     case REMOVE_SPOT: {
       const alteredState = merge({}, state);
@@ -21,4 +21,3 @@ export default (state = {}, action) => {
   }
 
 };
-

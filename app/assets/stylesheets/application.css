@@ -638,7 +638,8 @@ i {
 
 
 .show-content-right {
-  min-width: 410px;
+  max-width: 390px;
+  min-width: 390px;
   height: 500px;
   position: sticky;
   top: 115px;
@@ -689,5 +690,20 @@ i {
   margin-left: 4px;
 }
 
+.booking-form .modal-form {
+  margin-top: 20px;
+  border-top: 1px solid #eae8e8;
+}
+.booking-form .form-field {
+  justify-content: space-between;
+  margin-top: 2px;
+}
+.booking-form button {
+  width: 100%;
+}
 
+.arrow {
+  height: 100%;
+  margin: 0 10px;
+}
 

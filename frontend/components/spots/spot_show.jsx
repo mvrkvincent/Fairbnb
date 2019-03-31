@@ -1,4 +1,5 @@
 import React from 'react';
+import BookingForm from '../bookings/booking_form_container';
 
 class SpotShow extends React.Component {
 
@@ -8,8 +9,8 @@ class SpotShow extends React.Component {
 
   render() {
     const defaultSpot = {
-      name: '', accommodation: '', rate: 0, num_guests: 0, num_beds: 0,
-      num_baths: 0, city: '', description: '', img_url: ''};
+      name: null, accommodation: null, rate: null, num_guests: null, num_beds: null,
+      num_baths: null, city: null, description: null, img_url: null};
     
       const { name, accommodation, rate, num_guests, num_beds, 
             num_baths, city, description, img_url } = this.props.spot || defaultSpot;
@@ -99,6 +100,7 @@ class SpotShow extends React.Component {
                 <i className="far fa-star"></i>
                 <div className="num-reviews">No current ratings</div>
               </div>
+              <BookingForm />
           </div>
         </div>
 

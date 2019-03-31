@@ -16,4 +16,13 @@
 #
 
 class Booking < ApplicationRecord
+  validates :spot_id, :guest_id, :host_id, :check_in, :check_out, 
+            :num_guests, :total_rate, presence: true
+
+  belongs_to :host,
+    class_name: :User
+    
+  belongs_to :host
+
+
 end

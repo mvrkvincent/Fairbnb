@@ -22,6 +22,12 @@ class User < ApplicationRecord
 
   after_initialize :ensure_token
 
+  has_many :spots,
+    foreign_key: :host_id
+
+  has_many :bookings,
+    foreign_key: :guest_id
+
   def self.find_by_credentials(email, password)
     @user = User.find_by(email: email)
     @user && @user.is_password?(password) ? @user : nil

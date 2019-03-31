@@ -24,5 +24,9 @@ class Spot < ApplicationRecord
   validates :host_id, :name, :accommodation, :rate, :num_guests, :num_beds, 
             :num_baths, :city, :address, :lat, :lng, presence: true
 
+  belongs_to :host,
+    class_name: :User
+
+  has_many :bookings
 
 end
