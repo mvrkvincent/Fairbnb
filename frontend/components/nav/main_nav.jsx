@@ -8,9 +8,8 @@ class MainNav extends React.Component {
   render() {
   
     const {signup, login, logout, demo, about, currentUser} = this.props;
-    
     const NavButtons = (this.props.currentUser) ? <MemberNav about={about} logout={logout} currentUser={currentUser} /> : <VisitorNav demo={demo} about={about} signup={signup} login={login}/>;
-    
+
     return(
       <div className="main-nav">
       <div className="nav-bar">
@@ -21,12 +20,6 @@ class MainNav extends React.Component {
             <input className="search-input" type="text" placeholder="Search" /></div>
           </div>
         {NavButtons}
-        </div>
-        <div className="filter-bar">
-          <div>
-          <button>Dates</button>
-          <button>Guests</button>
-          </div>
         </div>
       </div >
     )

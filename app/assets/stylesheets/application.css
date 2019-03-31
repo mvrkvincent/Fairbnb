@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.main {
+  height: 100%;
+}
+
 
 .navBar{
   min-width: 960px;
@@ -26,7 +30,6 @@
 
 .content {
   min-width: 980px;
-  margin-top: 130px;
 }
 
 .nav-bar {
@@ -409,6 +412,7 @@ i {
 
 
 .spot-index {
+  margin-top: 130px;
   font-family: 'Montserrat Black', sans-serif;
   font-size: 24px;
   color: #585858;
@@ -483,6 +487,7 @@ i {
 }
 
 .show {
+  margin-top: 82px;
   font-family: 'Montserrat', sans-serif;
   color: #585858;
   box-sizing: border-box;
@@ -495,7 +500,7 @@ i {
   display: flex;
   align-items: center;
   overflow: hidden;
-  height: 500px;
+  height: 440px;
   width: 100%;
   margin-bottom: 15px;
   border-bottom: 1px solid #000000;
@@ -553,7 +558,7 @@ i {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  margin: 20px 120px;
+  margin: 20px 160px;
   padding: 0 25px;
 }
 
