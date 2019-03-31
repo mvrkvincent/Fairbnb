@@ -18,11 +18,12 @@ class SpotIndexItem extends React.Component {
           <div className="spot-name">{name}</div>
           <div className="spot-terms"><i className="fas fa-wave-square"></i>{rate} per night · Free cancellation</div>
           <div className="rating">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i> 
-            <i className="fas fa-star"></i> 
-            <i className="fas fa-star"></i> 
             <i className="far fa-star"></i>
+            <i className="far fa-star"></i> 
+            <i className="far fa-star"></i> 
+            <i className="far fa-star"></i> 
+            <i className="far fa-star"></i>
+            <div className="num-reviews">No current ratings</div>
           </div>
         </Link>
       </div>

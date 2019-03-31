@@ -274,7 +274,7 @@
 .close {
   color:  #797979;
   text-align: left;
-  font-family: 'Font Awesome';
+  font-family: 'Encode Sans Expanded';
   cursor: pointer;
   font-weight: lighter;
   margin-bottom: 10px;
@@ -462,6 +462,7 @@ i {
 
 .spot-name {
   font-size: 18px;
+  font-weight: 700;
   font-family: 'Montserrat Black', sans-serif;
   margin: 8px 0;
 }
@@ -484,6 +485,12 @@ i {
   padding: 0;
   color: #008489;
 }
+
+.spot-item .num-reviews {
+  font-family: 'Montserrat Bold', sans-serif;
+  margin-left: 4px;
+}
+
 
 .show {
   margin-top: 80px;
@@ -572,7 +579,8 @@ i {
 }
 .name-head {
   font-family: 'Montserrat Black', sans-serif;
-  font-size: 38px;
+  font-size: 34px;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -582,12 +590,14 @@ i {
 }
 .accommodation-head{
   font-size: 18px;
-  font-family: 'Montserrat Black', sans-serif;
+  font-family: 'Montserrat Bold', sans-serif;
+  font-weight: 600;
   margin: 8px 0;
 }
 .section-head {
   font-size: 18px;
-  font-family: 'Montserrat Black', sans-serif;
+  font-family: 'Montserrat Bold', sans-serif;
+  font-weight: 600;
   margin: 8px 0;
   border-top: 1px solid #eae8e8;
   padding-top: 20px;
@@ -638,9 +648,27 @@ i {
 .booking-module {
   width: 100%;
   height: 100%;
+  padding: 25px;
   border: 1px solid #eae8e8;  
 }
 
+.rate-head {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.rate {
+  margin-right: 4px; 
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.rating {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
 
 .modal-form #contact-git {
   background-color:  #52565e;
@@ -649,4 +677,17 @@ i {
 .modal-form #contact-li {
   background-color: #0077b5;
 }
+
+.booking-module .rating i {
+  font-size: 8px;
+  padding: 1px;
+  color: #008489;
+}
+
+.booking-module .num-reviews {
+  font-family: 'Montserrat Bold', sans-serif;
+  margin-left: 4px;
+}
+
+
 

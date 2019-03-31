@@ -11,7 +11,7 @@ class SpotShow extends React.Component {
       name: '', accommodation: '', rate: 0, num_guests: 0, num_beds: 0,
       num_baths: 0, city: '', description: '', img_url: ''};
     
-      const { name, accommodation, num_guests, num_beds, 
+      const { name, accommodation, rate, num_guests, num_beds, 
             num_baths, city, description, img_url } = this.props.spot || defaultSpot;
 
     const s1 = num_guests > 1 ? 's' : '';
@@ -75,10 +75,10 @@ class SpotShow extends React.Component {
           <div className="reviews">
             <div className="section-head">Reviews
             <div className="detail"> No current reviews{'  '}
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
+              <i className="far fa-star"></i>
+              <i className="far fa-star"></i>
+              <i className="far fa-star"></i>
+              <i className="far fa-star"></i>
               <i className="far fa-star"></i>
             </div>
             </div>
@@ -86,7 +86,20 @@ class SpotShow extends React.Component {
         </div>
 
         <div className="show-content-right">
-          <div className="booking-module"></div>
+          <div className="booking-module">
+              <div className="rate-head">
+                <div className="rate"><i className="fas fa-wave-square"></i>{rate}</div>
+                <div>per night</div>
+              </div>
+              <div className="rating">
+                <i className="far fa-star"></i>
+                <i className="far fa-star"></i>
+                <i className="far fa-star"></i>
+                <i className="far fa-star"></i>
+                <i className="far fa-star"></i>
+                <div className="num-reviews">No current ratings</div>
+              </div>
+          </div>
         </div>
 
 

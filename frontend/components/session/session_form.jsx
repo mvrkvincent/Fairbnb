@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="modal" >
-        <div onClick={this.props.closeModal} className="close"><i className="fas fa-times"></i></div>
+        <div onClick={this.props.closeModal} className="close">X</div>
 
         <div id="form-type">{this.props.formType} with Email or <button onClick={this.handleDemo}>Demo</button></div>
         <form className="modal-form" onSubmit={this.handleSubmit}>

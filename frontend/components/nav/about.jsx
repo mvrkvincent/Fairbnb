@@ -10,7 +10,7 @@ class About extends React.Component {
 
     return (
       <div className="modal">
-        <div onClick={this.props.closeModal} className="close"><i className="fas fa-times"></i></div>
+        <div onClick={this.props.closeModal} className="close">X</div>
  
         <div id="form-type">Contact the developer for inquiries</div>
         <div className="modal-form">
