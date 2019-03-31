@@ -86,6 +86,7 @@ class SpotShow extends React.Component {
         </div>
 
         <div className="show-content-right">
+          <div className="booking-module"></div>
         </div>
 
 

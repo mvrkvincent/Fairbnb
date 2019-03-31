@@ -616,8 +616,8 @@ i {
 .module{
   height: 300px;
   width: 100%;
-  border: 1px solid #eae8e8;
   margin: 15px 0;
+  border: 1px solid #eae8e8;  
 }
 
 
@@ -630,9 +630,16 @@ i {
 .show-content-right {
   min-width: 410px;
   height: 500px;
-  border: 1px solid #eae8e8;
+  position: sticky;
+  top: 115px;
+  z-index: 0;
 }
 
+.booking-module {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #eae8e8;  
+}
 
 
 .modal-form #contact-git {
@@ -642,3 +649,4 @@ i {
 .modal-form #contact-li {
   background-color: #0077b5;
 }
+
