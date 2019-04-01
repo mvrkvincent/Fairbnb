@@ -100,17 +100,13 @@ class SpotShow extends React.Component {
                 <i className="far fa-star"></i>
                 <div className="num-reviews">No current ratings</div>
               </div>
-              <BookingForm />
+              <BookingForm spot={this.props.spot}/>
           </div>
         </div>
 
 
 
       </div>
-
-
-
-
 
 
 

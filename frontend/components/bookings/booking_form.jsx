@@ -1,13 +1,31 @@
 import React from 'react';
+import { DateRangePicker } from 'react-dates';
+import 'react-dates/initialize';
+import { runInThisContext } from 'vm';
 
 class BookingForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = this.props.bookingInfo;
+    this.state = {
+      startDate: null,
+      endDate: null,
+      focusedInput: null,
+      num_guests: '',
+      host_id: 1,
+      total_rate: 10,
+      status: 'pending'
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.enforceLogin = this.enforceLogin.bind(this);
+
   }
 
+  enforceLogin(e) {
+    e.preventDefault();
+    this.props.requestLogin();
+  }
 
   handleInput(field) {
     return e => this.setState({ [field]: e.target.value });
@@ -15,7 +33,18 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.formAction(this.state).then();
+    const bookingInfo = {
+      check_in: this.state.startDate._d,
+      check_out: this.state.endDate._d,
+      num_guests: this.state.num_guests,
+      host_id: this.state.host_id,
+      spot_id: this.props.spot.id,
+      total_rate: this.state.total_rate,
+      status: this.state.status
+    };
+    
+    this.props.formAction(bookingInfo);
+ 
   }
 
   // renderErrors(field) {
@@ -31,49 +60,48 @@ class BookingForm extends React.Component {
 
   render() {
 
-    const bookAction = (this.props.current_user) ? this.handleSubmit : this.props.requestLogin;
-      
+    const bookAction = (this.props.currentUser) ? this.handleSubmit : this.enforceLogin;
+
     return (
         <div className="booking-form">
         <form className="modal-form" onSubmit={bookAction}>
           <div className="field-wrapper">
             <span>Dates</span>
             <div className="form-field">
-              <input
-                type="email"
-                className="form-input"
-                placeholder="Email address"
-                value={this.state.email}
-                onChange={this.handleInput('email')} />
-              <div className="arrow"><i className="fas fa-arrow-right"></i></div>
-              <input
-                type="email"
-                className="form-input"
-                placeholder="Email address"
-                value={this.state.email}
-                onChange={this.handleInput('email')} />
+            <DateRangePicker
+              startDate={this.state.startDate}
+              startDateId="check_in"
+              endDate={this.state.endDate}
+              endDateId="check_out"
+              onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
+              focusedInput={this.state.focusedInput}
+              onFocusChange={focusedInput => this.setState({ focusedInput })}
+            />
             </div>
-            {/* <div className="modal-errors">{this.renderErrors('E')}</div> */}
-          </div>
+          {/* <div className="modal-errors">{this.renderErrors('E')}</div> */}
+          </div>              
           <div className="field-wrapper">
             <span>Guests</span>
             <div className="form-field">
-              <input
-                type="password"
-                className="form-input"
-                placeholder="password"
-                value={this.state.password}
-                onChange={this.handleInput('password')} />
-              <i className="fas fa-lock"></i>
+            <input
+              type="text"
+              className="form-input"
+              value={this.state.num_guests}
+              onChange={this.handleInput('num_guests')} />
             </div>
             {/* <div className="modal-errors">{this.renderErrors('P')}</div> */}
           </div>
           <button>Book</button>
           Your credits will be deducted at check-in
         </form>
+
       </div>
     )
   };
+
+
+
+
 
 };
 

@@ -27,6 +27,8 @@ class Spot < ApplicationRecord
   belongs_to :host,
     class_name: :User
 
-  has_many :bookings
+  has_many :bookings,
+    class_name: :Booking,
+    foreign_key: :spot_id
 
 end

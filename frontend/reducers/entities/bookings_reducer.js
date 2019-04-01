@@ -11,6 +11,7 @@ export default (state = {}, action) => {
       return result;
     }
     case RECEIVE_BOOKING: {
+      debugger
       return merge({}, state, { [action.booking.id]: action.booking });
     }
     case REMOVE_BOOKING: {

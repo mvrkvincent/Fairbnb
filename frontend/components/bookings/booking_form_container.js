@@ -3,8 +3,8 @@ import { createBooking } from '../../actions/booking_actions';
 import { openModal } from '../../actions/modal_actions';
 import BookingForm from './booking_form';
 
-const msp = ({ entities }) => ({
-  bookingInfo: {check_in: null, check_out: null, num_guests: null},
+const msp = ({entities, session}) => ({
+  currentUser: entities.users[session.id],
   formType: 'Book'
 });
 

@@ -7,13 +7,11 @@ class Api::BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.guest_id = current_user.id
-    @booking.spot_id = params[:spot_id]
-    @booking.host_id = Spot.find(params[:spot_id]).host_id
-
+    
     if @booking.save
       render :show
     else
-      render json: @bookings.errors.full_messages, status: 422
+      render json: @booking.errors.full_messages, status: 422
     end
 
   end
@@ -29,7 +27,7 @@ class Api::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:check_in, :check_out, :num_guests)
+    params.require(:booking).permit(:check_in, :check_out, :num_guests, :host_id, :spot_id, :total_rate, :status)
   end
 
 end

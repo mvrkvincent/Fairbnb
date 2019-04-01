@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_31_183334) do
+ActiveRecord::Schema.define(version: 2019_04_01_001711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2019_03_31_183334) do
     t.integer "spot_id", null: false
     t.integer "guest_id", null: false
     t.integer "host_id", null: false
-    t.datetime "check_in", null: false
-    t.datetime "check_out", null: false
+    t.date "check_in", null: false
+    t.date "check_out", null: false
     t.integer "num_guests", null: false
     t.integer "total_rate", null: false
     t.string "status"

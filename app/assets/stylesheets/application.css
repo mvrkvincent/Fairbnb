@@ -640,7 +640,7 @@ i {
 .show-content-right {
   max-width: 390px;
   min-width: 390px;
-  height: 500px;
+  height: 380px;
   position: sticky;
   top: 115px;
   z-index: 0;
@@ -707,3 +707,8 @@ i {
   margin: 0 10px;
 }
 
+.field-wrapper button {
+  border-radius: 0px;
+  background: 0 0;
+  height: 0px;
+}
