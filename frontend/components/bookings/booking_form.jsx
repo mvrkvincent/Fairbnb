@@ -11,8 +11,8 @@ class BookingForm extends React.Component {
       startDate: null,
       endDate: null,
       focusedInput: null,
-      num_guests: '',
-      host_id: 1,
+      num_guests: 1,
+      host_id: 38,
       total_rate: 10,
       status: 'pending'
     };

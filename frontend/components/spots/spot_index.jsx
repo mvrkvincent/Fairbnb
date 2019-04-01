@@ -13,8 +13,8 @@ class SpotIndex extends React.Component {
 
     return (
       <div className="spot-index" >
-        <div id="spot-index-head">Where to stay</div>
-        {SpotIndexItems}
+        
+        <ul><div id="spot-index-head">Where to stay</div>{SpotIndexItems}</ul>
       </div>
     );
   }

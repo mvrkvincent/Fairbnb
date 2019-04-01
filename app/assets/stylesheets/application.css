@@ -28,7 +28,7 @@
 }
 
 .content {
-  min-width: 980px;
+  min-width: 800px;
 }
 
 .nav-bar {
@@ -184,67 +184,6 @@
   border: none;
 }
 
-
-@media only screen and (max-width: 960px) {
-
-
-  .content {
-    margin-top: 180px;
-  }
-  
-  .navBar {
-    justify-content: center;
-  }
-  .nav-bar {
-    flex-direction: column;
-  }
-
-  #logo-search {
-    justify-content: left;
-    border-bottom: 1px solid #eae8e8;
-    width: 960px;
-  }
-
-  .nav-bar .nav-buttons {
-    margin-left: 155.48px;
-    height: 48px;
-    font-family: 'Montserrat', sans-serif;
-    color: #787878;
-    display: flex;
-    align-items: center;
-    outline: none;
-  }
-
-  .nav-bar .nav-buttons button {
-    font-family: 'Montserrat', sans-serif;
-    padding: 0 16px;
-    color: #585858;
-    font-size: 13.8px;
-    font-weight: lighter;
-    height: 32px;
-    cursor: pointer;
-    border: 1px solid #eae8e8;
-    border-radius: 5px;
-    margin-right: 16px;
-    outline: none;
-  }
-
-  .nav-bar .nav-buttons button:hover {
-    background-color: #eae8e8;
-  }
-
-  .nav-bar .nav-buttons button:focus {
-    outline: none;
-    background-color: #008489;
-    color: #FFFFFF;
-    }
-
-  .search {
-    width: 400px;
-  }
-
- 
-}
 
 .modal-background {
   position: fixed;
@@ -424,6 +363,19 @@ i {
   
 }
 
+.spot-index ul {
+  font-family: 'Montserrat Black', sans-serif;
+  font-size: 24px;
+  color: #585858;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 40px;
+  width: 100%;
+}
+
 #spot-index-head {
  justify-content: center;
  padding: 25px 20px 0 20px;
@@ -440,12 +392,13 @@ i {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #585858;
-  width: 420px;
+  max-width: 420px;
   margin: 0 15px 15px 15px;
 }
 .spot-img {
-  height: 300px;
-  width: 100%;
+  width: 20vw;
+  height: 20vw;
+  min-width: 220px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -508,7 +461,7 @@ i {
   align-items: center;
   overflow: hidden;
   height: 440px;
-  width: 100%;
+  min-width: 100%;
   margin-bottom: 15px;
   border-bottom: 1px solid #000000;
 }
@@ -562,16 +515,26 @@ i {
 }
 
 .show-content {
-  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  /* align-items: center; */
+  justify-content: center;
   margin: 20px 160px;
-  padding: 0 25px 25px 25px;
+  /* padding: 0 25px 25px 25px; */
 }
 
 .show-content-left {
-  width: 60%;
-  margin-right: 60px;
+  /* max-width: 390px; */
+  min-width: 390px;
+  padding-right: 60px;
+}
+
+.show-content-right {
+  max-width: 390px;
+  min-width: 390px;
+  height: 380px;
+  position: sticky;
+  top: 115px;
+  z-index: 0;
 }
 
 .name {
@@ -637,14 +600,7 @@ i {
 }
 
 
-.show-content-right {
-  max-width: 390px;
-  min-width: 390px;
-  height: 380px;
-  position: sticky;
-  top: 115px;
-  z-index: 0;
-}
+
 
 .booking-module {
   width: 100%;
@@ -711,4 +667,80 @@ i {
   border-radius: 0px;
   background: 0 0;
   height: 0px;
+}
+
+
+@media only screen and (max-width: 960px) {
+
+  .show {
+    margin-top: 0;
+  }
+
+  .show-imgs {
+    margin-top: 130px;
+  }
+  .navBar {
+    justify-content: center;
+  }
+  .nav-bar {
+    flex-direction: column;
+  }
+
+  .spot-index {
+    margin-top: 180px;
+  }
+
+  #logo-search {
+    justify-content: left;
+    border-bottom: 1px solid #eae8e8;
+    width: 960px;
+  }
+
+  .nav-bar .nav-buttons {
+    margin-left: 155.48px;
+    height: 48px;
+    font-family: 'Montserrat', sans-serif;
+    color: #787878;
+    display: flex;
+    align-items: center;
+    outline: none;
+  }
+
+  .nav-bar .nav-buttons button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 16px;
+    color: #585858;
+    font-size: 13.8px;
+    font-weight: lighter;
+    height: 32px;
+    cursor: pointer;
+    border: 1px solid #eae8e8;
+    border-radius: 5px;
+    margin-right: 16px;
+    outline: none;
+  }
+
+  .nav-bar .nav-buttons button:hover {
+    background-color: #eae8e8;
+  }
+
+  .nav-bar .nav-buttons button:focus {
+    outline: none;
+    background-color: #008489;
+    color: #FFFFFF;
+    }
+
+  .search {
+    width: 400px;
+  }
+
+  .show-content-right {
+  max-width: 390px;
+  min-width: 390px;
+  height: 380px;
+  position: sticky;
+  top: 165px;
+  z-index: 0;
+  }
+
 }
