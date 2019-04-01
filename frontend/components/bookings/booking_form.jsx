@@ -1,7 +1,8 @@
 import React from 'react';
+import moment from 'moment';
 import { DateRangePicker } from 'react-dates';
 import 'react-dates/initialize';
-import { runInThisContext } from 'vm';
+
 
 class BookingForm extends React.Component {
 
@@ -13,7 +14,7 @@ class BookingForm extends React.Component {
       focusedInput: null,
       num_guests: 1,
       host_id: 38,
-      total_rate: 10,
+      total_rate: null,
       status: 'pending'
     };
 
@@ -27,25 +28,34 @@ class BookingForm extends React.Component {
     this.props.requestLogin();
   }
 
+  calculateTotal() {
+    const rate = this.props.spot.rate;
+    const days = this.state.endDate.diff(this.state.startDate, 'days', false);
+    const total = (rate * (days));
+    return total;
+  }
+
   handleInput(field) {
     return e => this.setState({ [field]: e.target.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    const bookingTotal = parseInt(document.getElementById('finalTotal').innerText);
     const bookingInfo = {
       check_in: this.state.startDate._d,
       check_out: this.state.endDate._d,
       num_guests: this.state.num_guests,
       host_id: this.state.host_id,
       spot_id: this.props.spot.id,
-      total_rate: this.state.total_rate,
+      total_rate: bookingTotal,
       status: this.state.status
     };
-    
-    this.props.formAction(bookingInfo);
+
+    this.props.formAction(bookingInfo).then(this.props.confirmBooking());
  
   }
+
 
   // renderErrors(field) {
   //   const errors = this.props.errors;
@@ -60,7 +70,28 @@ class BookingForm extends React.Component {
 
   render() {
 
+    const rate = this.props.spot ? this.props.spot.rate : null;
     const bookAction = (this.props.currentUser) ? this.handleSubmit : this.enforceLogin;
+    const currentTotal = (this.state.endDate) ? this.calculateTotal() : null;
+    const days = (this.state.endDate) ? this.state.endDate.diff(this.state.startDate, 'days', false) : null;
+    const s = days > 1 ? 's' : '';
+    
+    const calculator = (<div className="calculator">
+                          <div className="ledger">
+                              <div><i className="fas fa-wave-square"></i>{rate} x {days} day{s}</div>
+                              <div><i className="fas fa-wave-square"></i>{currentTotal}</div>
+                          </div>
+                          <div className="total">
+                            <div>Total</div>
+                            <div className ="wave_money"><i className="fas fa-wave-square"></i><div id="finalTotal">{currentTotal}</div></div>
+                          </div>
+                        </div>)
+
+
+    const bookingCost = (currentTotal) ? calculator : null;
+
+
+
 
     return (
         <div className="booking-form">
@@ -91,8 +122,14 @@ class BookingForm extends React.Component {
             </div>
             {/* <div className="modal-errors">{this.renderErrors('P')}</div> */}
           </div>
+         
+
+
+          {bookingCost}
+
+         
           <button>Book</button>
-          Your credits will be deducted at check-in
+          <span>Your credits will be deducted at check-in</span>
         </form>
 
       </div>

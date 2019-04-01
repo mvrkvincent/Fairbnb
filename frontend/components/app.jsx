@@ -14,12 +14,12 @@ export const App = () => (
       <MainNavContainer />
       <Route exact path='/' component={FilterNav} />
     </div>
-    <div className="content">
+
       <Switch>
         <Route exact path='/' component={SpotIndexContainer} />
         <Route exact path="/spots/:spotId" component={SpotShowContainer} />
       </Switch>
-    </div>
+
   </div>
 
 );

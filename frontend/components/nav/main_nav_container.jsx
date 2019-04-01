@@ -12,7 +12,7 @@ const mdp = dispatch => ({
   login: () => dispatch(openModal('LOGIN')),
   logout: () => dispatch(logout()),
   demo: () => dispatch(login({ email: 'smitty@number1.com', password: 'Werbenjagermanjensen' })), 
-  about: () => dispatch(openModal('ABOUT'))
+  about: () => dispatch(openModal('BOOK'))
 });
 
 export default connect(msp, mdp)(MainNav);

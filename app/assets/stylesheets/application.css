@@ -290,8 +290,9 @@
   background-color: #FF5A5F;
   color: #FFFFFF;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
   text-align: center;
-  padding: 10px 22px;
+  padding: 14px 22px;
   margin-bottom: 15px;
   line-height: 24px;
   font-size: 16px;
@@ -299,6 +300,7 @@
   cursor: pointer;
   border-style: none;
   border-radius: 5px;
+
 }
 
 .field-wrapper {
@@ -372,7 +374,6 @@ i {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  padding: 0 40px;
   width: 100%;
 }
 
@@ -397,7 +398,7 @@ i {
 }
 .spot-img {
   width: 20vw;
-  height: 20vw;
+  height: 15vw;
   min-width: 220px;
   background-size: cover;
   background-position: center;
@@ -407,9 +408,11 @@ i {
 }
 
 .spot-accom {
-  font-family: 'Montserrat Black', sans-serif;
+  font-family: 'Montserrat Extra Light', sans-serif;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 8px 0;
   margin: 8px 0;
 }
 
@@ -523,15 +526,12 @@ i {
 }
 
 .show-content-left {
-  /* max-width: 390px; */
-  min-width: 390px;
   padding-right: 60px;
 }
 
 .show-content-right {
-  max-width: 390px;
-  min-width: 390px;
-  height: 380px;
+  display: flex;
+  flex-direction: column;
   position: sticky;
   top: 115px;
   z-index: 0;
@@ -600,11 +600,8 @@ i {
 }
 
 
-
-
 .booking-module {
-  width: 100%;
-  height: 100%;
+  width: 350px;
   padding: 25px;
   border: 1px solid #eae8e8;  
 }
@@ -668,6 +665,39 @@ i {
   background: 0 0;
   height: 0px;
 }
+
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+.ledger{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #888888;
+  padding: 8px 0;
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid #eae8e8;
+  padding: 8px 0;
+  align-items: center;
+}
+.finalTotal {
+  justify-content: center;
+}
+.wave_money {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
 
 
 @media only screen and (max-width: 960px) {

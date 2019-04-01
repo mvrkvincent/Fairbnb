@@ -1,4 +1,4 @@
-/* .PresetDateRangePicker_panel {
+.PresetDateRangePicker_panel {
   padding: 0 22px 11px
 }
 .PresetDateRangePicker_button {
@@ -155,7 +155,9 @@
   height: 15px;
   width: 14px;
   vertical-align: middle
-} */
+}
+
+
 .DateRangePicker {
   position: relative;
   display: inline-block;
@@ -775,7 +777,7 @@
   background: #fff;
   position: relative;
   display: inline-block;
-  width: 130px;
+  width: 100px;
   vertical-align: middle
 }
 .DateInput__small {

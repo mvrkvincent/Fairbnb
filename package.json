@@ -11,6 +11,7 @@
     "jshint": "^2.10.2",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^20.1.0",

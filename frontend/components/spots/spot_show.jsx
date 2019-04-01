@@ -1,5 +1,6 @@
 import React from 'react';
 import BookingForm from '../bookings/booking_form_container';
+import BookingCalendar from '../bookings/booking_calendar_container';
 
 class SpotShow extends React.Component {
 
@@ -63,7 +64,7 @@ class SpotShow extends React.Component {
           <div className="availability">
               <div className="section-head">Availability</div>
               <div className="detail">Updated 2 days ago</div>
-              <div className="module"></div>
+              <BookingCalendar spot={this.props.spot}/>
           </div>
 
             <div className="map">
@@ -107,9 +108,6 @@ class SpotShow extends React.Component {
 
 
       </div>
-
-
-
     </div>
     );
   }

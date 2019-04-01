@@ -10,7 +10,8 @@ const msp = ({entities, session}) => ({
 
 const mdp = dispatch => ({
   formAction: booking => dispatch(createBooking(booking)),
-  requestLogin: () => dispatch(openModal('LOGIN'))
+  requestLogin: () => dispatch(openModal('LOGIN')),
+  confirmBooking: () => dispatch(openModal('BOOK'))
 });
 
 export default connect(msp, mdp)(BookingForm);
