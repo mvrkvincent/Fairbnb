@@ -5,8 +5,16 @@ import BookingForm from './booking_form';
 
 const msp = ({entities, session}) => ({
   currentUser: entities.users[session.id],
-  formType: 'Book'
-});
+  defaultState: {  startDate: null,
+                    endDate: null,
+                    focusedInput: null,
+                    num_guests: 1,
+                    host_id: 38,
+                    total_rate: null,
+                    status: 'pending',
+                    formType: 'Book'
+                  }
+  });
 
 const mdp = dispatch => ({
   formAction: booking => dispatch(createBooking(booking)),

@@ -528,14 +528,13 @@ i {
 .show-content-left {
   padding-right: 60px;
 }
-
+/* 
 .show-content-right {
-  display: flex;
-  flex-direction: column;
+  height: 380px;
   position: sticky;
-  top: 115px;
+  top: 165px;
   z-index: 0;
-}
+} */
 
 .name {
   margin-bottom: 30px;
@@ -601,6 +600,9 @@ i {
 
 
 .booking-module {
+  position: sticky;
+  top: 115px;
+  z-index: 0;
   width: 350px;
   padding: 25px;
   border: 1px solid #eae8e8;  

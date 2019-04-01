@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import { DateRangePicker } from 'react-dates';
 import 'react-dates/initialize';
 
@@ -8,15 +7,7 @@ class BookingForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      startDate: null,
-      endDate: null,
-      focusedInput: null,
-      num_guests: 1,
-      host_id: 38,
-      total_rate: null,
-      status: 'pending'
-    };
+    this.state = this.props.defaultState;
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.enforceLogin = this.enforceLogin.bind(this);
@@ -28,10 +19,14 @@ class BookingForm extends React.Component {
     this.props.requestLogin();
   }
 
+  clearValues() {
+    this.setState(this.props.defaultState);
+  }
+
   calculateTotal() {
     const rate = this.props.spot.rate;
     const days = this.state.endDate.diff(this.state.startDate, 'days', false);
-    const total = (rate * (days));
+    const total = (rate * (days + 1));
     return total;
   }
 
@@ -52,7 +47,10 @@ class BookingForm extends React.Component {
       status: this.state.status
     };
 
-    this.props.formAction(bookingInfo).then(this.props.confirmBooking());
+    this.props.formAction(bookingInfo)
+      .then(this.props.confirmBooking())
+      .then(this.clearValues())
+    ;
  
   }
 
@@ -73,17 +71,17 @@ class BookingForm extends React.Component {
     const rate = this.props.spot ? this.props.spot.rate : null;
     const bookAction = (this.props.currentUser) ? this.handleSubmit : this.enforceLogin;
     const currentTotal = (this.state.endDate) ? this.calculateTotal() : null;
-    const days = (this.state.endDate) ? this.state.endDate.diff(this.state.startDate, 'days', false) : null;
-    const s = days > 1 ? 's' : '';
+    const days = (this.state.endDate) ? (this.state.endDate.diff(this.state.startDate, 'days', false) + 1) : null;
     
     const calculator = (<div className="calculator">
                           <div className="ledger">
-                              <div><i className="fas fa-wave-square"></i>{rate} x {days} day{s}</div>
+                              <div><i className="fas fa-wave-square"></i>{rate} x {days} days</div>
                               <div><i className="fas fa-wave-square"></i>{currentTotal}</div>
                           </div>
                           <div className="total">
                             <div>Total</div>
-                            <div className ="wave_money"><i className="fas fa-wave-square"></i><div id="finalTotal">{currentTotal}</div></div>
+                            <div className ="wave_money"><i className="fas fa-wave-square"></i>
+                            <div id="finalTotal">{currentTotal}</div></div>
                           </div>
                         </div>)
 
