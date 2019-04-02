@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import moment from 'moment';
 import { DayPickerRangeController, isInclusivelyAfterDay } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
 
 class BookingCalendar extends React.Component {
 
