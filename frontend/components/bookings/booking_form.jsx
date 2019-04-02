@@ -44,7 +44,7 @@ class BookingForm extends React.Component {
       check_in: this.state.startDate._d,
       check_out: this.state.endDate._d,
       num_guests: this.state.num_guests,
-      host_id: this.state.host_id,
+      host_id: this.props.spot.host_id,
       spot_id: this.props.spot.id,
       total_rate: bookingTotal,
       status: this.state.status
@@ -54,7 +54,6 @@ class BookingForm extends React.Component {
       .then(this.props.confirmBooking())
       .then(this.clearValues())
     ;
- 
   }
 
   allowGuests(guests) {

@@ -33,7 +33,7 @@ class BookingConfirmation extends React.Component {
 };
 
 const msp = ({ session, entities }) => ({
-  currentUser: entities.users[session.id],
+  currentUser: entities.users[session.id]
 });
 
 const mdp = dispatch => ({

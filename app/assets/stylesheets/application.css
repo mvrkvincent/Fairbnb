@@ -723,6 +723,11 @@ i {
 
 @media only screen and (max-width: 960px) {
 
+  .calculator {
+   display: none;
+  }
+
+
   .show {
     margin-top: 0;
   }
@@ -801,9 +806,14 @@ i {
 
 @media only screen and (max-width: 1100px) {
 
+  .calculator {
+   display: none;
+  }
+
   .show-content {
     flex-direction: column-reverse;
     margin: 0;
+
   }
 
   .show-content-right {
@@ -815,8 +825,9 @@ i {
   .show-content-left {
     display: flex;
     flex-direction: column;
-    min-width: 400px;
+    min-width: 770px;
     margin: 0 20px;
+    padding: 0 50px;
   }
   .show-imgs {
     margin-bottom: 0px;
@@ -826,6 +837,7 @@ i {
     display: flex;
     flex-direction: row;
     width: 100%;
+    min-width: 1015px;
     position: sticky;
     top: 522px;
     z-index: 0;

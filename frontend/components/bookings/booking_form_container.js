@@ -9,7 +9,7 @@ const msp = ({entities, session}) => ({
                     endDate: null,
                     focusedInput: null,
                     num_guests: 1,
-                    host_id: 38,
+                    host_id: null,
                     total_rate: null,
                     status: 'pending',
                     formType: 'Book'
