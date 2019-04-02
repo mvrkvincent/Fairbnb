@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import { DateRangePicker } from 'react-dates';
 import 'react-dates/initialize';
 

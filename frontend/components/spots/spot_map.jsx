@@ -8,7 +8,7 @@ class SpotMap extends React.Component {
     const lat = this.props.lat;
     const lng = this.props.lng;
     const spot = { lat: lat, lng: lng };
-    debugger
+
     const map = new google.maps.Map( document.getElementById('spot-map'), { zoom: 16, center: spot });
     var marker = new google.maps.Marker({ position: spot, map: map });
 
