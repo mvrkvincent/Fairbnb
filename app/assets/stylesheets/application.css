@@ -609,13 +609,19 @@ i {
 .rate-head {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: baseline;
 }
 .rate {
   margin-right: 4px; 
   font-size: 25px;
   font-weight: 700;
+}
+
+.rate-amt {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 
 .rating {
@@ -851,6 +857,7 @@ i {
     flex-direction: column;
     width: 180px;
     min-width: 180px;
+    justify-content: center;
   }
   .booking-module .modal-form button {
     font-family: 'Montserrat', sans-serif;
