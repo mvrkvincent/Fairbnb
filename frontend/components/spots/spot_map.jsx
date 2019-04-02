@@ -10,6 +10,8 @@ class SpotMap extends React.Component {
     const map = new google.maps.Map( document.getElementById('spot-map'), { 
       zoom: 16, 
       center: spot,
+      mapTypeControl: false,
+      streetViewControl: false,
       styles: [
         {
           "featureType": "poi.business",

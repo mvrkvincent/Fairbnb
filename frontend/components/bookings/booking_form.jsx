@@ -1,6 +1,8 @@
 import React from 'react';
-import { DateRangePicker } from 'react-dates';
 import 'react-dates/initialize';
+import '../../../app/assets/stylesheets/_react_dates_override.css';
+import 'react-dates/lib/css/_datepicker.css';
+import { DateRangePicker } from 'react-dates';
 
 
 class BookingForm extends React.Component {

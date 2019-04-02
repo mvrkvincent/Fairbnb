@@ -1,3 +1,13 @@
+.DateRangePickerInput__withBorder {
+    border-radius: 0;
+    border: 0;
+}
+
+.DateRangePickerInput__withBorder div {
+    border-radius: 0px;
+    border: 0;
+}
+
 .PresetDateRangePicker_panel {
   padding: 0 22px 11px;
 }
@@ -156,7 +166,6 @@
   width: 14px;
   vertical-align: middle;
 }
-
 
 .DateRangePicker {
   position: relative;
@@ -681,6 +690,7 @@
   color: #cacccd;
 }
 .DateRangePickerInput {
+  border: 0;
   text-align: center;
   justify-content: space-between;
   width: 100%;
@@ -691,6 +701,7 @@
   background: #f2f2f2;
 }
 .DateRangePickerInput__withBorder {
+  border: 0;
   width: 100%;
 }
 .DateRangePickerInput__rtl {
@@ -705,7 +716,7 @@
 .DateRangePickerInput_arrow {
   margin: 0 25px;
   display: inline-block;
-  vertical-align: middle;
+  align-items: center;
 }
 .DateRangePickerInput_arrow_svg {
   vertical-align: middle;
@@ -800,7 +811,7 @@
   color: #585858;
   background-color: #fff;
   width: 100%;
-  /* padding: 13px 12px 11px; */
+  padding: 0px;
   border: 0;
   border-top: 0;
   border-right: 0;
@@ -857,4 +868,17 @@
 .DateInput_fangStroke {
   stroke: #dbdbdb;
   fill: transparent;
+}
+
+
+.DateInput input {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.form-field .DateRangePickerInput {
+  display: flex;
+  flex-direction: row;
+  border: 0;
 }

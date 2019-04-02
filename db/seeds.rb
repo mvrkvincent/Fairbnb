@@ -8,22 +8,21 @@
 
 Spot.delete_all
 
-User.create(email: 'smitty@number1.com', 
+user1 = User.create(email: 'smitty@number1.com', 
             fname: 'Smitty', 
             lname: 'Werbenjagermanjensen',
             password: 'Werbenjagermanjensen',
             img_url: 'https://vignette.wikia.nocookie.net/spongebob/images/f/f0/Smitty.jpg/revision/latest?cb=20160213220608'
             )
 
-User.create(email: 'bobby@xkcd.com', 
+user2 = User.create(email: 'bobby@xkcd.com', 
             fname: 'Bobby', 
             lname: 'Droptables',
             password: 'starwars'
             )
             
-# ---- EDIT BELOW ONLY ----
 
-Spot.create(host_id: 38,
+spot1 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 1', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -38,7 +37,7 @@ Spot.create(host_id: 38,
             num_baths: 1,
             )
 
-Spot.create(host_id: 38,
+spot2 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 2', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -54,7 +53,7 @@ Spot.create(host_id: 38,
             ) 
             
             
-Spot.create(host_id: 38,
+spot3 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 3', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -69,7 +68,7 @@ Spot.create(host_id: 38,
             num_baths: 2,
             )
 
-            Spot.create(host_id: 38,
+spot5 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 4', 
             accommodation: 'Private Room',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -84,7 +83,7 @@ Spot.create(host_id: 38,
             num_baths: 1,
             )
 
-Spot.create(host_id: 38,
+spot5 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 5', 
             accommodation: 'Shared Room',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -100,7 +99,7 @@ Spot.create(host_id: 38,
             ) 
             
             
-Spot.create(host_id: 38,
+spot6 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 6', 
             accommodation: 'Private Room',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -115,7 +114,7 @@ Spot.create(host_id: 38,
             num_baths: 1,
             )
 
-Spot.create(host_id: 38,
+spot7 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 7', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -130,7 +129,7 @@ Spot.create(host_id: 38,
             num_baths: 1,
             )
 
-Spot.create(host_id: 38,
+spot8 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 8', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -146,7 +145,7 @@ Spot.create(host_id: 38,
             ) 
             
             
-Spot.create(host_id: 38,
+spot9 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 9', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -163,7 +162,7 @@ Spot.create(host_id: 38,
             )
 
 
-Spot.create(host_id: 38,
+spot10 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 10', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -178,7 +177,7 @@ Spot.create(host_id: 38,
             num_baths: 1,
             )
 
-Spot.create(host_id: 38,
+spot11 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 11', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
@@ -194,7 +193,7 @@ Spot.create(host_id: 38,
             ) 
             
             
-Spot.create(host_id: 38,
+spot12 = Spot.create(host_id: user1.id,
             name: 'Lakeside Highrise 12', 
             accommodation: 'Entire Apartment',
             description: 'Steps from beer, bbq, and breakfast tacos',
