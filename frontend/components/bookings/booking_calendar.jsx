@@ -7,8 +7,11 @@ class BookingCalendar extends React.Component {
 
   constructor(props) {
     super(props);
-
-
+    this.state = {
+      startDate: moment(),
+      endDate: moment().add(3, 'd'),
+      focusedInput: null
+      };
   }
 
   isDayBooked() {
@@ -19,10 +22,13 @@ class BookingCalendar extends React.Component {
     return (
       <div style={{marginBottom: '20px'}}>
         <DayPickerRangeController
+          startDate={this.state.startDate}
+          endDate={this.state.endDate}
           numberOfMonths={2}
           isDayBlocked={this.isDayBooked}
           minimumNights={2}
           isOutsideRange={day => isInclusivelyAfterDay(moment(), day)}
+          onFocusChange={focusedInput => this.setState({ focusedInput })}
         />
       </div>
     )
