@@ -22,8 +22,9 @@ class SpotShow extends React.Component {
   render() {
     const { name, accommodation, rate, num_guests, num_beds, 
             num_baths, city, description, img_url, lat, lng } = this.props.spot || this.state;
-    const insertMap = lat ? <SpotMap lat={lat} lng={lng}/> : null;
-    
+    const spotMap = document.getElementById('spot-map');
+    const insertMap = spotMap ? <SpotMap lat={lat} lng={lng}/> : null;
+            debugger
     const s1 = num_guests > 1 ? 's' : '';
     const s2 = num_beds > 1 ? 's' : '';
     const s3 = num_baths > 1 ? 's' : '';
