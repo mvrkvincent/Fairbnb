@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_153547) do
+ActiveRecord::Schema.define(version: 2019_04_01_001711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "spot_id", null: false
+    t.integer "guest_id", null: false
+    t.integer "host_id", null: false
+    t.date "check_in", null: false
+    t.date "check_out", null: false
+    t.integer "num_guests", null: false
+    t.integer "total_rate", null: false
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spots", force: :cascade do |t|
+    t.integer "host_id", null: false
+    t.string "name", null: false
+    t.string "accommodation", null: false
+    t.integer "rate", null: false
+    t.integer "num_guests", null: false
+    t.integer "num_beds", null: false
+    t.integer "num_baths", null: false
+    t.string "img_url"
+    t.text "description"
+    t.string "city", null: false
+    t.string "address", null: false
+    t.float "lat", null: false
+    t.float "lng", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address"], name: "index_spots_on_address", unique: true
+    t.index ["city"], name: "index_spots_on_city"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false

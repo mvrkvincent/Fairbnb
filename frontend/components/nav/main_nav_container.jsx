@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { logout, login } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
@@ -12,7 +11,7 @@ const mdp = dispatch => ({
   signup: () => dispatch(openModal('SIGNUP')),
   login: () => dispatch(openModal('LOGIN')),
   logout: () => dispatch(logout()),
-  demo: () => dispatch(login({email: 'smitty@no1.com', password: 'Warbenjagermanjensen' })), 
+  demo: () => dispatch(login({ email: 'smitty@number1.com', password: 'Werbenjagermanjensen' })), 
   about: () => dispatch(openModal('ABOUT'))
 });
 

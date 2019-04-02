@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import LoginContainer from '../session/login_container';
 import SignupContainer from '../session/signup_container';
-import About from '../nav/about';
+import About from '../modal/about';
+import BookingConfirmation from '../modal/booking_confirmation';
 
 const Modal = ({modal, closeModal}) => {
 
@@ -23,6 +24,10 @@ const Modal = ({modal, closeModal}) => {
     }
     case 'ABOUT': {
       form = <About />
+      break;
+    }
+    case 'BOOK': {
+      form = <BookingConfirmation />
       break;
     }
     default: return null;
