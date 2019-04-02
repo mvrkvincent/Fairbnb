@@ -263,7 +263,7 @@
   color: #757575;
   position: absolute;
   top: 62px;
-  z-index: 2;
+  z-index: 1;
   padding: 0 13px 5px 13px;
   text-align: left
 }

@@ -136,9 +136,9 @@ class BookingForm extends React.Component {
 
           {bookingCost}
 
-          <button>Book</button>
-          <div id="book-text">Your credits will be deducted at check-in</div>
+          <div><button>Book</button></div>
         </form>
+          <div id="book-text">Your credits will be deducted at check-in</div>
 
       </div>
     )

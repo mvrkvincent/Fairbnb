@@ -24,7 +24,7 @@
   top: 0;
   width: 100%;
   background-color: #FFFFFF;
-  z-index: 1;
+  z-index: 3;
 }
 
 .content {
@@ -580,14 +580,16 @@ i {
 }
 
 
-.module{
+.module {
   height: 300px;
   width: 100%;
   margin: 15px 0;
   border: 1px solid #eae8e8;  
 }
 
-
+.map {
+  margin-bottom: 20px;
+}
 
 .reviews i {
   color: #008489;
@@ -796,35 +798,67 @@ i {
 }
 
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 1100px) {
 
   .show-content {
     flex-direction: column-reverse;
-    margin: 20px 50px;
+    margin: 0;
   }
 
   .show-content-right {
     display: flex;
-    justify-content: center;
+    min-width: 550px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eae8e8; 
   }
   
   .show-content-left {
+    display: flex;
+    flex-direction: column;
     min-width: 400px;
+    margin: 0 20px;
+  }
+  .show-imgs {
+    margin-bottom: 0px;
   }
 
   .booking-module {
     width: 100%;
-    min-width: 400px;
     position: relative;
     top: 0px;
     z-index: 0;
     padding: 25px;
-    border: 1px solid #eae8e8;  
-    margin-bottom: 20px;
+    border: none;
+    margin-bottom: 0px;
+  }
+
+  .booking-module .modal-form button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 16px;
+    margin: 0;
+    height: 52px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .booking-form .modal-form {
+    display: flex;
+    align-items: center;
+    height: 80px;
+  }
+
+  .booking-form .modal-form .field-wrapper {
+    margin-right: 16px;
+  }
+
+  #book-text {
+    text-align: left;
   }
 
 
 }
+
+
 
 @media only screen and (max-width: 740px) {
 

@@ -1,22 +1,29 @@
 import React from 'react';
+import 'react-dates/initialize';
 import BookingForm from '../bookings/booking_form_container';
 import BookingCalendar from '../bookings/booking_calendar';
-import 'react-dates/initialize';
+import SpotMap from './spot_map';
 
 class SpotShow extends React.Component {
 
+  constructor(props) {
+    super(props);
+      this.state = {
+        name: null, accommodation: null, rate: null, num_guests: null, num_beds: null,
+        num_baths: null, city: null, description: null, img_url: null, lat: null, lng: null
+      };
+  }
+
   componentDidMount() {
-    this.props.fetchSpot(this.props.match.params.spotId);
+    const spot = this.props.fetchSpot(this.props.match.params.spotId);
+    this.setState(spot);
   }
 
   render() {
-    const defaultSpot = {
-      name: null, accommodation: null, rate: null, num_guests: null, num_beds: null,
-      num_baths: null, city: null, description: null, img_url: null};
+    const { name, accommodation, rate, num_guests, num_beds, 
+            num_baths, city, description, img_url, lat, lng } = this.props.spot || this.state;
+    const insertMap = lat ? <SpotMap lat={lat} lng={lng}/> : null;
     
-      const { name, accommodation, rate, num_guests, num_beds, 
-            num_baths, city, description, img_url } = this.props.spot || defaultSpot;
-
     const s1 = num_guests > 1 ? 's' : '';
     const s2 = num_beds > 1 ? 's' : '';
     const s3 = num_baths > 1 ? 's' : '';
@@ -71,7 +78,7 @@ class SpotShow extends React.Component {
             <div className="map">
               <div className="section-head">The Neighborhood</div>
               <div className="detail">Take a look around {city}</div>
-              <div className="module"></div>
+              <div className="module" id="spot-map">{insertMap}</div>
               Exact location information is provided after a booking is confirmed.
             </div>
 
@@ -84,7 +91,7 @@ class SpotShow extends React.Component {
               <i className="far fa-star"></i>
               <i className="far fa-star"></i>
             </div>
-            </div>
+            </div>`
           </div>
         </div>
 
