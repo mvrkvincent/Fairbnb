@@ -4,16 +4,13 @@
     <title>Fairbnb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded|Montserrat|Sriracha" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <script id="bootstrap-img" type="text/javascript">
-      window.stockImg = "<%= image_path('austin_bed.jpg') %>"
-    </script>
+    <%= favicon_link_tag asset_path('Logo.png'), :rel => 'icon', :type =>  'image/png' %>
     <% if logged_in? %>
         <script type="text/javascript">
           window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { DayPickerRangeController } from 'react-dates';
 import 'react-dates/initialize';
-import PropTypes from 'prop-types';
 
 
 class BookingForm extends React.Component {
@@ -22,10 +21,14 @@ class BookingForm extends React.Component {
     return (
       <div>
         <DayPickerRangeController
-          startDate={this.state.startDate} 
-          endDate={this.state.endDate} 
+          noBorder
+          startDate={this.state.startDate}
+          endDate={this.state.endDate}
+          numberOfMonths={2}
+          onPrevMonthClick={DayPickerRangeController.onPrevMonthClick}
+          onNextMonthClick={DayPickerRangeController.onNextMonthClick}
           onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-          focusedInput={this.state.focusedInput}
+          focusedInput={null}
           onFocusChange={focusedInput => this.setState({ focusedInput })}
         />
       </div>

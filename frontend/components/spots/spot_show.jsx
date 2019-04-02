@@ -105,9 +105,8 @@ class SpotShow extends React.Component {
           </div>
         </div>
 
-
-
       </div>
+
     </div>
     );
   }

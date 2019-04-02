@@ -528,13 +528,6 @@ i {
 .show-content-left {
   padding-right: 60px;
 }
-/* 
-.show-content-right {
-  height: 380px;
-  position: sticky;
-  top: 165px;
-  z-index: 0;
-} */
 
 .name {
   margin-bottom: 30px;
@@ -657,6 +650,19 @@ i {
   width: 100%;
 }
 
+.booking-form select {
+  background: none;
+  height: 28px
+}
+
+.booking-form select > option {
+  background-color: #FFFFFF;
+}
+
+.booking-form select:focus {
+  outline: none;
+}
+
 .arrow {
   height: 100%;
   margin: 0 10px;
@@ -679,14 +685,15 @@ i {
   flex-direction: row;
   justify-content: space-between;
   color: #888888;
+  border-bottom: 1px solid #eae8e8;
   padding: 8px 0;
+  align-items: center;
 }
 
 .total {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 1px solid #eae8e8;
   padding: 8px 0;
   align-items: center;
 }
@@ -698,6 +705,13 @@ i {
   flex-direction: row;
   align-items: center;
 }
+
+#book-text {
+  font-size: 12px;
+  text-align: center;
+  font-weight: 900;
+}
+
 
 
 
@@ -720,6 +734,17 @@ i {
 
   .spot-index {
     margin-top: 180px;
+  }
+
+  .spot-img {
+    width: 300px;
+    height: 300px;
+    min-width: 220px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    margin-bottom: 15px;
   }
 
   #logo-search {
@@ -766,13 +791,54 @@ i {
     width: 400px;
   }
 
+}
+
+
+@media only screen and (max-width: 830px) {
+
+  .show-content {
+    flex-direction: column-reverse;
+    margin: 20px 50px;
+  }
+
   .show-content-right {
-  max-width: 390px;
-  min-width: 390px;
-  height: 380px;
-  position: sticky;
-  top: 165px;
-  z-index: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .show-content-left {
+    min-width: 400px;
+  }
+
+  .booking-module {
+    width: 100%;
+    min-width: 400px;
+    position: relative;
+    top: 0px;
+    z-index: 0;
+    padding: 25px;
+    border: 1px solid #eae8e8;  
+    margin-bottom: 20px;
+  }
+
+
+}
+
+@media only screen and (max-width: 740px) {
+
+  .spot-item {
+    max-width: 500px;
+  }
+
+  .spot-img {
+    width: 500px;
+    height: 400px;
+    min-width: 220px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    margin-bottom: 15px;
   }
 
 }
