@@ -589,6 +589,7 @@ i {
 
 .map {
   margin-bottom: 20px;
+  max-width: 620px;
 }
 
 .reviews i {
@@ -806,8 +807,7 @@ i {
   }
 
   .show-content-right {
-    display: flex;
-    min-width: 550px;
+    min-width: 560px;
     margin-bottom: 20px;
     border-bottom: 1px solid #eae8e8; 
   }
@@ -823,15 +823,23 @@ i {
   }
 
   .booking-module {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    position: relative;
-    top: 0px;
+    position: sticky;
+    top: 522px;
     z-index: 0;
-    padding: 25px;
+    padding: 10px 25px;
     border: none;
     margin-bottom: 0px;
   }
 
+  .rate-head {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    min-width: 180px;
+  }
   .booking-module .modal-form button {
     font-family: 'Montserrat', sans-serif;
     padding: 0 16px;
@@ -841,10 +849,19 @@ i {
     outline: none;
   }
 
+  .booking-form {
+    display: flex;
+    flex-direction: row;
+  }
+
   .booking-form .modal-form {
+    min-width: 560px;
+    border: 0;
     display: flex;
     align-items: center;
     height: 80px;
+    padding: 0;
+    margin: 0;
   }
 
   .booking-form .modal-form .field-wrapper {
@@ -852,7 +869,7 @@ i {
   }
 
   #book-text {
-    text-align: left;
+    visibility: hidden;
   }
 
 
