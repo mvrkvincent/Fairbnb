@@ -253,7 +253,8 @@
 }
 .DayPicker_weekHeaders {
   font-family: 'Montserrat', sans-serif;
-  position: relative
+  position: relative;
+  padding-bottom: 5px;
 }
 .DayPicker_weekHeaders__horizontal {
   margin-left: 9px
@@ -263,7 +264,7 @@
   position: absolute;
   top: 62px;
   z-index: 2;
-  padding: 0 13px;
+  padding: 0 13px 5px 13px;
   text-align: left
 }
 .DayPicker_weekHeader__vertical {
@@ -335,30 +336,30 @@
 }
 .DayPickerKeyboardShortcuts_show__bottomRight {
   border-top: 26px solid transparent;
-  border-right: 33px solid #00a699;
+  border-right: 33px solid #FFFFFF;
   bottom: 0;
   right: 0
 }
 .DayPickerKeyboardShortcuts_show__bottomRight:hover {
-  border-right: 33px solid #008489
+  border-right: 33px solid #FFFFFF
 }
 .DayPickerKeyboardShortcuts_show__topRight {
   border-bottom: 26px solid transparent;
-  border-right: 33px solid #00a699;
+  border-right: 33px solid #FFFFFF;
   top: 0;
   right: 0
 }
 .DayPickerKeyboardShortcuts_show__topRight:hover {
-  border-right: 33px solid #008489
+  border-right: 33px solid #FFFFFF
 }
 .DayPickerKeyboardShortcuts_show__topLeft {
   border-bottom: 26px solid transparent;
-  border-left: 33px solid #00a699;
+  border-left: 33px solid #FFFFFF;
   top: 0;
   left: 0
 }
 .DayPickerKeyboardShortcuts_show__topLeft:hover {
-  border-left: 33px solid #008489
+  border-left: 33px solid #FFFFFF
 }
 .DayPickerKeyboardShortcuts_showSpan {
   color: #fff;
@@ -523,7 +524,7 @@
 .CalendarMonthGrid {
   background: #fff;
   text-align: left;
-  z-index: 0
+  z-index: 0;
 }
 .CalendarMonthGrid__animating {
   z-index: 1
@@ -585,7 +586,8 @@
   box-sizing: border-box;
   cursor: pointer;
   font-size: 14px;
-  text-align: center
+  text-align: center;
+  padding-top: 5px;
 }
 .CalendarDay:active {
   outline: 0

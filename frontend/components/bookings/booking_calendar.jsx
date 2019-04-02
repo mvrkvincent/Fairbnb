@@ -1,39 +1,42 @@
+import { connect } from 'react-redux';
 import React from 'react';
-import { DayPickerRangeController } from 'react-dates';
-import 'react-dates/initialize';
+import moment from 'moment';
+import { DayPickerRangeController, isInclusivelyAfterDay } from 'react-dates';
 
-
-class BookingForm extends React.Component {
+class BookingCalendar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      startDate: null,
-      endDate: null,
-      focusedInput: null,
-    };
 
 
   }
 
-  render() {
+  isDayBooked() {
+    return null;
+  }
 
+  render() {
     return (
-      <div>
+      <div style={{marginBottom: '20px'}}>
         <DayPickerRangeController
-          noBorder
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
           numberOfMonths={2}
-          onPrevMonthClick={DayPickerRangeController.onPrevMonthClick}
-          onNextMonthClick={DayPickerRangeController.onNextMonthClick}
-          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-          focusedInput={null}
-          onFocusChange={focusedInput => this.setState({ focusedInput })}
+          isDayBlocked={this.isDayBooked}
+          minimumNights={2}
+          isOutsideRange={day => isInclusivelyAfterDay(moment(), day)}
         />
       </div>
     )
   };
 };
 
-export default BookingForm;
+
+const msp = ({ entities, session }) => ({
+  currentUser: entities.users[session.id],
+  // availability: entities.booking.id
+});
+
+const mdp = dispatch => ({
+  formAction: booking => dispatch(createBooking(booking)),
+});
+
+export default connect(msp, mdp)(BookingCalendar);

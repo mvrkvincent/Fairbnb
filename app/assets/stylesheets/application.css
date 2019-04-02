@@ -158,9 +158,10 @@
 
 .user-img {
   display: flex;
-  height: 80px;
+  height: 75px;
   margin-right: 10px;
   align-items: center;
+
 }
 
 .user-img:hover {
@@ -184,8 +185,8 @@
   border: none;
 }
 
-
 .modal-background {
+  transition:500ms ease-in;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -197,7 +198,8 @@
 
 .modal {
 
-    position: absolute;
+  transition: 500ms ease-in;
+  position: absolute;
   display: flex;
   justify-content: center;
   flex-direction: column;

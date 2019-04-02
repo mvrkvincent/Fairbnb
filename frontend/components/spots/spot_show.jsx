@@ -1,6 +1,7 @@
 import React from 'react';
 import BookingForm from '../bookings/booking_form_container';
-import BookingCalendar from '../bookings/booking_calendar_container';
+import BookingCalendar from '../bookings/booking_calendar';
+import 'react-dates/initialize';
 
 class SpotShow extends React.Component {
 
