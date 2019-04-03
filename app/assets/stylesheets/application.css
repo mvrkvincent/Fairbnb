@@ -323,6 +323,7 @@
   border: 1px solid #eae8e8;
   border-radius: 5px;
   width: 100%;
+  min-width: 80px;
 }
 
 .form-input {
