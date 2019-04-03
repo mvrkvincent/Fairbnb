@@ -13,6 +13,7 @@ class BookingConfirmation extends React.Component {
     this.state = currentBooking;
     this.handleCancel = this.handleCancel.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
+
   }
 
   handleCancel(e) {
@@ -26,29 +27,31 @@ class BookingConfirmation extends React.Component {
   handleConfirm(e) {
     e.preventDefault();
     this.setState({status: 'confirmed'}, () => this.props.confirmBooking(this.state));
+    this.props.closeModal();
   }
-
 
   render() {
 
-    const { currentUser, bookings } = this.props;
+    const { currentUser, bookings, spots } = this.props;
+    const currentSpot = spots[this.state.spot_id];
     const currentBooking = bookings[bookings.length - 1];
+    const spotImg = { backgroundImage: `url(${currentSpot.img_url})` };
     const nameText = {fontWeight: '900'};
     return (
       <div className="modal">
-        <div onClick={closeModal} className="close">X</div>
-
-        <div id="form-type">You're all set, <span style={nameText}>{currentUser.fname}</span>!</div>
+        <div id="form-type"><span></span>You're all set, <span style={nameText}>{currentUser.fname}</span>!</div>
+        <div className="spot-img" style={spotImg}></div>
         <div className="modal-form">
-            <div className="detail" id="confirmation">
-              <div>Confirmation: #{currentBooking.id}</div>
+            <div className="conf-detail" id="confirmation">
+              <div>Booking Number:</div>
+                <div style={nameText}>{currentBooking.id}</div>
               <div>Check In: {currentBooking.check_in}</div>
               <div>Check Out: {currentBooking.check_out}</div>
             </div>
             <div className="conf-buttons">
                 <button className="confirm" onClick={this.handleConfirm}>Confirm</button>
                 <button className="cancel" onClick={this.handleCancel}>Cancel</button>
-          </div>
+            </div>
         </div>
         <div>
         </div>
@@ -60,6 +63,7 @@ class BookingConfirmation extends React.Component {
 };
 
 const msp = ({ session, entities }) => ({
+  spots: entities.spots,
   currentUser: entities.users[session.id],
   bookings: Object.values(entities.bookings)
 });

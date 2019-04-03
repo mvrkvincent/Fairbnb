@@ -50,15 +50,14 @@ class BookingForm extends React.Component {
       status: 'pending'
     };
 
-    this.setState({status: 'pending'}, () => this.props.formAction(bookingInfo));
+    this.setState(bookingInfo, () => this.props.formAction(bookingInfo));
   }
 
   componentDidUpdate() {
-
     if (this.state.status  === 'pending') {
-      this.props.fetchBookings().then(this.setState({status:'received'}));
+      this.setState({status:'received'});
     } else if (this.state.status === 'received') {
-      this.setState({status: 'approved'});
+      this.setState({status: 'approved'}, () => this.props.fetchSpot(this.state.spot_id));
     } else if (this.state.status ===  'approved' && this.props.bookings[0]) {
       this.setState({status: 'open'}, () => this.props.confirmBooking());
       this.clearValues();
@@ -87,7 +86,7 @@ class BookingForm extends React.Component {
   // }
 
   render() {
-    // debugger
+
     const guestFee = this.state.num_guests > 1 ? 1 : 0;
     const rate = this.props.spot ? this.props.spot.rate : null;
     const guests = this.props.spot ? this.props.spot.num_guests : null;

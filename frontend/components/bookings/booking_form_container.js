@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { createBooking, updateBooking } from '../../actions/booking_actions';
 import { openModal } from '../../actions/modal_actions';
 import BookingForm from './booking_form';
-import { fetchBookings } from '../../actions/booking_actions';
+import { fetchSpot } from '../../actions/spot_actions';
 
 const msp = ({entities, session}) => ({
   currentUser: entities.users[session.id],
@@ -23,8 +23,7 @@ const mdp = dispatch => ({
   formAction: booking => dispatch(createBooking(booking)),
   requestLogin: () => dispatch(openModal('LOGIN')),
   confirmBooking: () => dispatch(openModal('BOOK')),
-  fetchBookings: () => dispatch(fetchBookings()),
-  updateBooking: (booking) => dispatch(updateBooking(booking))
+  fetchSpot: id => dispatch(fetchSpot(id))
 });
 
 export default connect(msp, mdp)(BookingForm);
