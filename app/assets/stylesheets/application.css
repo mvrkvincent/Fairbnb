@@ -723,6 +723,26 @@ i {
   font-weight: 900;
 }
 
+.modal-form .confirm {
+  background-color: #008489;
+  margin: 0;
+}
+
+.modal-form .cancel {
+  margin: 0;
+}
+.conf-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+  align-content: center;
+}
+
+.conf-buttons button {
+  width: 230px;
+  margin: 0;
+}
 
 
 

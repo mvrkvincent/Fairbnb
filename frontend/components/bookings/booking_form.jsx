@@ -50,10 +50,19 @@ class BookingForm extends React.Component {
       status: this.state.status
     };
 
-    this.props.formAction(bookingInfo)
-      .then(this.props.confirmBooking())
-      .then(this.clearValues())
-    ;
+    this.props.formAction(bookingInfo).then(this.setState({ status: 'pending' }));
+  }
+
+  componentDidUpdate() {
+    if (this.state.status  === 'pending') {
+      this.props.fetchBookings().then(this.setState({status:'received'}));
+    } else if (this.state.status === 'received') {
+      this.setState({status: 'approved'});
+    } else if (this.state.status ===  'approved' && this.props.bookings[0]) {
+      this.setState({status: 'confirmed'});
+      this.props.confirmBooking();
+      this.clearValues();
+    }
   }
 
   allowGuests(guests) {
@@ -78,6 +87,7 @@ class BookingForm extends React.Component {
   // }
 
   render() {
+    // debugger
     const guestFee = this.state.num_guests > 1 ? 1 : 0;
     const rate = this.props.spot ? this.props.spot.rate : null;
     const guests = this.props.spot ? this.props.spot.num_guests : null;
