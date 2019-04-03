@@ -23,7 +23,8 @@ export const createBooking = booking => (
 export const updateBooking = booking => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/bookings/${booking.id}`
+    url: `/api/bookings/${booking.id}`,
+    data: { booking }
   })
 );
 

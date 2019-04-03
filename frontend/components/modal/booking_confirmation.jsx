@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
-import { deleteBooking, fetchBookings } from '../../actions/booking_actions';
+import { deleteBooking, fetchBookings, updateBooking } from '../../actions/booking_actions';
 
 class BookingConfirmation extends React.Component {
 
 
   constructor(props) {
     super(props);
-
+    const bookings = this.props.bookings;
+    const currentBooking = bookings[bookings.length - 1];
+    this.state = currentBooking;
     this.handleCancel = this.handleCancel.bind(this);
     this.handleConfirm = this.handleConfirm.bind(this);
   }
@@ -24,10 +25,12 @@ class BookingConfirmation extends React.Component {
 
   handleConfirm(e) {
     e.preventDefault();
-    this.props.closeModal();
+    this.setState({status: 'confirmed'}, () => this.props.confirmBooking(this.state));
   }
 
+
   render() {
+
     const { currentUser, bookings } = this.props;
     const currentBooking = bookings[bookings.length - 1];
     const nameText = {fontWeight: '900'};
@@ -64,7 +67,8 @@ const msp = ({ session, entities }) => ({
 const mdp = dispatch => ({
   closeModal: () => dispatch(closeModal()),
   cancelBooking: id => dispatch(deleteBooking(id)),
-  fetchBookings: () => dispatch(fetchBookings())
+  fetchBookings: () => dispatch(fetchBookings()), 
+  confirmBooking: booking => dispatch(updateBooking(booking))
 });
 
 export default connect(msp, mdp)(BookingConfirmation);
