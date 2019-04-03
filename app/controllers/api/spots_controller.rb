@@ -32,7 +32,7 @@ class Api::SpotsController < ApplicationController
 #     @spot = current_user.spots.find(params[:id])
 #   end
 
-#   private
+  private
 
   def spot_params
     params.require(:spot).permit( :host_id, :name, :accommodation, :rate, :num_guests, :num_beds, 
