@@ -14,9 +14,7 @@
  *= require_self
  */
 
-.main {
-  height: 100%;
-}
+
 
 .navBar{
   min-width: 960px;
@@ -770,6 +768,7 @@ i {
 
 
   .show {
+    width: 100%;
     margin-top: 0;
   }
 
@@ -871,7 +870,6 @@ i {
   .show-content-left {
     display: flex;
     flex-direction: column;
-    min-width: 770px;
     margin: 0 20px;
     padding: 0 50px;
   }
@@ -883,8 +881,6 @@ i {
   .booking-module {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    min-width: 1015px;
     position: sticky;
     top: 522px;
     z-index: 0;

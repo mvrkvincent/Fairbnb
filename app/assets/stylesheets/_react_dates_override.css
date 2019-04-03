@@ -555,6 +555,7 @@
 .CalendarMonthGrid {
   background: #fff;
   text-align: left;
+  width: 618px;
   z-index: 0;
 }
 .CalendarMonthGrid__animating {
