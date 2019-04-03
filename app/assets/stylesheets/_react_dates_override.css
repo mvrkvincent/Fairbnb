@@ -327,66 +327,80 @@
   background: 0 0;
   border: 0;
   border-radius: 0;
-  color: inherit;
+  color: #FFFFFF;
   font: inherit;
   line-height: normal;
   overflow: visible;
   padding: 0;
   cursor: pointer;
   font-size: 14px;
+  display: none;
 }
 .DayPickerKeyboardShortcuts_buttonReset:active {
+  display: none;
   outline: 0;
 }
 .DayPickerKeyboardShortcuts_show {
+  display: none;
   width: 22px;
   position: absolute;
   z-index: 2;
 }
 .DayPickerKeyboardShortcuts_show__bottomRight {
+  display: none;
   border-top: 26px solid transparent;
   border-right: 33px solid #FFFFFF;
   bottom: 0;
   right: 0;
 }
 .DayPickerKeyboardShortcuts_show__bottomRight:hover {
+  display: none;
   border-right: 33px solid #FFFFFF;
 }
 .DayPickerKeyboardShortcuts_show__topRight {
+  display: none;
   border-bottom: 26px solid transparent;
   border-right: 33px solid #FFFFFF;
   top: 0;
   right: 0;
 }
 .DayPickerKeyboardShortcuts_show__topRight:hover {
+  display: none;
   border-right: 33px solid #FFFFFF;
 }
 .DayPickerKeyboardShortcuts_show__topLeft {
+  display: none;
   border-bottom: 26px solid transparent;
   border-left: 33px solid #FFFFFF;
   top: 0;
   left: 0;
 }
 .DayPickerKeyboardShortcuts_show__topLeft:hover {
+  display: none;
   border-left: 33px solid #FFFFFF;
 }
 .DayPickerKeyboardShortcuts_showSpan {
+  display: none;
   color: #fff;
   position: absolute;
 }
 .DayPickerKeyboardShortcuts_showSpan__bottomRight {
+  display: none;
   bottom: 0;
   right: -28px;
 }
 .DayPickerKeyboardShortcuts_showSpan__topRight {
+  display: none;
   top: 1px;
   right: -28px;
 }
 .DayPickerKeyboardShortcuts_showSpan__topLeft {
+  display: none;
   top: 1px;
   left: -28px;
 }
 .DayPickerKeyboardShortcuts_panel {
+  display: none;
   overflow: auto;
   background: #fff;
   border: 1px solid #dbdbdb;
@@ -401,31 +415,37 @@
   margin: 33px;
 }
 .DayPickerKeyboardShortcuts_title {
+  display: none;
   font-size: 16px;
   font-weight: 700;
   margin: 0;
 }
 .DayPickerKeyboardShortcuts_list {
+  display: none;
   list-style: none;
   padding: 0;
   font-size: 14px;
 }
 .DayPickerKeyboardShortcuts_close {
+  display: none;
   position: absolute;
   right: 22px;
   top: 22px;
   z-index: 2;
 }
 .DayPickerKeyboardShortcuts_close:active {
+  display: none;
   outline: 0;
 }
 .DayPickerKeyboardShortcuts_closeSvg {
+  display: none;
   height: 15px;
   width: 15px;
   fill: #cacccd;
 }
 .DayPickerKeyboardShortcuts_closeSvg:focus,
 .DayPickerKeyboardShortcuts_closeSvg:hover {
+  display: none;
   fill: #82888a;
 }
 .KeyboardShortcutRow {
@@ -433,9 +453,11 @@
   margin: 6px 0;
 }
 .KeyboardShortcutRow__block {
+  display: none;
   margin-bottom: 16px;
 }
 .KeyboardShortcutRow_keyContainer {
+  display: none;
   display: inline-block;
   white-space: nowrap;
   text-align: right;

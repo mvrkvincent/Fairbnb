@@ -772,6 +772,10 @@ i {
     margin-top: 180px;
   }
 
+  .user-img:hover {
+    border: 0;
+  }
+
   .spot-img {
     width: 300px;
     height: 300px;
@@ -827,6 +831,7 @@ i {
     width: 400px;
   }
 
+
 }
 
 
@@ -857,6 +862,7 @@ i {
   }
   .show-imgs {
     margin-bottom: 0px;
+    width: 100%;
   }
 
   .booking-module {

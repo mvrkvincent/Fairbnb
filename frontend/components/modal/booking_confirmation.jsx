@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
-import { deleteBooking } from '../../actions/booking_actions';
+import { deleteBooking, fetchBookings } from '../../actions/booking_actions';
 
 class BookingConfirmation extends React.Component {
 
@@ -11,7 +11,7 @@ class BookingConfirmation extends React.Component {
     super(props);
 
     this.handleCancel = this.handleCancel.bind(this);
-
+    this.handleConfirm = this.handleConfirm.bind(this);
   }
 
   handleCancel(e) {
@@ -19,11 +19,16 @@ class BookingConfirmation extends React.Component {
     const bookings = this.props.bookings;
     const currentBooking = bookings[bookings.length - 1];
 
-    this.props.cancelBooking(currentBooking.id);
+    this.props.cancelBooking(currentBooking.id).then(this.props.closeModal());
+  }
+
+  handleConfirm(e) {
+    e.preventDefault();
+    this.props.closeModal();
   }
 
   render() {
-    const { currentUser, bookings, closeModal } = this.props;
+    const { currentUser, bookings } = this.props;
     const currentBooking = bookings[bookings.length - 1];
     const nameText = {fontWeight: '900'};
     return (
@@ -38,7 +43,7 @@ class BookingConfirmation extends React.Component {
               <div>Check Out: {currentBooking.check_out}</div>
             </div>
             <div className="conf-buttons">
-                <button className="confirm" onClick={closeModal}>Confirm</button>
+                <button className="confirm" onClick={this.handleConfirm}>Confirm</button>
                 <button className="cancel" onClick={this.handleCancel}>Cancel</button>
           </div>
         </div>
@@ -58,7 +63,8 @@ const msp = ({ session, entities }) => ({
 
 const mdp = dispatch => ({
   closeModal: () => dispatch(closeModal()),
-  cancelBooking: id => dispatch(deleteBooking(id))
+  cancelBooking: id => dispatch(deleteBooking(id)),
+  fetchBookings: () => dispatch(fetchBookings())
 });
 
 export default connect(msp, mdp)(BookingConfirmation);
