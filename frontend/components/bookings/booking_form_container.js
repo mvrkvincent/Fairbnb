@@ -13,9 +13,8 @@ const msp = ({entities, session}) => ({
                   num_guests: 1,
                   host_id: null,
                   total_rate: null,
-                  status: 'open',
                   formType: 'Book',
-                  currentBooking: null
+                  request: 'in progress'
                 }
   });
 

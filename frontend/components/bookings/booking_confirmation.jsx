@@ -26,6 +26,7 @@ class BookingConfirmation extends React.Component {
 
   handleConfirm(e) {
     e.preventDefault();
+    debugger
     this.setState({status: 'confirmed'}, () => this.props.confirmBooking(this.state));
     this.props.closeModal();
   }

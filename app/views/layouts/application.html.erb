@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBnhc4rfW4wlW-ubS9o_BLlvqhS49Dc6zM" %>
+
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded|Montserrat|Sriracha" rel="stylesheet">
 
     <link 
@@ -15,6 +15,12 @@
         crossorigin="anonymous">
     
     <%= favicon_link_tag asset_path('Logo.png'), :rel => 'icon', :type =>  'image/png' %>
+
+    <script type="text/javascript">
+      window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"
+    </script>
+
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}" %>
     
     <% if logged_in? %>
         <script type="text/javascript">
