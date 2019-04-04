@@ -1,25 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { searchCity } from '../../actions/search_actions';
+import { Object } from 'es6-shim';
 
 
 class SearchBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = this.props.city;
+    this.state = {  city: '',
+                    options: []
+                  };
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   handleInput(field) {
-    return e => this.setState({ [field]: e.target.value });
+    return e => this.setState({ [field]: e.target.value }, () => this.fetchOptions());
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.searchCity(this.state);
+    debugger
+    if (this.state.options.includes(this.state.city)) {
+        this.props.searchCity(this.state.city);
+    } else {
+      this.props.searchCity('');
+    }
+  }
+
+  fetchOptions() {
+    const cityList = this.props.spots.map(spot => spot.city);
+    const optionsList = [...new Set(cityList)];
+    this.setState({options: optionsList});
   }
 
   render() {
@@ -43,8 +58,8 @@ class SearchBar extends React.Component {
 }
 
 
-const msp = state => ({
-  city: { city: '' }
+const msp = ({ entities }) => ({
+  spots: Object.values(entities.spots)
 })
 
 const mdp = dispatch => ({
