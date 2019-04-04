@@ -11,6 +11,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {  city: '',
                     options: [],
+                    search: 'Search'
                   };
 
     this.handleInput = this.handleInput.bind(this);
@@ -23,14 +24,19 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
-    const pathName = this.state.city.split(' ').join('_');
+    const cityName = this.state.city;
+    const pathName = cityName.split(' ').map(part => (part[0].toUpperCase() + part.slice(1))).join('_');
+    const searchText = pathName.split('_').join(' ');
     e.preventDefault();
     if (this.state.options.includes(this.state.city.toLowerCase())) {
       this.props.searchCity(this.state.city.toLowerCase());
       this.props.history.push(`/${pathName}`);
+      this.setState({ search: `Searching in ${searchText}`, city: '' });
     } else {
+      
       this.props.searchCity('');
       this.props.history.push('/');
+      this.setState({search: `No Spots in ${searchText}`, city: ''});
     }
   }
 
@@ -48,11 +54,12 @@ class SearchBar extends React.Component {
           <input
           type="text"
           className="search-input"
-          placeholder="Search"
+          placeholder={this.state.search}
           value={this.state.city}
           onChange={this.handleInput('city')} />
           <input type="submit" style={{display: "none"}}value="submit"/>
         </form>
+        {/* {this.state.searchError} */}
     </div>
 
     )

@@ -118,7 +118,11 @@
   -3px 2px 5px #eae8e8, 3px 2px 5px #eae8e8;
 }
 
+.search form {
+  width: 300px;
+}
 .search-input {
+  width: 100%;
   margin-left: 18px;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -126,7 +130,6 @@
   line-height: 24px;
   font-weight: bolder;
   border-style: none;
-  width: 100%;
 }
 
 .search-input[type="text"]:focus { 
