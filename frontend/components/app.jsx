@@ -16,8 +16,9 @@ export const App = () => (
     </div>
 
       <Switch>
-        <Route exact path='/' component={SpotIndexContainer} />
         <Route exact path="/spots/:spotId" component={SpotShowContainer} />
+        <Route exact path='/' component={SpotIndexContainer} />
+        <Route exact path='/:city' component={SpotIndexContainer} />
       </Switch>
 
   </div>

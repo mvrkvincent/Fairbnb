@@ -1,7 +1,7 @@
 import { merge } from 'lodash';
 import { SEARCH_CITY } from "../../actions/search_actions";
 
-export default (state = [], action) => {
+export default (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
