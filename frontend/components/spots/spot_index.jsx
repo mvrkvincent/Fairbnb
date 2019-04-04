@@ -15,7 +15,7 @@ class SpotIndex extends React.Component {
     let SpotIndexItems;
     if (city[0]) {
       const searchCity = city.join('');
-      SpotIndexItems = spots.map(spot => (spot.city === searchCity) ? <SpotIndexItem key={spot.id} spot={spot} /> : null);
+      SpotIndexItems = spots.map(spot => (spot.city.toLowerCase() === searchCity) ? <SpotIndexItem key={spot.id} spot={spot} /> : null);
     } else {
       SpotIndexItems = spots.map(spot => <SpotIndexItem key={spot.id} spot={spot} />);
     }

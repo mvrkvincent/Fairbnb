@@ -23,16 +23,15 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
-    if (this.state.options.includes(this.state.city)) {
-        this.props.searchCity(this.state.city);
+    if (this.state.options.includes(this.state.city.toLowerCase())) {
+        this.props.searchCity(this.state.city.toLowerCase());
     } else {
       this.props.searchCity('');
     }
   }
 
   fetchOptions() {
-    const cityList = this.props.spots.map(spot => spot.city);
+    const cityList = this.props.spots.map(spot => spot.city.toLowerCase());
     const optionsList = [...new Set(cityList)];
     this.setState({options: optionsList});
   }
