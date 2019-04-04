@@ -1,6 +1,5 @@
 import React from 'react';
 import SpotIndexItem from './spot_index_item';
-import { searchCity } from '../../actions/search_actions';
 
 class SpotIndex extends React.Component {
 

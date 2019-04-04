@@ -33,7 +33,16 @@ class SpotMap extends React.Component {
       ]
     });
 
-    var marker = new google.maps.Marker({ position: spot, map: map });
+    const circle = {
+      path: ' M 50 10 A 40 40 0 1 0 50 90 A 40 40 0 1 0 50 10 Z',
+      fillColor: '#008489',
+      fillOpacity: 0.2,
+      scale: 1.4,
+      strokeColor: '#008489',
+      strokeWeight: 1
+    };
+
+    var marker = new google.maps.Marker({ position: spot, icon: circle, map: map });
 
   }
 
