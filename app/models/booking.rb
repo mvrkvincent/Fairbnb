@@ -18,9 +18,19 @@
 class Booking < ApplicationRecord
   validates :spot_id, :guest_id, :host_id, :check_in, :check_out, 
             :num_guests, :total_rate, presence: true
+  validates :check_in, :check_out, uniqueness: {scope: :spot_id, message: 'Spot is unavailable' }
 
   belongs_to :host,
     class_name: :User,
     foreign_key: :host_id
+
+  belongs_to :guest,
+    class_name: :User,
+    foreign_key: :guest_id
+
+  belongs_to :spot,
+    class_name: :Spot,
+    foreign_key: :spot_id
+
 
 end

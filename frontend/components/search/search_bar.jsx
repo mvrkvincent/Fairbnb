@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { searchCity } from '../../actions/search_actions';
 import { Object } from 'es6-shim';
 
@@ -9,7 +10,7 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {  city: '',
-                    options: []
+                    options: [],
                   };
 
     this.handleInput = this.handleInput.bind(this);
@@ -22,11 +23,14 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
+    const pathName = this.state.city.split(' ').join('_');
     e.preventDefault();
     if (this.state.options.includes(this.state.city.toLowerCase())) {
-        this.props.searchCity(this.state.city.toLowerCase());
+      this.props.searchCity(this.state.city.toLowerCase());
+      this.props.history.push(`/${pathName}`);
     } else {
       this.props.searchCity('');
+      this.props.history.push('/');
     }
   }
 
@@ -37,7 +41,6 @@ class SearchBar extends React.Component {
   }
 
   render() {
-
     return(
 
     <div>
@@ -66,4 +69,4 @@ const mdp = dispatch => ({
 });
 
 
-export default connect(msp, mdp)(SearchBar);
+export default withRouter(connect(msp, mdp)(SearchBar));
