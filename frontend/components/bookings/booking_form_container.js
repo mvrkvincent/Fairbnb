@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createBooking, updateBooking } from '../../actions/booking_actions';
+import { createBooking, fetchBookings } from '../../actions/booking_actions';
 import { openModal } from '../../actions/modal_actions';
 import BookingForm from './booking_form';
 import { fetchSpot } from '../../actions/spot_actions';
@@ -22,6 +22,7 @@ const mdp = dispatch => ({
   formAction: booking => dispatch(createBooking(booking)),
   requestLogin: () => dispatch(openModal('LOGIN')),
   confirmBooking: () => dispatch(openModal('BOOK')),
+  fetchBookings: () => dispatch(fetchBookings()),
   fetchSpot: id => dispatch(fetchSpot(id))
 });
 

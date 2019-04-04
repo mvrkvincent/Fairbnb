@@ -48,20 +48,17 @@ class BookingForm extends React.Component {
       spot_id: this.props.spot.id,
       total_rate: bookingTotal
     };
-    debugger
     this.setState(bookingInfo, () => this.props.formAction(bookingInfo));
     this.setState({request: 'submitted'});
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (this.state.request  === 'submitted') {
-      debugger
       this.setState({request:'received'});
     } else if (this.state.request === 'received') {
-      debugger
       this.setState({request: 'approved'}, () => this.props.fetchSpot(this.state.spot_id));
-    } else if (this.state.request ===  'approved' && this.props.bookings[0]) {
-      debugger
+    } else if ( this.state.request === 'approved' && 
+                (this.props.bookings[this.props.bookings.length - 1] !== prevProps.bookings[prevProps.bookings.length - 1]) ) {
       this.setState({request: 'pending confirmation'}, () => this.props.confirmBooking());
       this.clearValues();
     }

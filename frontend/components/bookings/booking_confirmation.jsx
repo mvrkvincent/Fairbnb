@@ -18,29 +18,33 @@ class BookingConfirmation extends React.Component {
 
   handleCancel(e) {
     e.preventDefault();
-    const bookings = this.props.bookings;
-    const currentBooking = bookings[bookings.length - 1];
-
-    this.props.cancelBooking(currentBooking.id).then(this.props.closeModal());
+    this.props.cancelBooking(this.state.id).then(this.props.closeModal());
   }
 
   handleConfirm(e) {
     e.preventDefault();
-    debugger
-    this.setState({status: 'confirmed'}, () => this.props.confirmBooking(this.state));
-    this.props.closeModal();
+    this.setState({status: 'CONFIRMED'}, () => this.props.confirmBooking(this.state));
   }
 
   render() {
-
     const { currentUser, bookings, spots } = this.props;
     const currentSpot = spots[this.state.spot_id];
     const currentBooking = bookings[bookings.length - 1];
     const spotImg = { backgroundImage: `url(${currentSpot.img_url})` };
     const nameText = {fontWeight: '900'};
+    const pendText = (<div>Please confirm your booking details</div>);
+    const confText = (<div>You're all set, <div style={nameText}>{currentUser.fname}</div></div>);
+    const pendButtons = (
+        <div className="conf-buttons"><button className="confirm" onClick={this.handleConfirm}>Confirm</button>
+        <button className="cancel" onClick={this.handleCancel}>Cancel</button></div> );
+    
+    const confButton = (<button className="confirm" onClick={this.props.closeModal}>Back to Spots</button>);
+
+    const formHead = (this.state.status === 'CONFIRMED') ? confText : pendText;
+    const formButtons = (this.state.status === 'CONFIRMED') ? confButton : pendButtons;
     return (
       <div className="modal">
-        <div id="form-type"><span></span>You're all set, <span style={nameText}>{currentUser.fname}</span>!</div>
+        <div id="form-type">{formHead}</div>
         <div className="spot-img" style={spotImg}></div>
         <div className="modal-form">
             <div className="conf-detail" id="confirmation">
@@ -49,14 +53,8 @@ class BookingConfirmation extends React.Component {
               <div>Check In: {currentBooking.check_in}</div>
               <div>Check Out: {currentBooking.check_out}</div>
             </div>
-            <div className="conf-buttons">
-                <button className="confirm" onClick={this.handleConfirm}>Confirm</button>
-                <button className="cancel" onClick={this.handleCancel}>Cancel</button>
+                {formButtons}
             </div>
-        </div>
-        <div>
-        </div>
-        
       </div>
     )
   };
