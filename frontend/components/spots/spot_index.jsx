@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import SpotIndexItem from './spot_index_item';
 
 class SpotIndex extends React.Component {
@@ -18,7 +19,7 @@ class SpotIndex extends React.Component {
       headText = (<span>Explore {cityName}</span>)
       SpotIndexItems = spots.map(spot => (spot.city.toLowerCase() === searchCity) ? <SpotIndexItem key={spot.id} spot={spot} /> : null);
     } else {
-      SpotIndexItems = spots.map(spot => <SpotIndexItem key={spot.id} spot={spot} />);
+      SpotIndexItems = spots.map(spot => <SpotIndexItem key={spot.id} spot={spot} />)
     }
 
     return (
