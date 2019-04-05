@@ -14,11 +14,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
         crossorigin="anonymous">
     
-    <%= favicon_link_tag asset_path('Logo.png'), :rel => 'icon', :type =>  'image/png' %>
-
-    <script type="text/javascript">
-      window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"
-    </script>
+    <%= favicon_link_tag asset_path('Logo.png')%>
 
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}" %>
     
