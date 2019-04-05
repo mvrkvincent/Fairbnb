@@ -42,7 +42,7 @@ class SpotMap extends React.Component {
       scale: 1.4
     };
 
-    var marker = new google.maps.Marker({ position: spot, icon: circle, map: map });
+    let marker = new google.maps.Marker({ position: spot, icon: circle, map: map });
 
   }
 

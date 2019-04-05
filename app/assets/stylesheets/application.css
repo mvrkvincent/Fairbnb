@@ -162,7 +162,10 @@
   height: 75px;
   margin-right: 10px;
   align-items: center;
-
+}
+.dropbtn {
+  /* width: 5px; */
+  padding: 0;
 }
 
 .user-img:hover {
@@ -368,7 +371,6 @@ i {
   display: flex;
   flex-flow: row wrap;
   padding: 0 40px;
-  
 }
 
 .spot-index ul {
@@ -388,6 +390,16 @@ i {
  padding: 25px 20px 0 20px;
  width: 100%;
 }
+
+.index-map-hidden {
+  height:0px;
+}
+
+.index-map-visible {
+  width: 100%;
+  margin-top: 20px;
+}
+
 
 .spot-link {
   font-family: sans-serif;
@@ -823,7 +835,7 @@ i {
 
   .nav-bar .nav-buttons button {
     font-family: 'Montserrat', sans-serif;
-    padding: 0 16px;
+    /* padding: 0 16px; */
     color: #585858;
     font-size: 13.8px;
     font-weight: lighter;

@@ -48,7 +48,7 @@ class Booking < ApplicationRecord
       .where.not(id: self.id)
       .where(spot_id: spot_id)
       .where.not('check_in > :check_out OR check_out < :check_in',
-                 check_in: check_in, check_out: check_out)
+        check_in: check_in, check_out: check_out)
   end
 
   def confirmed_overlap

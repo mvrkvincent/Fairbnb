@@ -10,4 +10,7 @@
 #
 
 class Amenity < ApplicationRecord
+  validates :img_url, :name, null: false
+
+  
 end

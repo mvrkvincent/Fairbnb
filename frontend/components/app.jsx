@@ -13,6 +13,7 @@ export const App = () => (
     <div className="navBar">
       <MainNavContainer />
       <Route exact path='/' component={FilterNav} />
+      <Route exact path='/:city' component={FilterNav} />
     </div>
 
       <Switch>
