@@ -396,7 +396,7 @@ i {
 }
 
 .index-map-visible {
-  width: 100%;
+  width: 96%;
   margin-top: 20px;
 }
 
@@ -537,10 +537,8 @@ i {
 
 .show-content {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   margin: 20px 160px;
-  /* padding: 0 25px 25px 25px; */
 }
 
 .show-content-left {
@@ -605,6 +603,22 @@ i {
   width: 100%;
   margin: 15px 0;
   border: 1px solid #eae8e8;  
+}
+
+.amenity-list {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.amenity-list-item i {
+  /* display: flex; */
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
 }
 
 .map {

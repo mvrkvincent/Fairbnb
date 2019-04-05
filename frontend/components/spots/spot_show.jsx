@@ -69,7 +69,12 @@ class SpotShow extends React.Component {
           
           <div className="amenities">
               <div className="section-head">Amenitites</div>
-              <div className="detail">Many Amenitites</div>
+              <div className="amenity-list">
+                <div className="amenity-list-item"><i class="fas fa-wifi"></i>Wifi</div>
+                <div className="amenity-list-item"><i class="fas fa-tv"></i>TV</div>
+                <div className="amenity-list-item"><i class="fas fa-utensils"></i>Kitchen</div>
+                <div className="amenity-list-item"><i class="fas fa-mug-hot"></i>Coffee</div>
+              </div>
           </div>
 
           <div className="availability">
@@ -94,7 +99,8 @@ class SpotShow extends React.Component {
               <i className="far fa-star"></i>
               <i className="far fa-star"></i>
             </div>
-            </div>`
+            </div>
+            <div className="module"></div>
           </div>
         </div>
 

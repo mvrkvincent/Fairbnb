@@ -11,24 +11,25 @@ class SpotIndex extends React.Component {
   render() {
     const { spots, city } = this.props;
     const indexMap = document.getElementById('index-map');
-    let headText = (<span>Browse all {spots.length}+ spots</span>);
-    let SpotIndexItems, locs, insertMap;
+    let spotIndexItems, locs, insertMap, headText, s;
 
     if (city[0]) {
       const searchCity = city.join('');
       const cityName = searchCity.split(' ').map(part => (part[0].toUpperCase() + part.slice(1)));
+      spotIndexItems = spots.map(spot => (spot.city.toLowerCase() === searchCity) ? <SpotIndexItem key={spot.id} spot={spot} /> : null);
+      s = (spotIndexItems.length > 1) ? 's' : '';
       headText = (<span>Explore {cityName}</span>)
-      SpotIndexItems = spots.map(spot => (spot.city.toLowerCase() === searchCity) ? <SpotIndexItem key={spot.id} spot={spot} /> : null);
     } else {
-      SpotIndexItems = spots.map(spot => <SpotIndexItem key={spot.id} spot={spot} />)
+      spotIndexItems = spots.map(spot => <SpotIndexItem key={spot.id} spot={spot} />)
       locs = spots.map(spot => ([spot.name, spot.lat, spot.lng, spot.id]));
       insertMap = (indexMap) ? (<IndexMap locs={locs} />) : null;
+      headText = (<span>Browse all {spotIndexItems.length}+ spots</span>);
     }
 
     return (
       <div className="spot-index" >
         <div className="index-map-visible" id="index-map">{insertMap}</div>
-        <ul><div id="spot-index-head">{headText}</div>{SpotIndexItems}</ul>
+        <ul><div id="spot-index-head">{headText}</div>{spotIndexItems}</ul>
       </div>
     );
   }
