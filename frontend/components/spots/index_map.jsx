@@ -63,6 +63,7 @@ class IndexMap extends React.Component {
       marker.addListener('mouseout', function () {
         infowindow.close();
       });
+      
 
   }));
 

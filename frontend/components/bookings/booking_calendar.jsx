@@ -10,9 +10,9 @@ class BookingCalendar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      startDate: null,
+      startDate: moment(),
       endDate: null,
-      focusedInput: null
+      focusedInput: true
       };
   }
 

@@ -580,6 +580,10 @@ i {
   margin-top: 10px;
 }
 
+.details .detail {
+  line-height: 150%
+}
+
 .main-detail {
   display: flex;
   flex-direction: row;
