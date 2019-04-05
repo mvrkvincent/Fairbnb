@@ -12,6 +12,8 @@ class SpotIndex extends React.Component {
     const { spots, city } = this.props;
     const indexMap = document.getElementById('index-map');
     let spotIndexItems, locs, insertMap, headText, s;
+    locs = spots.map(spot => ([spot.name, spot.lat, spot.lng, spot.id]));
+    insertMap = (indexMap) ? (<IndexMap locs={locs} />) : null;
 
     if (city[0]) {
       const searchCity = city.join('');
@@ -21,8 +23,6 @@ class SpotIndex extends React.Component {
       headText = (<span>Explore {cityName}</span>)
     } else {
       spotIndexItems = spots.map(spot => <SpotIndexItem key={spot.id} spot={spot} />)
-      locs = spots.map(spot => ([spot.name, spot.lat, spot.lng, spot.id]));
-      insertMap = (indexMap) ? (<IndexMap locs={locs} />) : null;
       headText = (<span>Browse all {spotIndexItems.length}+ spots</span>);
     }
 
