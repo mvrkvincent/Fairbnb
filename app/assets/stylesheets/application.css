@@ -655,6 +655,7 @@ i {
 }
 .reviews .section-head {
   font-size: 25px;
+  margin-bottom: 20px;
 }
 .review-head {
   font-family: 'Montserrat Bold', sans-serif;
@@ -662,10 +663,23 @@ i {
   font-weight: 700;
 }
 
+.review-body {
+  padding: 10px 0;
+}
+
+
 .reviews .modal-form {
   width: 500px;
 }
 
+.reviews .form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews select:focus {
+  outline: none;
+}
 
 .booking-module {
   position: sticky;

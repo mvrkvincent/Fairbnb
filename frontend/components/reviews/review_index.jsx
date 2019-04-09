@@ -8,7 +8,6 @@ class ReviewIndex extends React.Component {
     this.state = {  rating: 0, 
                     body: '',
                     spot_id: null,
-                    reviewCount: null,
                     ratingAve: null
                   }; 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -52,7 +51,7 @@ class ReviewIndex extends React.Component {
     let ratingAve = 0;
     reviews.forEach(review => {reviewCount += 1; ratingSum += review.rating;});
 
-    ratingAve = Math.floor(ratingSum/reviewCount);
+    ratingAve = Math.ceil(ratingSum/reviewCount);
     this.setState({ reviewCount: reviewCount, ratingAve: ratingAve });
 
     if (this.props.rating !== ratingAve) {
@@ -87,24 +86,11 @@ class ReviewIndex extends React.Component {
 
 
   render() {
-    const { reviews } = this.props;
-    const { ratingAve } = this.state;
+    const { reviews, stars } = this.props;
     let numReviews = 0;
     reviews.forEach(() => { numReviews += 1; });
     const s1 = numReviews > 1 ? 's' : '';
     const reviewIndexItems = reviews.map(review => <ReviewIndexItem key={review.id} review={review} />)
-
-    let stars = [];
-    let k = 0;
-
-    for (let i = 1; i <= ratingAve; i++) {
-      stars.push(<i key={i} className="fas fa-star"></i>);
-    }
-
-    while (stars.length < 5) {
-      stars.push(<i key={k} className="far fa-star"></i>);
-      k++
-    }
 
     const reviewForm = 
       <form className="modal-form" onSubmit={this.handleSubmit}>
