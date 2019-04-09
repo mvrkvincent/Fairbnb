@@ -672,9 +672,19 @@ i {
   width: 500px;
 }
 
+.reviews .modal-form .rating-wrapper {
+  font-family: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
 .reviews .form-field {
   display: flex;
   flex-direction: column;
+}
+
+.reviews select {
+  background-color: #FFFFFF;
 }
 
 .reviews select:focus {

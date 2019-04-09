@@ -62,8 +62,8 @@ class ReviewIndex extends React.Component {
 
   generateRatingOptions() {
     const ratingOptions = [];
-    const star = <i className="far fa-star"></i>
-    for (let i = 1; i <= 5; i++) {
+    const star = <i className="far fa-star"/>
+    for (let i = 5; i > 0; i--) {
       ratingOptions.push((<option key={i} value={i}>{i}</option>))
     }
     return ratingOptions;
@@ -103,6 +103,7 @@ class ReviewIndex extends React.Component {
               onChange={this.handleInput('body')} />
             <select
               className="form-input"
+              placeholder="rating"
               onChange={this.handleInput('rating')}>
               {this.generateRatingOptions()}
             </select>
