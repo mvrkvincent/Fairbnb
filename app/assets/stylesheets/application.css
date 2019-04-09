@@ -35,8 +35,8 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #eae8e8;
-  
 }
+
 
 #logo-search {
   font-family: 'Sriracha';
@@ -546,7 +546,7 @@ i {
 .show-content {
   display: flex;
   justify-content: center;
-  margin: 20px 160px;
+  margin: 20px 160px 40px 160px;
 }
 
 .show-content-left {
@@ -852,6 +852,43 @@ i {
 }
 
 
+.spot-form {
+  margin-top: 150px;
+  font-family: 'Montserrat Black', sans-serif;
+  font-size: 18px;
+  color: #585858;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 40px;
+}
+
+.spot-form select:focus {
+  outline: none;
+}
+
+.spot-form .form-field {
+  margin-top: 5px;
+}
+
+.spot-form .field-wrapper {
+  margin-top: 5px;
+}
+
+.spot-form-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.host-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 
 @media only screen and (max-width: 960px) {
@@ -878,6 +915,10 @@ i {
 
   .spot-index {
     margin-top: 180px;
+  }
+
+  .spot-form {
+    margin-top: 200px;
   }
 
   .user-img:hover {
@@ -951,7 +992,7 @@ i {
 
   .show-content {
     flex-direction: column-reverse;
-    margin: 0;
+    margin: 0 0 40px 0;
 
   }
 

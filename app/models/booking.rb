@@ -58,9 +58,6 @@ class Booking < ApplicationRecord
 
   # validity based on guest confirmation during host ui buildout
   def valid_booking
-
-  
-
     unless confirmed_overlap.empty?
       errors[:base] << 'Spot is not available for these dates'
     end
