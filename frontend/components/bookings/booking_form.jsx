@@ -9,7 +9,7 @@ class BookingForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = this.props.defaultState;
+    this.state = this.props.defaultBooking;
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.enforceLogin = this.enforceLogin.bind(this);
@@ -22,7 +22,7 @@ class BookingForm extends React.Component {
   }
 
   clearValues() {
-    this.setState(this.props.defaultState);
+    this.setState(this.props.defaultBooking);
   }
 
   calculateTotal() {
@@ -40,7 +40,7 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const bookingTotal = parseInt(document.getElementById('finalTotal').innerText);
-    const bookingInfo = {
+    const newBooking = {
       check_in: this.state.startDate._d,
       check_out: this.state.endDate._d,
       num_guests: this.state.num_guests,
@@ -48,7 +48,7 @@ class BookingForm extends React.Component {
       spot_id: this.props.spot.id,
       total_rate: bookingTotal
     };
-    this.setState(bookingInfo, () => this.props.formAction(bookingInfo));
+    this.setState(newBooking, () => this.props.formAction(newBooking));
     this.setState({request: 'submitted'});
   }
 

@@ -350,6 +350,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
   outline: none;
 }
 
+textarea {
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
 
 button:focus {
   outline: none;
@@ -566,12 +574,20 @@ i {
   margin: 8px 0;
 }
 .section-head {
+  display: flex;
+  flex-direction: row;
   font-size: 18px;
   font-family: 'Montserrat Bold', sans-serif;
   font-weight: 600;
   margin: 8px 0;
   border-top: 1px solid #eae8e8;
   padding-top: 20px;
+  align-items: center;
+}
+
+.large-rating {
+  font-size: 18px;
+  margin-left: 10px;
 }
 
 .details {
@@ -628,6 +644,26 @@ i {
 
 .reviews i {
   color: #008489;
+}
+
+.review-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  margin: 10px 0; 
+  border-bottom: 1px solid #eae8e8;
+}
+.reviews .section-head {
+  font-size: 25px;
+}
+.review-head {
+  font-family: 'Montserrat Bold', sans-serif;
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+.reviews .modal-form {
+  width: 500px;
 }
 
 

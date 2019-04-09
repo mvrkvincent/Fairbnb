@@ -30,5 +30,9 @@ class Spot < ApplicationRecord
   has_many :bookings,
     class_name: :Booking,
     foreign_key: :spot_id
+  
+  has_many :reviews,
+    class_name: :Review,
+    foreign_key: :spot_id
 
 end

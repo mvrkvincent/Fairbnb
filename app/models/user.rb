@@ -29,6 +29,10 @@ class User < ApplicationRecord
   has_many :bookings,
     class_name: :Booking,
     foreign_key: :guest_id
+  
+  has_many :reviewed_spots,
+    class_name: :Review,
+    foreign_key: :guest_id
 
   def self.find_by_credentials(email, password)
     @user = User.find_by(email: email)

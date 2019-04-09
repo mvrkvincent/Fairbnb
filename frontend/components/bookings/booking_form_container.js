@@ -7,7 +7,7 @@ import { fetchSpot } from '../../actions/spot_actions';
 const msp = ({entities, session}) => ({
   currentUser: entities.users[session.id],
   bookings: Object.values(entities.bookings),
-  defaultState:{  startDate: null,
+  defaultBooking:{startDate: null,
                   endDate: null,
                   focusedInput: null,
                   num_guests: 1,

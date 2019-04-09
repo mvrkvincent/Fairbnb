@@ -4,26 +4,27 @@ import '../../../app/assets/stylesheets/_react_dates_override.css';
 import 'react-dates/lib/css/_datepicker.css';
 import BookingForm from '../bookings/booking_form_container';
 import BookingCalendar from '../bookings/booking_calendar';
+import Reviews from '../reviews/review_index_container';
 import SpotMap from './spot_map';
 
 class SpotShow extends React.Component {
 
   constructor(props) {
     super(props);
-      this.state = {
-        name: null, accommodation: null, rate: null, num_guests: null, num_beds: null,
-        num_baths: null, city: null, description: null, img_url: null, lat: null, lng: null
-      };
+    this.state = {
+      id: null, name: null, accommodation: null, rate: null, num_guests: null, num_beds: null,
+      num_baths: null, city: null, description: null, img_url: null, lat: null, lng: null
+    };
   }
 
   componentDidMount() {
-    const spot = this.props.fetchSpot(this.props.match.params.spotId);
-    this.setState(spot);
+    this.props.fetchSpot(this.props.match.params.spotId).then(() => this.setState(this.props.spot));
   }
 
+
   render() {
-    const { name, accommodation, rate, num_guests, num_beds, 
-            num_baths, city, description, img_url, lat, lng } = this.props.spot || this.state;
+    const { id, name, accommodation, rate, num_guests, num_beds, 
+            num_baths, city, description, img_url, lat, lng } = this.state;
     const spotMap = document.getElementById('spot-map');
     const insertMap = spotMap ? <SpotMap lat={lat} lng={lng}/> : null;
   
@@ -91,16 +92,7 @@ class SpotShow extends React.Component {
             </div>
 
           <div className="reviews">
-            <div className="section-head">Reviews
-            <div className="detail"> No current reviews{'  '}
-              <i className="far fa-star"></i>
-              <i className="far fa-star"></i>
-              <i className="far fa-star"></i>
-              <i className="far fa-star"></i>
-              <i className="far fa-star"></i>
-            </div>
-            </div>
-            <div className="module"></div>
+            <Reviews spotId={id}/>
           </div>
         </div>
 
