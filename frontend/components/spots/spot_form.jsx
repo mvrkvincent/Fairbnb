@@ -88,7 +88,7 @@ class SpotForm extends React.Component {
             <div className="form-field">
               <textarea
                 className="form-input"
-                placeholder='Max 1200 characters'
+                placeholder='Describe your spot'
                 value={this.state.description}
                 onChange={this.handleInput('description')} />
             </div>
