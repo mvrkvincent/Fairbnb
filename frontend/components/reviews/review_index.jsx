@@ -5,7 +5,7 @@ class ReviewIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {  rating: 4, 
+    this.state = {  rating: 0, 
                     body: '',
                     spot_id: null,
                     reviewCount: null,
@@ -14,7 +14,7 @@ class ReviewIndex extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
 
     if (prevProps.spotId !== this.props.spotId) {
       const spot = this.props.spotId;
@@ -23,7 +23,7 @@ class ReviewIndex extends React.Component {
       this.props.fetchReviews(spot);
     }
 
-    if (this.props.reviews[0] && this.state.ratingAve === null) {
+    if (this.props.reviews[0] && this.state.ratingAve !== prevState.ratingAve) {
       this.calculateRating();
     }
   }
@@ -41,6 +41,8 @@ class ReviewIndex extends React.Component {
     };
 
     this.props.createReview(newReview);
+    this.calculateRating();
+    this.clearValues();
   }
 
   calculateRating() {
@@ -57,6 +59,19 @@ class ReviewIndex extends React.Component {
       this.props.updateSpot({id: this.state.spot_id, ave_rating: ratingAve});
     }
 
+  }
+
+  generateRatingOptions() {
+    const ratingOptions = [];
+    const star = <i className="far fa-star"></i>
+    for (let i = 1; i <= 5; i++) {
+      ratingOptions.push((<option key={i} value={i}>{i}</option>))
+    }
+    return ratingOptions;
+  }
+
+  clearValues() {
+    this.setState({body: ''});
   }
 
   // renderErrors(field) {
@@ -100,6 +115,11 @@ class ReviewIndex extends React.Component {
               placeholder="Tell us about your stay..."
               value={this.state.body}
               onChange={this.handleInput('body')} />
+            <select
+              className="form-input"
+              onChange={this.handleInput('rating')}>
+              {this.generateRatingOptions()}
+            </select>
           </div>
           {/* <div className="modal-errors">{this.renderErrors('B')}</div> */}
         </div>

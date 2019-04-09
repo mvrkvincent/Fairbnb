@@ -9,6 +9,7 @@
 User.delete_all
 Spot.delete_all
 Booking.delete_all
+Review.delete_all
 
 user1 = User.create(email: 'smitty@number1.com', 
             fname: 'Smitty', 
@@ -37,6 +38,7 @@ Mark = Spot.create(host_id: user1.id,
             num_guests: 1,   
             num_beds: 1,
             num_baths: 2,
+            ave_rating: 0
             )
 
 spot12 = Spot.create(host_id: user1.id,
@@ -52,6 +54,7 @@ spot12 = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 2,
             num_baths: 2,
+            ave_rating: 0
 )
 
 Laura = Spot.create(host_id: user1.id,
@@ -67,6 +70,7 @@ Laura = Spot.create(host_id: user1.id,
             num_guests: 2,   
             num_beds: 2,
             num_baths: 1,
+            ave_rating: 0
             ) 
             
             
@@ -83,6 +87,7 @@ Ryan = Spot.create(host_id: user1.id,
             num_guests: 1,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
 
 Ron = Spot.create(host_id: user1.id,
@@ -98,6 +103,7 @@ Ron = Spot.create(host_id: user1.id,
             num_guests: 2,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
 
 JC = Spot.create(host_id: user1.id,
@@ -113,6 +119,7 @@ JC = Spot.create(host_id: user1.id,
             num_guests: 1,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             ) 
             
 spot6 = Spot.create(host_id: user1.id,
@@ -128,6 +135,7 @@ spot6 = Spot.create(host_id: user1.id,
             num_guests: 2,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
             
             
@@ -144,6 +152,7 @@ Brett = Spot.create(host_id: user1.id,
             num_guests: 1,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
 
 spot8 = Spot.create(host_id: user1.id,
@@ -160,6 +169,7 @@ spot8 = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 2,
             num_baths: 2,
+            ave_rating: 0
             )
 
 
@@ -176,6 +186,7 @@ Blake = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 2,
             num_baths: 1,
+            ave_rating: 0
             ) 
             
             
@@ -192,6 +203,7 @@ Will = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
 
 spot1 = Spot.create(host_id: user1.id,
@@ -207,6 +219,7 @@ spot1 = Spot.create(host_id: user1.id,
             num_guests: 2,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
 
 
@@ -223,6 +236,7 @@ Cameron = Spot.create(host_id: user1.id,
             num_guests: 2,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
 
 Justin = Spot.create(host_id: user1.id,
@@ -238,6 +252,7 @@ Justin = Spot.create(host_id: user1.id,
             num_guests: 1,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             ) 
 
 spot2 = Spot.create(host_id: user1.id,
@@ -253,6 +268,7 @@ spot2 = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 2,
             num_baths: 1,
+            ave_rating: 0
             ) 
             
             
@@ -269,6 +285,7 @@ AA = Spot.create(host_id: user1.id,
             num_guests: 40,   
             num_beds: 0,
             num_baths: 2,
+            ave_rating: 0
 )
 
 Jobs = Spot.create(host_id: user1.id,
@@ -284,6 +301,7 @@ Jobs = Spot.create(host_id: user1.id,
             num_guests: 15,   
             num_beds: 15,
             num_baths: 1,
+            ave_rating: 0
 )
 
 
@@ -304,6 +322,7 @@ spot3 = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 2,
             num_baths: 2,
+            ave_rating: 0
             )
 
 spot5 = Spot.create(host_id: user1.id,
@@ -319,6 +338,7 @@ spot5 = Spot.create(host_id: user1.id,
             num_guests: 2,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
 
 spot5 = Spot.create(host_id: user1.id,
@@ -334,6 +354,7 @@ spot5 = Spot.create(host_id: user1.id,
             num_guests: 1,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             ) 
             
             
@@ -353,6 +374,7 @@ spot7 = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 2,
             num_baths: 1,
+            ave_rating: 0
             ) 
             
             
@@ -372,6 +394,7 @@ spot9 = Spot.create(host_id: user1.id,
             num_guests: 2,   
             num_beds: 1,
             num_baths: 1,
+            ave_rating: 0
             )
 
 spot10 = Spot.create(host_id: user1.id,
@@ -387,6 +410,7 @@ spot10 = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 2,
             num_baths: 1,
+            ave_rating: 0
             ) 
             
             
@@ -403,6 +427,7 @@ spot11 = Spot.create(host_id: user1.id,
             num_guests: 4,   
             num_beds: 2,
             num_baths: 2,
+            ave_rating: 0
 )
 
 

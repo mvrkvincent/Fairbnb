@@ -39,12 +39,29 @@ class SpotShow extends React.Component {
     return stars;
   }
 
+  displayRatingText() {
+    let rating = this.state.ave_rating;
+    let ratingText;
+    if (rating === 0) {
+      ratingText = 'No current reviews'
+    } else if (rating > 0 && rating < 3) {
+      ratingText = 'Good Spot'
+    } else if (rating >= 3 && rating < 5) {
+      ratingText = 'Great Spot'
+    } else {
+      ratingText = 'Excellent Spot'
+    }
+
+    return ratingText;
+  }
+
   render() {
     const { id, name, accommodation, rate, num_guests, num_beds, 
-            num_baths, city, description, img_url, lat, lng, ave_rating, stars } = this.state;
+            num_baths, city, description, img_url, lat, lng, ave_rating } = this.state;
     const spotMap = document.getElementById('spot-map');
     const insertMap = spotMap ? <SpotMap lat={lat} lng={lng}/> : null;
-  
+    const ratingText = this.displayRatingText();
+    const stars = this.calculateStars();
     const s1 = num_guests > 1 ? 's' : '';
     const s2 = num_beds > 1 ? 's' : '';
     const s3 = num_baths > 1 ? 's' : '';
@@ -121,7 +138,8 @@ class SpotShow extends React.Component {
                 <div>per night</div>
               </div>
               <div className="rating">
-              {this.calculateStars()}
+              {stars}
+              <div className="num-reviews">{ratingText}</div>
               </div>
               </div>
               <BookingForm spot={this.props.spot}/>
