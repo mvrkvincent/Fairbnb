@@ -8,17 +8,23 @@ class ReviewIndex extends React.Component {
     this.state = {  rating: 4, 
                     body: '',
                     spot_id: null,
-                    reviewTotal: 0,
-                    ratingAverage: 0
+                    reviewCount: null,
+                    ratingAve: null
                   }; 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidUpdate(prevProps) {
+
     if (prevProps.spotId !== this.props.spotId) {
       const spot = this.props.spotId;
-      this.setState({spot_id: spot});
+      const rating = this.props.rating;
+      this.setState({spot_id: spot, ratingAve: rating});
       this.props.fetchReviews(spot);
+    }
+
+    if (this.props.reviews[0] && this.state.ratingAve === null) {
+      this.calculateRating();
     }
   }
 
@@ -39,12 +45,18 @@ class ReviewIndex extends React.Component {
 
   calculateRating() {
     const reviews = this.props.reviews;
-    let reviewTotal = 0;
+    let reviewCount = 0;
     let ratingSum = 0;
+    let ratingAve = 0;
+    reviews.forEach(review => {reviewCount += 1; ratingSum += review.rating;});
 
-    reviews.forEach(review => {reviewTotal += 1; ratingSum += review.rating;});
+    ratingAve = Math.floor(ratingSum/reviewCount);
+    this.setState({ reviewCount: reviewCount, ratingAve: ratingAve });
 
-    return { reviewTotal, ratingSum };
+    if (this.props.rating !== ratingAve) {
+      this.props.updateSpot({id: this.state.spot_id, ave_rating: ratingAve});
+    }
+
   }
 
   // renderErrors(field) {
@@ -61,19 +73,22 @@ class ReviewIndex extends React.Component {
 
   render() {
     const { reviews } = this.props;
-    const { reviewTotal, ratingSum } = this.calculateRating();
-    const ratingAve = (ratingSum / reviewTotal);
-    const s1 = reviewTotal > 1 ? 's' : '';
+    const { ratingAve } = this.state;
+    let numReviews = 0;
+    reviews.forEach(() => { numReviews += 1; });
+    const s1 = numReviews > 1 ? 's' : '';
     const reviewIndexItems = reviews.map(review => <ReviewIndexItem key={review.id} review={review} />)
 
     let stars = [];
+    let k = 0;
 
     for (let i = 1; i <= ratingAve; i++) {
       stars.push(<i key={i} className="fas fa-star"></i>);
     }
 
     while (stars.length < 5) {
-      stars.push(<i className="far fa-star"></i>);
+      stars.push(<i key={k} className="far fa-star"></i>);
+      k++
     }
 
     const reviewForm = 
@@ -92,7 +107,7 @@ class ReviewIndex extends React.Component {
       </form>
 
     const showReviewForm = (this.props.currentUser) ? reviewForm : null;
-    const reviewText = (reviewTotal > 0) ? `${reviewTotal} Review${s1}` : `No current reviews${'  '}`
+    const reviewText = (numReviews > 0) ? `${numReviews} Review${s1}` : `No current reviews${'  '}`
     return (
       <div>
         <div className="section-head">{reviewText}

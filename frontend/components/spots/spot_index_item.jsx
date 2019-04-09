@@ -3,6 +3,23 @@ import { Link } from 'react-router-dom';
 
 class SpotIndexItem extends React.Component {
 
+  calculateStars() {
+    debugger
+    let ratingAve = this.props.spot.avg_rating;
+    let stars = [];
+    let k = 0;
+
+    for (let i = 1; i <= ratingAve; i++) {
+      stars.push(<i key={i} className="fas fa-star"></i>);
+    }
+
+    while (stars.length < 5) {
+      stars.push(<i key={k} className="far fa-star"></i>);
+      k++
+    }
+
+    return stars;
+  }
   
   render() {
     const { id, name, accommodation, num_beds, img_url, rate } = this.props.spot;
@@ -18,12 +35,7 @@ class SpotIndexItem extends React.Component {
           <div className="spot-name">{name}</div>
           <div className="spot-terms"><i className="fas fa-wave-square"></i>{rate} per night · Free cancellation</div>
           <div className="rating">
-            <i className="far fa-star"></i>
-            <i className="far fa-star"></i> 
-            <i className="far fa-star"></i> 
-            <i className="far fa-star"></i> 
-            <i className="far fa-star"></i>
-            <div className="num-reviews">No current ratings</div>
+          {this.calculateStars()}
           </div>
         </Link>
       </div>

@@ -13,7 +13,7 @@ class SpotShow extends React.Component {
     super(props);
     this.state = {
       id: null, name: null, accommodation: null, rate: null, num_guests: null, num_beds: null,
-      num_baths: null, city: null, description: null, img_url: null, lat: null, lng: null
+      num_baths: null, city: null, description: null, img_url: null, lat: null, lng: null, ave_rating: null
     };
   }
 
@@ -22,9 +22,26 @@ class SpotShow extends React.Component {
   }
 
 
+  calculateStars() {
+    let ratingAve = this.state.ave_rating;
+    let stars = [];
+    let k = 0;
+
+    for (let i = 1; i <= ratingAve; i++) {
+      stars.push(<i key={i} className="fas fa-star"></i>);
+    }
+
+    while (stars.length < 5) {
+      stars.push(<i key={k} className="far fa-star"></i>);
+      k++
+    }
+
+    return stars;
+  }
+
   render() {
     const { id, name, accommodation, rate, num_guests, num_beds, 
-            num_baths, city, description, img_url, lat, lng } = this.state;
+            num_baths, city, description, img_url, lat, lng, ave_rating, stars } = this.state;
     const spotMap = document.getElementById('spot-map');
     const insertMap = spotMap ? <SpotMap lat={lat} lng={lng}/> : null;
   
@@ -92,7 +109,7 @@ class SpotShow extends React.Component {
             </div>
 
           <div className="reviews">
-            <Reviews spotId={id}/>
+            <Reviews spotId={id} rating={ave_rating}/>
           </div>
         </div>
 
@@ -104,12 +121,7 @@ class SpotShow extends React.Component {
                 <div>per night</div>
               </div>
               <div className="rating">
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-                <div className="num-reviews">No current ratings</div>
+              {this.calculateStars()}
               </div>
               </div>
               <BookingForm spot={this.props.spot}/>

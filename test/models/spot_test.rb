@@ -18,6 +18,7 @@
 #  lng           :float            not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  ave_rating    :integer
 #
 
 require 'test_helper'

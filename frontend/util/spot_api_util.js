@@ -23,7 +23,8 @@ export const createSpot = spot => (
 export const updateSpot = spot => (
   $.ajax({
     method: 'PATCH',
-    url: `/api/spots/${spot.id}`
+    url: `/api/spots/${spot.id}`,
+    data: { spot }
   })
 );
 
