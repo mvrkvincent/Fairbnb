@@ -24,6 +24,7 @@
 class Spot < ApplicationRecord
   validates :host_id, :name, :accommodation, :rate, :num_guests, :num_beds, 
             :num_baths, :city, :address, :lat, :lng, presence: true
+  validates :rate, numericality: { less_than_or_equal_to: 100,  only_integer: true }
 
   belongs_to :host,
     class_name: :User

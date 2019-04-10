@@ -37,6 +37,11 @@
   border-bottom: 1px solid #eae8e8;
 }
 
+.nav-bar a {
+  text-decoration: none;
+  color: #585858;
+}
+
 
 #logo-search {
   font-family: 'Sriracha';
@@ -864,7 +869,9 @@ i {
   flex-flow: row wrap;
   padding: 0 40px;
 }
-
+.spot-form #form-type {
+  font-size: 25px;
+}
 .spot-form select:focus {
   outline: none;
 }

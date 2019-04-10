@@ -10,6 +10,8 @@ class SpotForm extends React.Component {
       city: '',
       address: '',
       rate: 1,
+      lat: null,
+      lng: null,
       num_guests: 1,
       num_beds: 0,
       num_baths: 0,
@@ -25,7 +27,7 @@ class SpotForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.formAction(this.state);
+    this.codeAddress();
   }
 
   generateGuestOptions() {
@@ -44,6 +46,26 @@ class SpotForm extends React.Component {
     return spotOptions;
   }
 
+  codeAddress() {
+    const geocoder = new google.maps.Geocoder();
+    let address = this.state.address;
+    this.setState = this.setState.bind(this)
+
+    geocoder.geocode({ 'address': address }, (results, status) => {
+      let lat, lng, geoAdd;
+        if (status == 'OK') {
+          lat = results[0].geometry.bounds.ma.j;
+          lng = results[0].geometry.bounds.ga.j;
+          geoAdd = results[0].formatted_address;
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      this.setState({ lat: lat , lng: lng, address: geoAdd })
+    });
+
+  }
+  
+
   // renderErrors(field) {
   //   const errors = this.props.errors;
   //   const fieldError = [];
@@ -57,7 +79,6 @@ class SpotForm extends React.Component {
 
   render() {
     let buttonText;
-
     if (this.props.formType === 'Host') {
       buttonText = 'List Spot';
 
@@ -111,7 +132,7 @@ class SpotForm extends React.Component {
                 type="text"
                 className="form-input"
                 placeholder="Address"
-                value={this.state.city}
+                value={this.state.address}
                 onChange={this.handleInput('address')} />
             </div>
           </div>
