@@ -869,6 +869,10 @@ i {
   flex-flow: row wrap;
   padding: 0 40px;
 }
+
+.spot-form select {
+  background-color: #FFFFFF;
+}
 .spot-form #form-type {
   font-size: 25px;
 }

@@ -5,10 +5,12 @@ class SpotForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
+      host_id: this.props.currentUser.id,
       name: '',
       description: '',
       city: '',
       address: '',
+      accommodation: '',
       rate: 1,
       lat: null,
       lng: null,
@@ -19,7 +21,6 @@ class SpotForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
 
   handleInput(field) {
     return e => this.setState({ [field]: e.target.value });
@@ -40,16 +41,38 @@ class SpotForm extends React.Component {
 
   generateSpotOptions() {
     const spotOptions = [];
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 0; i <= 10; i++) {
       spotOptions.push((<option key={i} value={i}>{i}</option>))
     }
     return spotOptions;
   }
 
+  generateAccomOptions() {
+    const accomList = [
+      'Couch', 'Shared Room', 'Private Room', 'Entire Apartment', 'Entire Home'
+    ]
+    const accomOptions = [];
+    for (let i = 0; i < accomList.length; i++) {
+      accomOptions.push((<option key={i} value={accomList[i]}>{accomList[i]}</option>))
+    }
+    return accomOptions;
+  }
+
+  generateCityOptions() {
+    const cityList = [
+      'Austin', 'New York', 'San Antonio', 'Boston', 'London'
+    ]
+    const cityOptions = [];
+    for (let i = 0; i < cityList.length; i++) {
+      cityOptions.push((<option key={i} value={cityList[i]}>{cityList[i]}</option>))
+    }
+    return cityOptions;
+  }
+
   codeAddress() {
     const geocoder = new google.maps.Geocoder();
     let address = this.state.address;
-    this.setState = this.setState.bind(this)
+    this.setState = this.setState.bind(this);
 
     geocoder.geocode({ 'address': address }, (results, status) => {
       let lat, lng, geoAdd;
@@ -60,7 +83,7 @@ class SpotForm extends React.Component {
         } else {
           alert('Geocode was not successful for the following reason: ' + status);
         }
-      this.setState({ lat: lat , lng: lng, address: geoAdd })
+      this.setState({ lat: lat , lng: lng, address: geoAdd }, () => this.props.formAction(this.state));
     });
 
   }
@@ -120,25 +143,36 @@ class SpotForm extends React.Component {
               <input
                 type="text"
                 className="form-input"
-                placeholder="City"
-                value={this.state.city}
-                onChange={this.handleInput('city')} />
-            </div>
-          </div>
-
-          <div className="field-wrapper">
-            <div className="form-field">
-              <input
-                type="text"
-                className="form-input"
                 placeholder="Address"
                 value={this.state.address}
                 onChange={this.handleInput('address')} />
             </div>
           </div>
+
+            <div className="field-wrapper">
+              <div className="form-field">
+                <select
+                  className="form-input"
+                  defaultValue={'City'}
+                  onChange={this.handleInput('city')}>
+                  <option disabled>City</option>
+                  {this.generateCityOptions()}
+                </select>
+              </div>
+            </div>
+
+            <div className="field-wrapper">
+              <div className="form-field">
+                <select
+                  className="form-input"
+                  defaultValue={'Accommodation'}
+                  onChange={this.handleInput('accommodation')}>
+                  <option disabled>Accommodation</option>
+                  {this.generateAccomOptions()}
+                </select>
+              </div>
+            </div>
           </div>
-
-
 
           <div className="host-details">
           <div className="field-wrapper">
