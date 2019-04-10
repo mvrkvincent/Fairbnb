@@ -14,10 +14,10 @@ class IndexMap extends React.Component {
   }
 
   initMap() {
-    const {locs} = this.props;
+    const {locs, zoom} = this.props;
     const map = new google.maps.Map(document.getElementById('index-map'), {
-      zoom: 2,
-      center: new google.maps.LatLng(40.7513597, -73.9839223),
+      zoom: zoom,
+      center: new google.maps.LatLng(locs[0][1], locs[0][2]),
       mapTypeControl: false,
       streetViewControl: false,
       styles: [
