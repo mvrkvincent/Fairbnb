@@ -70,7 +70,6 @@ class IndexMap extends React.Component {
   }
 
   render() {
-
     return (
       <div className="module">{this.initMap()}</div>
     )

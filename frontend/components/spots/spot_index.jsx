@@ -43,7 +43,7 @@ class SpotIndex extends React.Component {
 
   render() {
     const { spots, city } = this.props;
-    let spotIndexItems, locs, insertMap, headText, s;
+    let spotIndexItems, headText, s;
 
     if (city[0]) {
       const searchCity = city.join('');
