@@ -14,6 +14,15 @@ class SpotIndex extends React.Component {
     this.props.fetchSpots().then(() => this.renderMap());
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.city !== this.props.city) {
+      const indexMap = document.getElementById('index-map');
+      const button = document.getElementById('map-button');
+      indexMap.classList.add("index-map-visible");
+      button.classList.toggle("active-button");
+      this.renderMap();
+    }
+  }
 
   fetchMapLocations() {
     const { spots, city } = this.props;
@@ -51,6 +60,7 @@ class SpotIndex extends React.Component {
       spotIndexItems = spots.map(spot => (spot.city.toLowerCase() === searchCity) ? <SpotIndexItem key={spot.id} spot={spot} /> : null);
       s = (spotIndexItems.length > 1) ? 's' : '';
       headText = (<span>Explore {cityName}</span>)
+
     } else {
       spotIndexItems = spots.map(spot => <SpotIndexItem key={spot.id} spot={spot} />)
       headText = (<span>Browse all {spotIndexItems.length}+ spots</span>);

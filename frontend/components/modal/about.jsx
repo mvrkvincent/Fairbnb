@@ -22,7 +22,7 @@ class About extends React.Component {
             <button id="contact-li"><i className="fab fa-linkedin"></i>{' '}LinkedIn</button></a>
         </div>
 
-        <div className="alt-link"><i className="far fa-copyright"></i>mark vincent rodriguez | 2019</div>
+        <div className="alt-link"><i className="far fa-copyright"></i>mark vincent | 2019</div>
       </div>
     )
   };
