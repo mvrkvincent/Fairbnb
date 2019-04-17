@@ -915,7 +915,6 @@ i {
 	position: absolute;
 }
 
-
 .spot-form select {
   background-color: #FFFFFF;
 }
@@ -934,10 +933,18 @@ i {
   margin-top: 5px;
 }
 
-.spot-form .modal-form {
+#rate {
+  width: 200px;
+}
+
+#spot-form-fields .modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 20px;
 }
 .spot-form-options {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

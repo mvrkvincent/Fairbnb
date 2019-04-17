@@ -102,21 +102,21 @@ class SpotForm extends React.Component {
 
   render() {
 
+    let { img_url } = this.state
+    let uploadImg = img_url ? <img src={img_url} /> : <i className="fas fa-camera-retro" />;
     let buttonText;
+    
     if (this.props.formType === 'Host') {
       buttonText = 'List Spot';
-
     } else {
       buttonText = 'Update Spot';
     };
-
-    let uploadImg = this.state.img_url ? 'TESTING' : <i className="fas fa-camera-retro" />;
-  
 
     return (
       <div className="spot-form">
       <div id="form-type">{this.props.formType} your Spot</div>
       <div id="spot-form-fields">
+
           <input 
               type="file"
               id="uploader"
@@ -124,6 +124,7 @@ class SpotForm extends React.Component {
           <label htmlFor='uploader' className="img-upload">
             {uploadImg}
           </label>
+
         <form className="modal-form" onSubmit={this.handleSubmit}>
 
         <div className="spot-form-options">
@@ -187,12 +188,12 @@ class SpotForm extends React.Component {
 
           <div className="host-details">
           <div className="field-wrapper">
-            <span>Nightly rate</span>
-            <div className="form-field">
+            <span>Credits per night</span>
+            <div id="rate"className="form-field">
+              <i className="fas fa-wave-square" /> 
               <input
                 type="text"
                 className="form-input"
-                placeholder="Nightly Rate"
                 value={this.state.rate}
                 onChange={this.handleInput('rate')} />
             </div>

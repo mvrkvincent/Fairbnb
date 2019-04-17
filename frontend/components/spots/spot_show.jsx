@@ -134,7 +134,7 @@ class SpotShow extends React.Component {
           <div className="booking-module">
               <div className="rate-head">
               <div className="rate-amt">
-                <div className="rate"><i className="fas fa-wave-square"></i>{rate}</div>
+                <div className="rate"><i className="fas fa-wave-square"/>{rate}</div>
                 <div>per night</div>
               </div>
               <div className="rating">
