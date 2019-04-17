@@ -887,11 +887,12 @@ i {
   justify-content: center;
 }
 
-#spot-form-fields .module {
+.img-upload {
   width: 500px;
   min-width: 400px;
   height: 400px;
   margin: 20px;
+  border: 1px solid #eae8e8;  
 }
 
 .spot-form select {

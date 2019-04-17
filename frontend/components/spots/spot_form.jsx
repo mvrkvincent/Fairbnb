@@ -87,7 +87,6 @@ class SpotForm extends React.Component {
     });
 
   }
-  
 
   // renderErrors(field) {
   //   const errors = this.props.errors;
@@ -113,7 +112,10 @@ class SpotForm extends React.Component {
       <div className="spot-form">
       <div id="form-type">{this.props.formType} your Spot</div>
       <div id="spot-form-fields">
-        <div className="module"></div>
+          <div id="upload" className="img-upload">
+          <i className="fas fa-camera-retro"/>Upload Images
+          <input type="file"/>
+          </div>
         <form className="modal-form" onSubmit={this.handleSubmit}>
 
         <div className="spot-form-options">
