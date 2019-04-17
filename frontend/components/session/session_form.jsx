@@ -44,9 +44,22 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let ident, buttonText, placeText, altLinkText;
+    let { img_url } = this.state
+    let ident, img, buttonText, placeText, altLinkText;
+    let uploadImg = img_url ? 'PIC' : <i className="fas fa-camera-retro" />;
 
     if (this.props.formType === 'Sign up') {
+      img = <div className="user-img-wrapper">
+              <input
+              type="file"
+              id="uploader"
+              // onChange={this.handleInput('img_url')} 
+              />
+              <label id="user-img" htmlFor='uploader'>
+                {uploadImg}
+              </label>
+            </div>
+
       ident = 
         <div>
 
@@ -93,6 +106,7 @@ class SessionForm extends React.Component {
 
         <div id="form-type">{this.props.formType} with Email or <button onClick={this.handleDemo}>Demo</button></div>
         <form className="modal-form" onSubmit={this.handleSubmit}>
+          {img}
           <div className="field-wrapper">
           <div className="form-field">
           <input

@@ -4,7 +4,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form';
 
 const msp = state => ({
-  userInfo: { email: '', fname: '', lname: '', password: '' },
+  userInfo: { email: '', fname: '', lname: '', password: '', img_url: null },
   formType: 'Sign up',
   errors: Object.values(state.errors.session)
 });

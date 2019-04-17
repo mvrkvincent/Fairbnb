@@ -281,7 +281,7 @@
 }
 
 .modal-form {
-  padding-top: 20px
+  padding-top: 20px;
 }
 
 #form-type {
@@ -900,11 +900,29 @@ i {
   border: 1px solid #eae8e8;  
 }
 
-.img-upload:hover {
+.user-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#user-img {
+  display: flex;
+  border: 1px solid #eae8e8;  
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+#user-img:hover, .img-upload:hover {
   cursor: pointer;
   color:  #008489;
 }
-
 
 #uploader {
   z-index: -1;
