@@ -111,10 +111,11 @@ class SpotForm extends React.Component {
 
     return (
       <div className="spot-form">
-        <div id="form-type">{this.props.formType} your Spot</div>
+      <div id="form-type">{this.props.formType} your Spot</div>
+      <div id="spot-form-fields">
+        <div className="module"></div>
         <form className="modal-form" onSubmit={this.handleSubmit}>
 
-        <div className="module"></div>
         <div className="spot-form-options">
         <div>
           <div className="field-wrapper">
@@ -226,6 +227,7 @@ class SpotForm extends React.Component {
           </div>
           <button>{buttonText}</button>
         </form>
+        </div>
       </div>
     )
   };

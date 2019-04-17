@@ -876,8 +876,22 @@ i {
   justify-content: center;
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   padding: 0 40px;
+}
+
+#spot-form-fields {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#spot-form-fields .module {
+  width: 500px;
+  min-width: 400px;
+  height: 400px;
+  margin: 20px;
 }
 
 .spot-form select {
@@ -898,6 +912,9 @@ i {
   margin-top: 5px;
 }
 
+.spot-form .modal-form {
+  margin: 20px;
+}
 .spot-form-options {
   display: flex;
   flex-direction: column;
@@ -923,6 +940,9 @@ i {
    display: none;
   }
 
+  #spot-form-fields {
+    flex-direction: column;
+  }
 
   .show {
     width: 100%;
