@@ -68,7 +68,7 @@
   margin-left: 155.48px;
 }
 
-.filter-bar button {
+.filter-button {
   font-family: 'Montserrat', sans-serif;
   padding: 0 16px;
   color: #585858;
@@ -82,14 +82,19 @@
   outline: none;
 }
 
-.filter-bar button:hover {
-  background-color: #eae8e8;
-}
-
-.filter-bar button:focus {
-  outline: none;
+.filter-button:hover {
   background-color: #008489;
   color: #FFFFFF;
+}
+
+.active-button {
+  background-color: #008489;
+  color: #FFFFFF;
+}
+
+.active-button:hover {
+  background-color: #eae8e8;
+  color: #585858;
 }
 
 
@@ -405,13 +410,17 @@ i {
  width: 100%;
 }
 
+
 .index-map-hidden {
+  width: 96%;
+  margin-top: 20px;
   height:0px;
 }
 
 .index-map-visible {
   width: 96%;
   margin-top: 20px;
+  height: 350px
 }
 
 

@@ -58,7 +58,7 @@ class SpotIndex extends React.Component {
 
     return (
       <div className="spot-index" >
-        <div className="index-map-visible" id="index-map">{this.state.map}</div>
+        <div id="index-map" className="index-map-hidden">{this.state.map}</div>
         <ul><div id="spot-index-head">{headText}</div>{spotIndexItems}</ul>
       </div>
     );
