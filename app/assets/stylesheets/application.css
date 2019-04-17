@@ -888,12 +888,33 @@ i {
 }
 
 .img-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 500px;
   min-width: 400px;
   height: 400px;
   margin: 20px;
+  font-size: 80px;
   border: 1px solid #eae8e8;  
 }
+
+.img-upload:hover {
+  cursor: pointer;
+  color:  #008489;
+}
+
+
+#uploader {
+  z-index: -1;
+	width: 0px;
+	height: 0px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
 
 .spot-form select {
   background-color: #FFFFFF;
