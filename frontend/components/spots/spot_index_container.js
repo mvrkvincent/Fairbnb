@@ -4,7 +4,7 @@ import SpotIndex from './spot_index';
 
 const msp = ({ entities, ui }) => ({
   spots: Object.values(entities.spots),
-  city: Object.values(ui.search)
+  search: ui.search 
 });
 
 const mdp = dispatch => ({

@@ -15,23 +15,27 @@ class SpotIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.city !== this.props.city) {
-      const indexMap = document.getElementById('index-map');
-      const button = document.getElementById('map-button');
+    const indexMap = document.getElementById('index-map');
+    const button = document.getElementById('map-button');
+    if ((prevProps.search.city !== this.props.search.city)) {
       indexMap.classList.add("index-map-visible");
-      button.classList.toggle("active-button");
+      button.classList.add("active-button");
       this.renderMap();
+    } 
+    else if (this.props.search === undefined) {
+      indexMap.classList.remove("index-map-visible");
+      button.classList.remove("active-button");
     }
   }
 
   fetchMapLocations() {
-    const { spots, city } = this.props;
-    let citySearch = city.join('');
+    const { spots, search } = this.props;
+    let searchCity = search.city;
     let zoom;
     let mapLocs = [];
-    if (city[0]) {
+    if (searchCity) {
       for (let i=0; i < spots.length; i++) {
-        if (spots[i].city.toLowerCase() === citySearch) {
+        if (spots[i].city.toLowerCase() === searchCity) {
           mapLocs.push(spots[i]);
         }
       }
@@ -51,12 +55,12 @@ class SpotIndex extends React.Component {
   }
 
   render() {
-    const { spots, city } = this.props;
+    const { spots, search } = this.props;
     let spotIndexItems, headText, s;
 
-    if (city[0]) {
-      const searchCity = city.join('');
-      const cityName = searchCity.split(' ').map(part => (part[0].toUpperCase() + part.slice(1)));
+    if (search.city) {
+      const searchCity = search.city;
+      const cityName = searchCity.split(' ').map(part => (part[0].toUpperCase() + part.slice(1))).join(' ');
       spotIndexItems = spots.map(spot => (spot.city.toLowerCase() === searchCity) ? <SpotIndexItem key={spot.id} spot={spot} /> : null);
       s = (spotIndexItems.length > 1) ? 's' : '';
       headText = (<span>Explore {cityName}</span>)

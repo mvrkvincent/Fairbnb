@@ -15,10 +15,15 @@ class FilterNav extends React.Component {
   }
 
   toggleMap() {
-      const indexMap = document.getElementById('index-map');
-      const button = document.getElementById('map-button');
-      indexMap.classList.toggle("index-map-visible");
-      button.classList.toggle("active-button");
+    const indexMap = document.getElementById('index-map');
+    const button = document.getElementById('map-button');
+    if (indexMap.classList.contains("index-map-visible")) {
+      indexMap.classList.remove("index-map-visible");
+      button.classList.remove("active-button");
+    } else {
+      indexMap.classList.add("index-map-visible");
+      button.classList.add("active-button");
+    }
   }
 
   render() {

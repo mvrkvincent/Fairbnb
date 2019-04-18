@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {  city: [],
+    this.state = {  city: '',
                     options: [],
                     search: 'Search'
                   };
@@ -25,12 +25,12 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     const cityName = this.state.city;
-    const pathName = (cityName[0]) ? cityName.split(' ').map(part => (part[0].toUpperCase() + part.slice(1))).join('_') : [];
+    const pathName = (cityName[0]) ? cityName.split(' ').map(part => (part[0].toUpperCase() + part.slice(1))).join('_') : '';
     const searchText = pathName.split('_').join(' ');
     e.preventDefault();
 
-    if (this.state.options.includes(this.state.city.toLowerCase())) {
-        this.props.searchCity(this.state.city.toLowerCase());
+    if (cityName[0] && this.state.options.includes(cityName.toLowerCase())) {
+        this.props.searchCity({city: this.state.city.toLowerCase()});
         this.props.history.push(`/${pathName}`);
         this.setState({ search: `Searching in ${searchText}`, city: [] });
     } else if (pathName === '') {
