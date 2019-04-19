@@ -18,7 +18,7 @@ class About extends React.Component {
             <button id="contact-mail"><i className="far fa-envelope"></i>{' '}Email</button></a>
           <a href="https://github.com/mrkvncnt">
               <button id="contact-git"><i className="fab fa-github"></i>{' '}GitHub</button></a>
-          <a href="https://www.linkedin.com/in/mark-rodriguez-a39934163/">
+          <a href="https://www.linkedin.com/in/mark-vincent-rodriguez-a39934163/">
             <button id="contact-li"><i className="fab fa-linkedin"></i>{' '}LinkedIn</button></a>
         </div>
 
