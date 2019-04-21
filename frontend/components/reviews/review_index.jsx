@@ -5,7 +5,7 @@ class ReviewIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {  rating: 0, 
+    this.state = {  rating: null, 
                     body: '',
                     spot_id: null,
                     ratingAve: null
@@ -23,7 +23,6 @@ class ReviewIndex extends React.Component {
     }
 
     if (this.props.reviews[0] && this.state.ratingAve !== prevState.ratingAve) {
-      debugger
       this.calculateRating();
     }
   }
@@ -50,13 +49,16 @@ class ReviewIndex extends React.Component {
     let reviewCount = 0;
     let ratingSum = 0;
     let ratingAve = 0;
-    reviews.forEach(review => {reviewCount += 1; ratingSum += review.rating;});
+
+    for (let i=0; i < reviews.length; i++) {
+      reviewCount++;
+      ratingSum += reviews[i].rating;
+    }
 
     ratingAve = Math.ceil(ratingSum/reviewCount);
-    this.setState({ reviewCount: reviewCount, ratingAve: ratingAve });
+    this.setState({ratingAve: ratingAve });
 
     if (this.props.rating !== ratingAve) {
-      debugger
       this.props.updateSpot({id: this.state.spot_id, ave_rating: ratingAve});
     }
 
@@ -64,7 +66,7 @@ class ReviewIndex extends React.Component {
 
   generateRatingOptions() {
     const ratingOptions = [];
-    const star = <i className="far fa-star"/>
+    
     for (let i = 5; i > 0; i--) {
       ratingOptions.push((<option key={i} value={i}>{i}</option>))
     }
@@ -107,6 +109,7 @@ class ReviewIndex extends React.Component {
               className="form-input"
               placeholder="rating"
               onChange={this.handleInput('rating')}>
+              <option value="" disabled selected>Give this spot some stars</option>
               {this.generateRatingOptions()}
             </select>
           </div>
