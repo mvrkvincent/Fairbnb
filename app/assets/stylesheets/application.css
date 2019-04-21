@@ -40,6 +40,7 @@
 .nav-bar a {
   text-decoration: none;
   color: #585858;
+  height: 100%;
 }
 
 
@@ -1005,6 +1006,7 @@ i {
     flex-direction: column;
   }
 
+
   .spot-index {
     margin-top: 180px;
   }
@@ -1067,6 +1069,12 @@ i {
     background-color: #008489;
     color: #FFFFFF;
     }
+
+  .nav-bar a {
+    text-decoration: none;
+    color: #585858;
+    height: 32px;
+  }
 
   .search {
     width: 400px;
