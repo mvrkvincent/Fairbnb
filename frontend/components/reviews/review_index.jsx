@@ -23,6 +23,7 @@ class ReviewIndex extends React.Component {
     }
 
     if (this.props.reviews[0] && this.state.ratingAve !== prevState.ratingAve) {
+      debugger
       this.calculateRating();
     }
   }
@@ -55,6 +56,7 @@ class ReviewIndex extends React.Component {
     this.setState({ reviewCount: reviewCount, ratingAve: ratingAve });
 
     if (this.props.rating !== ratingAve) {
+      debugger
       this.props.updateSpot({id: this.state.spot_id, ave_rating: ratingAve});
     }
 
