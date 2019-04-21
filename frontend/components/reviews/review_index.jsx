@@ -66,9 +66,11 @@ class ReviewIndex extends React.Component {
 
   generateRatingOptions() {
     const ratingOptions = [];
-    
+
     for (let i = 5; i > 0; i--) {
-      ratingOptions.push((<option key={i} value={i}>{i}</option>))
+      let s = i > 1 ? 's' : '';
+      let k = `option${i}`;
+      ratingOptions.push((<option key={k} value={i}>{i} star{s}</option>))
     }
     return ratingOptions;
   }
@@ -94,8 +96,8 @@ class ReviewIndex extends React.Component {
     let numReviews = 0;
     reviews.forEach(() => { numReviews += 1; });
     const s1 = numReviews > 1 ? 's' : '';
-    const reviewIndexItems = reviews.map(review => <ReviewIndexItem key={review.id} review={review} />)
-
+    const reviewIndexItems = reviews.map(review => <ReviewIndexItem key={review.id} review={review} />);
+    reviewIndexItems.reverse();
     const reviewForm = 
       <form className="modal-form" onSubmit={this.handleSubmit}>
         <div className="field-wrapper">
@@ -109,7 +111,7 @@ class ReviewIndex extends React.Component {
               className="form-input"
               placeholder="rating"
               onChange={this.handleInput('rating')}>
-              <option value="" disabled selected>Give this spot some stars</option>
+              <option value="" disabled selected>Rating</option>
               {this.generateRatingOptions()}
             </select>
           </div>
