@@ -5,7 +5,7 @@ class ReviewIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {  rating: 0, 
+    this.state = {  rating: null, 
                     body: '',
                     spot_id: null,
                     ratingAve: null
@@ -49,10 +49,14 @@ class ReviewIndex extends React.Component {
     let reviewCount = 0;
     let ratingSum = 0;
     let ratingAve = 0;
-    reviews.forEach(review => {reviewCount += 1; ratingSum += review.rating;});
+
+    for (let i=0; i < reviews.length; i++) {
+      reviewCount++;
+      ratingSum += reviews[i].rating;
+    }
 
     ratingAve = Math.ceil(ratingSum/reviewCount);
-    this.setState({ reviewCount: reviewCount, ratingAve: ratingAve });
+    this.setState({ratingAve: ratingAve });
 
     if (this.props.rating !== ratingAve) {
       this.props.updateSpot({id: this.state.spot_id, ave_rating: ratingAve});
@@ -62,9 +66,11 @@ class ReviewIndex extends React.Component {
 
   generateRatingOptions() {
     const ratingOptions = [];
-    const star = <i className="far fa-star"/>
+
     for (let i = 5; i > 0; i--) {
-      ratingOptions.push((<option key={i} value={i}>{i}</option>))
+      let s = i > 1 ? 's' : '';
+      let k = `option${i}`;
+      ratingOptions.push((<option key={k} value={i}>{i} star{s}</option>))
     }
     return ratingOptions;
   }
@@ -90,8 +96,8 @@ class ReviewIndex extends React.Component {
     let numReviews = 0;
     reviews.forEach(() => { numReviews += 1; });
     const s1 = numReviews > 1 ? 's' : '';
-    const reviewIndexItems = reviews.map(review => <ReviewIndexItem key={review.id} review={review} />)
-
+    const reviewIndexItems = reviews.map(review => <ReviewIndexItem key={review.id} review={review} />);
+    reviewIndexItems.reverse();
     const reviewForm = 
       <form className="modal-form" onSubmit={this.handleSubmit}>
         <div className="field-wrapper">
@@ -105,6 +111,7 @@ class ReviewIndex extends React.Component {
               className="form-input"
               placeholder="rating"
               onChange={this.handleInput('rating')}>
+              <option value="" disabled selected>Rating</option>
               {this.generateRatingOptions()}
             </select>
           </div>

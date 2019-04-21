@@ -18,7 +18,7 @@ export const App = () => (
     </div>
 
       <Switch>
-        <Route exact path='/host' component={SpotForm} />
+        <Route exact path='/:userId/host' component={SpotForm} />
         <Route exact path="/spots/:spotId" component={SpotShow} />
         <Route exact path='/:city' component={SpotIndex} />
         <Route exact path='/' component={SpotIndex} />

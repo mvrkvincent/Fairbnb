@@ -10,7 +10,7 @@ class MemberNav extends React.Component {
     const userImg = (img_url) ? { backgroundImage: `url(${img_url})` } : { border: `1px solid #eae8e8` };
     return (
       <div className="nav-buttons">
-        <Link to={'/host'}><button>Become a host</button></Link>
+        <Link to={`/${this.props.currentUser.id}/host`}><button>Become a host</button></Link>
         <button onClick={this.props.about}>About</button>
         <button onClick={this.props.logout} value="Log out">Log out</button>
         <div className="user-img">
