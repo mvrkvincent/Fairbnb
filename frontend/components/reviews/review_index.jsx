@@ -5,10 +5,11 @@ class ReviewIndex extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {  rating: null, 
+    this.state = {  rating: this.props.rating, 
                     body: '',
                     spot_id: null,
-                    ratingAve: null
+                    ratingAve: null,
+                    stars: null
                   }; 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,6 +26,24 @@ class ReviewIndex extends React.Component {
     if (this.props.reviews[0] && this.state.ratingAve !== prevState.ratingAve) {
       this.calculateRating();
     }
+  }
+
+
+  calculateStars() {
+    let ratingAve = this.state.ave_rating;
+    let rateStars = [];
+    let k = 0;
+
+    for (let i = 1; i <= ratingAve; i++) {
+      rateStars.push(<i key={i} className="fas fa-star"></i>);
+    }
+
+    while (rateStars.length < 5) {
+      rateStars.push(<i key={k} className="far fa-star"></i>);
+      k++
+    }
+
+    this.setState({ stars: rateStars });
   }
 
   handleInput(field) {
