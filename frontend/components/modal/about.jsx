@@ -14,6 +14,8 @@ class About extends React.Component {
  
         <div id="form-type">Contact the developer for inquiries</div>
         <div className="modal-form">
+          <a href="https://markvincent.dev/">
+            <button id="contact-portfolio"><i class="fas fa-globe"></i>{' '}Portfolio</button></a>
           <a href="mailto:mrkxvncnt@gmail.com">
             <button id="contact-mail"><i className="far fa-envelope"></i>{' '}Email</button></a>
           <a href="https://github.com/mrkvncnt">
@@ -22,7 +24,7 @@ class About extends React.Component {
             <button id="contact-li"><i className="fab fa-linkedin"></i>{' '}LinkedIn</button></a>
         </div>
 
-        <div className="alt-link"><i className="far fa-copyright"></i>mark vincent | 2019</div>
+        <div className="alt-link"><i className="far fa-copyright"></i>mark vincent rodriguez | 2019</div>
       </div>
     )
   };

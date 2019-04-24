@@ -744,6 +744,12 @@ i {
   background-color: #0077b5;
 }
 
+.modal-form #contact-portfolio {
+  background-color: #FFFFFF;
+  color: #52565e;
+  border: 2px solid #52565e;
+}
+
 .booking-module .rating i {
   font-size: 8px;
   padding: 1px;
