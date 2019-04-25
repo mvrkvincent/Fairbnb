@@ -31,8 +31,8 @@ class FilterNav extends React.Component {
     return (
       <div className="filter-bar">
         <div>
-          <button className="filter-button">Dates</button>
-          <button className="filter-button">Guests</button>
+          {/* <button className="filter-button">Dates</button> */}
+          {/* <button className="filter-button">Guests</button> */}
           <button id="map-button" className="filter-button" onClick={this.toggleMap}>Show Map</button>
         </div>
       </div>
