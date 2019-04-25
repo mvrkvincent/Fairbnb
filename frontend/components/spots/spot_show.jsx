@@ -13,7 +13,7 @@ class SpotShow extends React.Component {
     super(props);
     this.state = {
       id: null, name: null, accommodation: null, rate: null, num_guests: null, num_beds: null,
-      num_baths: null, city: null, description: null, img_url: null, lat: null, lng: null, ave_rating: null,
+      num_baths: null, city: null, description: null, img_url: null, lat: 0, lng: 0, ave_rating: null,
       stars: []
     };
   }
