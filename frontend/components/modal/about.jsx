@@ -16,7 +16,7 @@ class About extends React.Component {
         <div className="modal-form">
           <a href="https://markvincent.dev/">
             <button id="contact-portfolio"><i class="fas fa-globe"></i>{' '}Portfolio</button></a>
-          <a href="mailto:mrkxvncnt@gmail.com">
+          <a href="mailto:connect@markvincent.dev">
             <button id="contact-mail"><i className="far fa-envelope"></i>{' '}Email</button></a>
           <a href="https://github.com/mrkvncnt">
               <button id="contact-git"><i className="fab fa-github"></i>{' '}GitHub</button></a>
