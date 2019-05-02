@@ -1,4 +1,4 @@
-# Fairbnb
+# Fairbnb | [Live](https://fairbnb.markvincent.dev)
 
 **A clone of Airbnb built on a Rails backend and React/Redux frontend**
 
