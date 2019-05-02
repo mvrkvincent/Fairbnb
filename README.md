@@ -8,13 +8,13 @@
 * Narrow search by location using integrated map feature
 * Book a spot through the app and recieve imediate confirmation
 
-![alt text](https://media.giphy.com/media/PNufELPcE06BACPItz/giphy.gif "Dynamic UI")
+![home](https://github.com/mrkvncnt/Fairbnb/blob/master/app/assets/images/home.png)
 
 ## Dynamic UI
 * Interface optimized for a variety of viewports
 
-![alt text](https://media.giphy.com/media/PNufELPcE06BACPItz/giphy.gif "Dynamic UI")
-![alt text](https://media.giphy.com/media/PNufELPcE06BACPItz/giphy.gif "Dynamic UI")
+![dyno](https://github.com/mrkvncnt/Fairbnb/blob/master/app/assets/images/dynamic.png)
+![dyno_gif](https://media.giphy.com/media/PNufELPcE06BACPItz/giphy.gif "Dynamic UI")
 
 ## Custom Search
 * Real-time, case-agnostic search limites available search terms to an eager-loaded set of active listing locations - instantly notifying the user if no listing exists for their desired location - eliminating resultless database calls.
