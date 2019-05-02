@@ -64,7 +64,6 @@ class SearchBar extends React.Component {
           onChange={this.handleInput('city')} />
           <input type="submit" style={{display: "none"}}value="submit"/>
         </form>
-        {/* {this.state.searchError} */}
     </div>
 
     )
