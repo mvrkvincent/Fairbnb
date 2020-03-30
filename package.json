@@ -35,7 +35,9 @@
     "lib": "lib",
     "test": "test"
   },
-  "devDependencies": {"redux-logger": "^3.0.6"},
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  },
   "engines": {
     "node": "v11.10.1",
     "npm": "6.7.0"
