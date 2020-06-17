@@ -160,6 +160,7 @@
   font-weight: 500;
   cursor: pointer;
   height: 100%;
+  background: none;
 }
 
 .nav-buttons button:hover {
