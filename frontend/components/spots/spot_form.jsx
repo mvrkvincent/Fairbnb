@@ -29,7 +29,8 @@ class SpotForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.codeAddress();
+    // this.codeAddress();
+    alert('Congrats! Your spot is under admin review.');
   }
 
   generateGuestOptions() {
