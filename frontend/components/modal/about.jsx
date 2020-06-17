@@ -16,15 +16,15 @@ class About extends React.Component {
         <div className="modal-form">
           <a href="https://markvincent.dev/">
             <button id="contact-portfolio"><i class="fas fa-globe"></i>{' '}Portfolio</button></a>
-          <a href="mailto:connect@markvincent.dev">
+          <a href="mailto:hello@markvincent.dev">
             <button id="contact-mail"><i className="far fa-envelope"></i>{' '}Email</button></a>
-          <a href="https://github.com/mrkvncnt">
+          <a href="https://github.com/mvrkvincent">
               <button id="contact-git"><i className="fab fa-github"></i>{' '}GitHub</button></a>
-          <a href="https://www.linkedin.com/in/markvincentrodriguez/">
+          <a href="https://www.linkedin.com/in/mvrkvincent/">
             <button id="contact-li"><i className="fab fa-linkedin"></i>{' '}LinkedIn</button></a>
         </div>
 
-        <div className="alt-link"><i className="far fa-copyright"></i>mark vincent rodriguez | 2019</div>
+        <div className="alt-link">&copy; Designed & Built by Mark Vincent in Brooklyn, NY | &copy; 2019</div>
       </div>
     )
   };

@@ -257,6 +257,7 @@
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   padding-left: 5px;
+  background: none;
 }
 
 .alt-link button:hover {
@@ -296,6 +297,7 @@
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   padding-left: 1px;
+  background: none;
 }
 
 #form-type button:hover {
@@ -772,6 +774,7 @@ i {
 }
 .booking-form button {
   width: 100%;
+  background: none;
 }
 
 .booking-form select {
@@ -796,6 +799,7 @@ i {
   border-radius: 0px;
   background: 0 0;
   height: 0px;
+  background: none;
 }
 
 
@@ -855,6 +859,7 @@ i {
 .conf-buttons button {
   width: 230px;
   margin: 0;
+  background: none;
 }
 
 .modal .spot-img {
@@ -1062,6 +1067,7 @@ i {
     border-radius: 5px;
     margin-right: 16px;
     outline: none;
+    background: none;
   }
 
   .nav-bar .nav-buttons button:hover {
@@ -1142,6 +1148,7 @@ i {
     height: 52px;
     cursor: pointer;
     outline: none;
+    background: none;
   }
 
   .booking-form {
