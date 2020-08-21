@@ -774,7 +774,7 @@ i {
 }
 .booking-form button {
   width: 100%;
-  background: none;
+  background: #FF5A5F;
 }
 
 .booking-form select {
@@ -1173,11 +1173,6 @@ i {
   #book-text {
     visibility: hidden;
   }
-
-  #booking {
-    background: #FF5A5F;
-  }
-
 
 }
 
