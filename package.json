@@ -11,7 +11,7 @@
     "css-loader": "^2.1.1",
     "jshint": "^2.10.2",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-addons-shallow-compare": "^15.6.2",
