@@ -1,4 +1,4 @@
-# Fairbnb | [Live](https://fairbnb-beta.herokuapp.com/)
+# Fairbnb | [Live] - Depricated (Hoasting is expensive!)
 
 **A clone of Airbnb built on a Rails backend and React/Redux frontend and PostgreSQL database**
 
